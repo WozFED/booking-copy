@@ -1,13 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import styled from 'styled-components'
 import { StaticImage } from "gatsby-plugin-image"
-
-
-const H1 = styled.h1 `
-color: ${({color}) => color};
-font-size: 24px;
-`
 
 
 const NavigationHeader = () =>{
