@@ -1,6 +1,5 @@
-import React, {useEffect, useState, useCallback} from "react"
+import React from "react"
 import { Link } from "gatsby"
-import IndexPage from "../../pages"
 
 const NavigationFooter = () => {
   const navigationObject = [
@@ -31,11 +30,7 @@ const NavigationFooter = () => {
     },
   ]
 
-  const [pathClass, setPathClass] = useState()
-
-  useEffect(()=>{
-    setPathClass(window.location.pathname)
-  },[pathClass])
+  
 
   return (
     <div className="header__navigation-footer">
@@ -44,7 +39,7 @@ const NavigationFooter = () => {
           return (
             <Link to={el.path} style={{ textDecoration: "none" }}>
               <li 
-                className = {pathClass === el.path ? 'click' : null}
+                className = {window.location.pathname === el.path ? 'click' : null}
                 key={index}>
                 <span>obrazek</span>
                 <p>{el.name}</p>
