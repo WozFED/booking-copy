@@ -9,8 +9,10 @@ const IndexPage = ({data}) => {
   return(
     <Layout>
       <h1>Strona główna</h1>
-      
-      
+      <div className = 'test'>KRAKÓW</div>
+      <div className = 'test'>Ustka</div>
+      <div className = 'test'>Warszawa</div>
+      <div className = 'test'>Toruń</div>
     </Layout>
   )
   

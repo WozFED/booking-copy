@@ -5,7 +5,23 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
+
   plugins: [
+    {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `towns`,
+      path: `${__dirname}/src/towns`,
+    }
+  },
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      footnotes: true,
+      gfm: true,
+      plugins: [],
+    },
+  },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     'gatsby-plugin-styled-components',

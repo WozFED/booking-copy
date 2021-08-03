@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 const NavigationFooter = () => {
   const navigationObject = [
@@ -53,3 +53,15 @@ const NavigationFooter = () => {
 }
 
 export default NavigationFooter
+
+export const query = graphql`
+query towns {
+  allMarkdownRemark {
+    nodes {
+      frontmatter {
+        title
+        objects
+      }
+    }
+  }
+}`
