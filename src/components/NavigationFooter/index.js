@@ -1,50 +1,23 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import {navigationFooter} from '../../navigation/navigation'
 
 const NavigationFooter = () => {
-  const navigationObject = [
-    {
-      name: "Pobyty",
-      path: "/",
-      image: null,
-    },
-    {
-      name: "Loty",
-      path: "/flights",
-      image: null,
-    },
-    {
-      name: "Wynajem samochodów",
-      path: "/cars",
-      image: null,
-    },
-    {
-      name: "Atrakcje",
-      path: "/atractive",
-      image: null,
-    },
-    {
-      name: "Taksówki lotniskowe",
-      path: "/taxi",
-      image: null,
-    },
-  ]
-
   
-
   return (
     <div className="header__navigation-footer">
       <ul className="header__list">
-        {navigationObject.map((el, index) => {
+        {navigationFooter.map((el, index) => {
           return (
-            <Link to={el.path} style={{ textDecoration: "none" }}>
-              <li 
-                className = {window.location.pathname === el.path ? 'click' : null}
+          <li className = {window.location.pathname === el.path ? 'click' : null}
                 key={index}>
-                <span>obrazek</span>
+            <Link to={el.path} style={{ textDecoration: "none" }}>
+               
+                
+                <span>{el.image}</span>
                 <p>{el.name}</p>
-              </li>
-            </Link>
+               </Link></li>
+           
           )
         })}
       </ul>
@@ -52,16 +25,4 @@ const NavigationFooter = () => {
   )
 }
 
-export default NavigationFooter
-
-export const query = graphql`
-query towns {
-  allMarkdownRemark {
-    nodes {
-      frontmatter {
-        title
-        objects
-      }
-    }
-  }
-}`
+export default NavigationFooter;

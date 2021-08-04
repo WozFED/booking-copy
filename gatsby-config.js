@@ -8,27 +8,28 @@ module.exports = {
 
   plugins: [
     {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      name: `towns`,
-      path: `${__dirname}/src/towns`,
-    }
-  },
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      footnotes: true,
-      gfm: true,
-      plugins: [],
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `towns`,
+        path: `${__dirname}/src/towns/`,
+      },
     },
-  },
+    
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        footnotes: true,
+        gfm: true,
+        plugins: [],
+      },
+    },
+    `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-styled-components",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sass`,
-    
   ],
 }

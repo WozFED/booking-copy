@@ -2,12 +2,26 @@
     &-header {
         background-color: white;
         border: 1px solid blue;
-
         height: 38px;
         p{
             padding: 10px;
             color: rgb(0, 50, 130)
         }
+    }
+    &-icons {
+        background-color: transparent;
+        border: none; 
+        width: 100%;
+        height: 100%;
+        &:hover {
+            cursor: pointer;
+        }
+        img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50px;
+        }
+    
     }
 }
 
