@@ -72,13 +72,18 @@
     align-items: center;
     justify-content: flex-end;
     flex-basis: 80%;
-    position: relative;
-    div {
-      margin: 5px;
-    }
   }
 }
 
+.options {
+  width: 700px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  background-color: black;
+  position: absolute;
+  top: 400px;
+}
 
 
 .test {

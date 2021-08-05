@@ -1,0 +1,10 @@
+.inputs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__wrapper {
+        width: 70%;
+        text-align: start;
+        padding: 50px 0;
+    }
+}

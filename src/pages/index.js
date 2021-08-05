@@ -2,13 +2,14 @@ import { graphql, Link } from 'gatsby'
 import React, {useState, useEffect} from 'react'
 import Layout from '../components/Layout'
 import '../styles/themes/default/theme.scss'
+import SearchHotels from '../components/SearchHotels'
 
 
 
 const IndexPage = ({data}) => {
   return(
     <Layout>
-      <h1>Strona główna</h1>
+      <SearchHotels />
       <div className = 'test'>KRAKÓW</div>
       <div className = 'test'>Ustka</div>
       <div className = 'test'>Warszawa</div>

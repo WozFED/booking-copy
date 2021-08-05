@@ -7,27 +7,27 @@ import { Icon } from '@iconify/react'
 
 export const navigationFooter = [
     {
-      "name": "Pobyty",
+      "name": "stays",
       "path": "/",
       "image": <IoIosBed style = {{color: 'white', fontSize: '22px'}}/>
     },
     {
-      "name": "Loty",
+      "name": "flights",
       "path": "/flights",
       "image": <FaPlane style = {{color: 'white', fontSize: '22px'}}/>
     },
     {
-      "name": "Wynajem samochodów",
+      "name": "rent",
       "path": "/cars",
       "image": <BiCar style = {{color: 'white', fontSize: '22px'}}/>
     },
     {
-      "name": "Atrakcje",
+      "name": "attraction",
       "path": "/atractive",
       "image": <GiBarracksTent style = {{color: 'white', fontSize: '22px'}}/>
     },
     {
-      "name": "Taksówki lotniskowe",
+      "name": "taxi",
       "path": "/taxi",
       "image": <Icon icon="cil:taxi" style = {{color: 'white', fontSize: '22px'}}/>
     }

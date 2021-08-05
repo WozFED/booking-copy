@@ -14,7 +14,19 @@ module.exports = {
         path: `${__dirname}/src/towns/`,
       },
     },
-    
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/languages`,
+        // supported language
+        languages: [`english`, `french`, `polish`, `russia`],
+        // language file path
+        defaultLanguage: `polish`,
+        // option to redirect to `/ko` when connecting `/`
+        redirect: true,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+import React,  {useEffect, useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled, { keyframes } from "styled-components"
 import { navHeader } from "../../navigation/header"
+import { FormattedMessage} from "gatsby-plugin-intl"
+import Language from "../Language"
 
 const downup = keyframes`
     from {top: 66px;}
@@ -41,13 +42,33 @@ const NavigationHeader = () => {
     is: false,
     id: 0,
   })
+  const [language, setLanguage] = useState(false)
+  const [image, setImage] = useState('/polski.png')
+  
+  const setValuePage = id => {
+    id === 2 ? setLanguage(true) : setLanguage(false)
+  }
 
   const showMeValue = id => {
     show.is === false
       ? setShow({ is: true, id: id })
       : setShow({ is: false, id: 0 })
   }
-
+  useEffect(()=>{
+    if(window.location.pathname.includes("/english/")){
+      setImage('/english.png')}
+      if(window.location.pathname.includes("/russia/")){
+        setImage('/русский.png')
+      }
+      if(window.location.pathname.includes("/polish/")){
+        setImage('/polski.png')
+      }
+      if(window.location.pathname.includes("/french")){
+        setImage('/français.png')
+      }
+  },[])
+  
+  
   return (
     <div className="header__navigation-header">
       <div className="header__title">
@@ -65,10 +86,11 @@ const NavigationHeader = () => {
                 className="button-icons"
                 onMouseOver={() => showMeValue(el.id)}
                 onMouseOut={() => showMeValue(0)}
+                onClick = {() => setValuePage(el.id)}
               >
                 <p>{el.text}</p>
                 {el.image !== null ? (
-                  <img src={el.image} alt="kraj"></img>
+                  <img src={image} alt="kraj"></img>
                 ) : null}
               </button>
               {show.is && show.id === el.id ? (
@@ -79,25 +101,25 @@ const NavigationHeader = () => {
             </div>
           )
         })}
-
+        {language ? <Language languageF = {setValuePage}/> : null }
         <div>
           <button className="button-header another">
             <p>
-              <strong>Udostępnij obiekt</strong>
+            <FormattedMessage id= "share" />
             </p>
           </button>
         </div>
         <div>
           <button className="button-header">
-            <p>
-              <strong>Zarejestruj się</strong>
+          <p>
+            <FormattedMessage id="register" />
             </p>
           </button>
         </div>
         <div>
           <button className="button-header">
-            <p>
-              <strong>Zaloguj się</strong>
+          <p>
+            <FormattedMessage id="login" />
             </p>
           </button>
         </div>

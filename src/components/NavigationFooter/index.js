@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import {navigationFooter} from '../../navigation/navigation'
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
 
 const NavigationFooter = () => {
   
@@ -15,7 +16,7 @@ const NavigationFooter = () => {
                
                 
                 <span>{el.image}</span>
-                <p>{el.name}</p>
+                <p><FormattedMessage id={el.name} /></p>
                </Link></li>
            
           )
