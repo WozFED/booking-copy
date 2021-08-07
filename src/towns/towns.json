@@ -1,0 +1,42 @@
+[
+  {
+    "TownName": "Toruń",
+    "Objects": 400,
+    "Background": "red"
+  },
+  {
+    "TownName": "Gdańsk",
+    "Objects": 400,
+    "Background": "blue"
+  },
+  {
+    "TownName": "Warszawa",
+    "Objects": 400,
+    "Background": "lightgray"
+  },
+  {
+    "TownName": "Kraków",
+    "Objects": 400,
+    "Background": "green"
+  },
+  {
+    "TownName": "Hel",
+    "Objects": 400,
+    "Background": "brown"
+  },
+  {
+    "TownName": "Szczecin",
+    "Objects": 400,
+    "Background": "lightblue"
+  },
+  {
+    "TownName": "Sworne Gacie",
+    "Objects": 400,
+    "Background": "gold"
+  },
+  {
+    "TownName": "Olsztyn",
+    "Objects": 400,
+    "Background": "silver"
+  }
+]

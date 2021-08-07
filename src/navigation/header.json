@@ -13,6 +13,7 @@
     "sLeft": 49,
     "image": "/poland.png",
     "textHover": "Wybierz język",
+    "text": null,
     "id": "2",
     "block": "header__button",
     "buttonClass": "button-icons"
@@ -31,6 +32,7 @@
     "left": null,
     "sLeft": null,
     "image": null,
+    "text": null,
     "formatID": "share",
     "block": null,
     "buttonClass": "button-header another"
@@ -39,6 +41,7 @@
     "left": null,
     "sLeft": null,
     "image": null,
+    "text": null,
     "formatID": "register",
     "block": null,
     "buttonClass": "button-header"
@@ -47,6 +50,7 @@
     "left": null,
     "sLeft": null,
     "image": null,
+    "text": null,
     "formatID": "login",
     "block": null,
     "buttonClass": "button-header"

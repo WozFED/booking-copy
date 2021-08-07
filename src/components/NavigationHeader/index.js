@@ -41,14 +41,14 @@ const NavigationHeader = () => {
     query NavHeader {
       allHeaderJson {
         nodes {
-          formatID
+          block
           buttonClass
+          formatID
           id
           image
           sLeft
           text
           textHover
-          block
         }
       }
     }

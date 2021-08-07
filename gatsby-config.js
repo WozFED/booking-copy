@@ -21,12 +21,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `towns`,
+        path: `${__dirname}/src/towns/`,
+        ignore: [`**/\.*`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/languages`,
         languages: [`english`, `french`, `polish`, `russia`],
         defaultLanguage: `polish`,
-        redirect: true,
+        redirect: false,
       },
     },
     {

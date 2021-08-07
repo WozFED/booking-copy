@@ -2,26 +2,31 @@
   {
     "name": "stays",
     "path": "/",
+    "id": 0,
     "image": "fluent:bed-24-filled"
   },
   {
     "name": "flights",
     "path": "/flights",
+    "id": 1,
     "image": "fa-solid:plane"
   },
   {
     "name": "rent",
     "path": "/cars",
+    "id": 2,
     "image": "bx:bxs-car"
   },
   {
     "name": "attraction",
     "path": "/atractive",
+    "id": 3,
     "image": "ic:sharp-attractions" 
   },
   {
     "name": "taxi",
     "path": "/taxi",
+    "id": 4,
     "image": "cil:taxi"
   }
 ]
