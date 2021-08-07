@@ -1,24 +1,45 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import {navigationFooter} from '../../navigation/navigation'
+import { navigationFooter } from "../../navigation/navigation"
 import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
+import { Icon } from "@iconify/react"
 
 const NavigationFooter = () => {
-  
+  const data = useStaticQuery(graphql`
+    query NavFoot {
+      allNavigationJson {
+        nodes {
+          name
+          image
+          path
+        }
+      }
+    }
+  `)
+
+  const { nodes } = data.allNavigationJson
+
   return (
     <div className="header__navigation-footer">
       <ul className="header__list">
-        {navigationFooter.map((el, index) => {
+        {nodes.map((el, index) => {
           return (
-          <li className = {window.location.pathname === el.path ? 'click' : null}
-                key={index}>
-            <Link to={el.path} style={{ textDecoration: "none" }}>
-               
-                
-                <span>{el.image}</span>
-                <p><FormattedMessage id={el.name} /></p>
-               </Link></li>
-           
+            <li
+              className={window.location.pathname === el.path ? "click" : null}
+              key={index}
+            >
+              <Link to={el.path} style={{ textDecoration: "none" }}>
+                <span>
+                  <Icon
+                    icon={`${el.image}`}
+                    style={{ fontSize: "25px", color: "white" }}
+                  />
+                </span>
+                <p>
+                  <FormattedMessage id={el.name} />
+                </p>
+              </Link>
+            </li>
           )
         })}
       </ul>
@@ -26,4 +47,4 @@ const NavigationFooter = () => {
   )
 }
 
-export default NavigationFooter;
+export default NavigationFooter

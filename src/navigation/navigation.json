@@ -1,0 +1,27 @@
+[
+  {
+    "name": "stays",
+    "path": "/",
+    "image": "fluent:bed-24-filled"
+  },
+  {
+    "name": "flights",
+    "path": "/flights",
+    "image": "fa-solid:plane"
+  },
+  {
+    "name": "rent",
+    "path": "/cars",
+    "image": "bx:bxs-car"
+  },
+  {
+    "name": "attraction",
+    "path": "/atractive",
+    "image": "ic:sharp-attractions" 
+  },
+  {
+    "name": "taxi",
+    "path": "/taxi",
+    "image": "cil:taxi"
+  }
+]

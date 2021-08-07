@@ -1,4 +1,6 @@
 ---
 title: Gdańsk
-objects: 2500
+objects: 1200
+image: 
+slug: /towns/gdansk/
 ---

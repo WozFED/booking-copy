@@ -1,0 +1,6 @@
+---
+name: Posejdon,
+price: 120/dzień,
+slug: gdansk/first-hotel,
+---
+LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM

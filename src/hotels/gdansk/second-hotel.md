@@ -1,0 +1,6 @@
+---
+name: Taki tam Hotel,
+price: 50/dzień,
+slug: gdansk/second-hotel,
+---
+LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM

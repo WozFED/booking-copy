@@ -6,14 +6,13 @@ import SearchHotels from '../components/SearchHotels'
 
 
 
+
 const IndexPage = ({data}) => {
+  
   return(
     <Layout>
       <SearchHotels />
-      <div className = 'test'>KRAKÓW</div>
-      <div className = 'test'>Ustka</div>
-      <div className = 'test'>Warszawa</div>
-      <div className = 'test'>Toruń</div>
+      
     </Layout>
   )
   
@@ -22,13 +21,3 @@ const IndexPage = ({data}) => {
 
 export default IndexPage
 
-export const query = graphql`
-query SiteInfo {
-  site {
-    siteMetadata {
-      author
-      title
-    }
-  }
-}
-`

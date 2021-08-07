@@ -1,16 +1,15 @@
-import React,  {useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import styled, { keyframes } from "styled-components"
-import { navHeader } from "../../navigation/header"
-import { FormattedMessage} from "gatsby-plugin-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 import Language from "../Language"
+import { useStaticQuery, graphql } from "gatsby"
 
 const downup = keyframes`
     from {top: 66px;}
     to {top: 56px;}
 `
 const MovingOnHover = styled.div`
-  left: ${props => props.left + "px"};
   top: 66px;
   height: 30px;
   background: black;
@@ -38,37 +37,56 @@ const MovingOnHover = styled.div`
 `
 
 const NavigationHeader = () => {
+  const data = useStaticQuery(graphql`
+    query NavHeader {
+      allHeaderJson {
+        nodes {
+          formatID
+          buttonClass
+          id
+          image
+          sLeft
+          text
+          textHover
+          block
+        }
+      }
+    }
+  `)
+  const { nodes } = data.allHeaderJson
+
   const [show, setShow] = useState({
     is: false,
     id: 0,
   })
   const [language, setLanguage] = useState(false)
-  const [image, setImage] = useState('/polski.png')
-  
+
+  const [image, setImage] = useState("/polski.png")
+
   const setValuePage = id => {
-    id === 2 ? setLanguage(true) : setLanguage(false)
+    id === "2" ? setLanguage(true) : setLanguage(false)
   }
 
-  const showMeValue = id => {
-    show.is === false
+  const showMeValue = (id, textHover) => {
+    show.is === false && textHover
       ? setShow({ is: true, id: id })
       : setShow({ is: false, id: 0 })
   }
-  useEffect(()=>{
-    if(window.location.pathname.includes("/english/")){
-      setImage('/english.png')}
-      if(window.location.pathname.includes("/russia/")){
-        setImage('/русский.png')
-      }
-      if(window.location.pathname.includes("/polish/")){
-        setImage('/polski.png')
-      }
-      if(window.location.pathname.includes("/french")){
-        setImage('/français.png')
-      }
-  },[])
-  
-  
+  useEffect(() => {
+    if (window.location.pathname.includes("/english/")) {
+      setImage("/english.png")
+    }
+    if (window.location.pathname.includes("/russia/")) {
+      setImage("/русский.png")
+    }
+    if (window.location.pathname.includes("/polish/")) {
+      setImage("/polski.png")
+    }
+    if (window.location.pathname.includes("/french")) {
+      setImage("/français.png")
+    }
+  }, [])
+
   return (
     <div className="header__navigation-header">
       <div className="header__title">
@@ -79,50 +97,33 @@ const NavigationHeader = () => {
         />
       </div>
       <div className="header__options">
-        {navHeader.map((el, index) => {
+        {nodes.map(el => {
           return (
-            <div className="header__button" key={index}>
+            <div className={`${el.block}`} key={el.id}>
               <button
-                className="button-icons"
-                onMouseOver={() => showMeValue(el.id)}
+                className={`${el.buttonClass}`}
+                onMouseOver={() => showMeValue(el.id, el.textHover)}
                 onMouseOut={() => showMeValue(0)}
-                onClick = {() => setValuePage(el.id)}
+                onClick={() => setValuePage(el.id)}
               >
-                <p>{el.text}</p>
-                {el.image !== null ? (
-                  <img src={image} alt="kraj"></img>
-                ) : null}
+                <p>
+                  {el.text ? (
+                    el.text
+                  ) : el.formatID ? (
+                    <FormattedMessage id={`${el.formatID}`} />
+                  ) : null}
+                </p>
+                {el.image !== null ? <img src={image}></img> : null}
               </button>
               {show.is && show.id === el.id ? (
-                <MovingOnHover left={el.left} sLeft={el.sLeft}>
+                <MovingOnHover sLeft={el.sLeft}>
                   <p>{el.textHover}</p>
                 </MovingOnHover>
               ) : null}
             </div>
           )
         })}
-        {language ? <Language languageF = {setValuePage}/> : null }
-        <div>
-          <button className="button-header another">
-            <p>
-            <FormattedMessage id= "share" />
-            </p>
-          </button>
-        </div>
-        <div>
-          <button className="button-header">
-          <p>
-            <FormattedMessage id="register" />
-            </p>
-          </button>
-        </div>
-        <div>
-          <button className="button-header">
-          <p>
-            <FormattedMessage id="login" />
-            </p>
-          </button>
-        </div>
+        {language ? <Language languageF={setValuePage} /> : null}
       </div>
     </div>
   )

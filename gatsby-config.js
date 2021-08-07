@@ -1,29 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Booking.com`,
+    author: `Patryk Woźniak`,
   },
 
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `towns`,
-        path: `${__dirname}/src/towns/`,
+        name: `hotels`,
+        path: `${__dirname}/src/hotels/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `navigation`,
+        path: `${__dirname}/src/navigation/`,
+        ignore: [`**/\.*`],
       },
     },
     {
       resolve: `gatsby-plugin-intl`,
       options: {
-        // language JSON resource path
         path: `${__dirname}/src/languages`,
-        // supported language
         languages: [`english`, `french`, `polish`, `russia`],
-        // language file path
         defaultLanguage: `polish`,
-        // option to redirect to `/ko` when connecting `/`
         redirect: true,
       },
     },

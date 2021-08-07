@@ -1,0 +1,6 @@
+---
+name: Mars,
+price: 150/dzień,
+slug: gdansk/fourth-hotel,
+---
+LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM

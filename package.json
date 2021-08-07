@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@react-icons/all-files": "^4.1.0",
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.10.1",
@@ -14,6 +17,7 @@
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-offline": "^4.10.0",
     "gatsby-plugin-react-helmet": "^4.10.0",
+    "gatsby-plugin-react-intl": "^1.3.0",
     "gatsby-plugin-sass": "^4.10.0",
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-plugin-styled-components": "^4.10.0",
