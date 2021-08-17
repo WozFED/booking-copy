@@ -1,17 +1,15 @@
-module.exports = {
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+  
+  module.exports = {
   siteMetadata: {
     title: `Booking.com`,
     author: `Patryk Woźniak`,
   },
-
+  
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `hotels`,
-        path: `${__dirname}/src/hotels/`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,21 +18,30 @@ module.exports = {
         ignore: [`**/\.*`],
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `towns`,
-        path: `${__dirname}/src/towns/`,
+        name: `images`,
+        path: `${__dirname}/src/images/`,
         ignore: [`**/\.*`],
       },
     },
+    
     {
       resolve: `gatsby-plugin-intl`,
       options: {
-        path: `${__dirname}/src/languages`,
-        languages: [`english`, `french`, `polish`, `russia`],
-        defaultLanguage: `polish`,
-        redirect: false,
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `pl`],
+        defaultLanguage: `pl`,
+        redirect: true,
+      },
+    },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: "lbkyug7ubuiw",
+        accessToken: "zdzqGlPONWEG2xtTIHwkZBIDsYQj4_eJkaX07LGk9Mg",
       },
     },
     {
@@ -45,6 +52,7 @@ module.exports = {
         plugins: [],
       },
     },
+    
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,

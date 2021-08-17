@@ -1,6 +1,0 @@
----
-name: Trzeci Hotel,
-price: 111/dzień,
-slug: gdansk/third-hotel,
----
-LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM

@@ -2,31 +2,31 @@
   {
     "name": "stays",
     "path": "/",
-    "id": 0,
-    "image": "fluent:bed-24-filled"
+    "image": "fluent:bed-24-filled",
+    "test": 0
   },
   {
     "name": "flights",
     "path": "/flights",
-    "id": 1,
-    "image": "fa-solid:plane"
+    "image": "fa-solid:plane",
+"test": 1
   },
   {
     "name": "rent",
     "path": "/cars",
-    "id": 2,
-    "image": "bx:bxs-car"
+    "image": "bx:bxs-car",
+"test": 2
   },
   {
     "name": "attraction",
     "path": "/atractive",
-    "id": 3,
-    "image": "ic:sharp-attractions" 
+    "image": "ic:sharp-attractions" ,
+"test": 3
   },
   {
     "name": "taxi",
     "path": "/taxi",
-    "id": 4,
-    "image": "cil:taxi"
+    "image": "cil:taxi",
+      "test": 4
   }
 ]

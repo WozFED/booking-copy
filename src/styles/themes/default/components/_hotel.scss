@@ -1,0 +1,109 @@
+.hotels {
+    padding-top: 50px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    &__wrapper {
+        width: 60%;
+        padding-left: 25px;
+    }
+    &__container {
+        width: 100%;
+        a {
+            padding: 0;
+        }
+    }
+    &__options {
+        width: 20%;
+        background-color: red;
+    }
+    &__window {
+        border: 1px solid black;
+        border-radius: 2px;
+        width: 100%;
+        display: flex;
+        margin: 25px 0;
+        
+    }
+    
+}
+
+.window {
+
+    &__image {
+        width: 225px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        
+        &-postcard {
+        margin-left: 15px;
+        width: 200px;
+        height: 200px;
+        }
+
+        a {
+            padding: 0;
+        }
+    }
+    &__description {
+        padding: 25px 10px;
+        width: 50%;
+        
+        p{
+            font-size: 14px;
+        }
+        div {
+            display: flex;
+            padding: 5px 0;
+        }
+    }
+    &__show {
+        display: flex;
+        width: 33%;
+        height: 100%;
+        align-items: flex-end;
+        padding-right: 20px;
+        flex-direction: column;
+        p{
+            padding: 40px;
+        }
+    }
+}
+
+.image {
+    &-postcard {
+        border-radius: 2px;
+    }
+}
+.selects {
+    width: 100%;
+    display: flex;
+    margin: 25px 0;
+    &__element {
+        background-color: white;
+        height: 35px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        border: 0.5px solid #0071c2;
+        border-left: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:first-of-type {
+        width: 25%;
+        background-color: #0071c2;
+        color: white;
+    }
+    &:nth-child(2){
+        width: 30%;
+        color: #0071c2
+    }
+    &:last-child{
+        width: 45%;
+        color: #0071c2
+    }
+    }
+}

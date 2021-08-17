@@ -12,13 +12,12 @@ const NavigationFooter = () => {
           name
           image
           path
-          id
+          test
         }
       }
     }
   `)
   const { nodes } = data.allNavigationJson
-    console.log(window.location.pathname)
   return (
     <div className="header__navigation-footer">
       <ul className="header__list">
@@ -26,7 +25,8 @@ const NavigationFooter = () => {
           return (
             
             <li
-            className={window.location.pathname.includes(el.path) ? 'click':null}
+            onClick = {()=> localStorage.setItem('classClick', el.name)}
+            className = {localStorage.getItem('classClick') === el.name ? 'click' : ''}
               key={index}
             >
               <Link to={el.path} style={{ textDecoration: "none" }}>

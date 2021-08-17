@@ -1,10 +1,12 @@
 [
     {
+    
     "sLeft": 49,
     "image": null,
     "textHover": "Wybierz walutę",
     "text": "PLN",
     "id": "1",
+    "formatID": null,
     "block": "header__button",
     "buttonClass": "button-icons"
 
@@ -15,6 +17,7 @@
     "textHover": "Wybierz język",
     "text": null,
     "id": "2",
+    "formatID": null,
     "block": "header__button",
     "buttonClass": "button-icons"
 },
@@ -24,33 +27,40 @@
     "textHover": "Skonsultuj się z Obsługą klienta",
     "text": "??",
     "id": "3",
+    "formatID": null,
     "block": "header__button",
     "buttonClass": "button-icons"
 
 },
 {
-    "left": null,
+
     "sLeft": null,
+    "textHover": null,
     "image": null,
     "text": null,
+    "id": "4",
     "formatID": "share",
     "block": null,
     "buttonClass": "button-header another"
 },
 {
-    "left": null,
+ 
     "sLeft": null,
+    "textHover": null,
     "image": null,
     "text": null,
+    "id": "5",
     "formatID": "register",
     "block": null,
     "buttonClass": "button-header"
 },
 {
-    "left": null,
+
     "sLeft": null,
+    "textHover": null,
     "image": null,
     "text": null,
+    "id": "6",
     "formatID": "login",
     "block": null,
     "buttonClass": "button-header"
