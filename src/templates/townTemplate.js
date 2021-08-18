@@ -6,43 +6,38 @@ import Hotels from "../components/Hotels"
 import Options from "../components/Options"
 import Img from "gatsby-image"
 
-const TownTemplate = ({ pageContext, data }) => {
-  const hotel = data.contentfulTowns.hotels1
-  console.log(data.contentfulTowns.hotels1[0].description)
+const TownTemplate = ({ data }) => {
+  console.log(data.allContentfulHotels)
+  const hotel = data.allContentfulHotels.nodes
+
   return (
     <Layout>
-      <div className="hotels">
-        <Options />
-        <Hotels hotels = {hotel}
-                town = {data.contentfulTowns.name}/>
-        </div>
+      <div className = "hotels">
+      <Options />
+      <Hotels hotels={hotel} />
+    </div>
     </Layout>
+    
   )
 }
 export default TownTemplate
-
 export const query = graphql`
-  query ContentFulPost($slug: String, $locale: String) {
-    contentfulTowns(slug: { eq: $slug }, node_locale: { eq: $locale }) {
-      slug
-      node_locale
-      name
-      hotels1 {
-        slug
-        town
+  query ($limit: Int!, $skip: Int!, $locale: String, $parentSlug: String) {
+    allContentfulHotels(
+      filter: { node_locale: { eq: $locale }, parentSlug: { eq: $parentSlug } }
+      sort: { fields: contentful_id, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      nodes {
         name
-        node_locale
+        slug
         description {
           description
         }
-        photos {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
         background {
           fluid {
-            ...GatsbyContentfulFluid
+            src
           }
         }
       }

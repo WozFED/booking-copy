@@ -4,10 +4,7 @@ import Img from "gatsby-image"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
 const Hotels = ({ hotels, town }) => {
-  console.log(hotels, town)
 
-  let hotelsArr = Array(20).fill(hotels).flat()
-  
   return (
     <div className="hotels__wrapper">
       <h2>{town}: znaleziono x obiektów</h2>
@@ -23,7 +20,7 @@ const Hotels = ({ hotels, town }) => {
         </div>
       </div>
       <div className="hotels__container">
-        {hotelsArr.map((hotel, index) => {
+        {hotels.map((hotel, index) => {
           return (
             
               <div className="hotels__window">
