@@ -14,8 +14,7 @@
         }
     }
     &__options {
-        width: 20%;
-        background-color: red;
+        width: 17%;
     }
     &__window {
         border: 1px solid black;
@@ -72,6 +71,68 @@
     }
 }
 
+.options {
+    &__header {
+        border: 1px solid #bdbdbd;
+        width: 100%;
+        h3 {
+            padding: 5px;
+            font-size: 15px;    
+        }
+    }
+    &__box {
+        border: 1px solid #bdbdbd;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h4 {
+            padding: 5px;
+            padding-left: 10px;
+            padding-bottom: 0;
+            font-size: 14px;
+        }
+        label {
+        padding: 5px;
+        padding-top: 0;
+        display: flex;
+        p{
+            width: 80%;
+            font-size: 12px;
+            padding-top: 7px;
+            padding-bottom: 10px;
+            font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        }
+        
+    }
+    }
+}
+
+.checkbox {
+position: relative;
+  background: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #bdbdbd;
+}
+.checkbox:after {
+    position: absolute;
+    top: 5%;
+    display: block;
+    line-height: 32px;
+    background: #fff;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s ease-in 0s;
+    color: black;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+  }
 .image {
     &-postcard {
         border-radius: 2px;
