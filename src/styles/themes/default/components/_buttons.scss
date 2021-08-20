@@ -1,4 +1,15 @@
 .button {
+    &-search {
+        background-color: #0071c2;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+    }
     &-header {
         background-color: white;
         border: 1px solid blue;
@@ -24,14 +35,17 @@
         }
     
     }
-    &__price {
-        width: 100px;
-        height: 36px;
-        background-color: blue;
+    &-price {
+        margin-top: 90px;
+        width: 125px;
+        height: 40px;
+        background-color: #0071c2;
         border: none;
         border-radius: 2px;
-            color: white;
-        
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
 }
 

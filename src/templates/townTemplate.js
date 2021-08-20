@@ -12,7 +12,7 @@ const TownTemplate = ({ data }) => {
   const hotel = data.allContentfulHotels.nodes
   const [isChecked, setIsChecked] = useState([false, false, false])
   const [arrFil, setArrFil] = useState([])
-
+  const town = data.allContentfulHotels.nodes[0].town
   const inputFunction = (el, id) => {
     setIsChecked(isChecked =>
       produce(isChecked, isChecked => {
@@ -30,7 +30,8 @@ const TownTemplate = ({ data }) => {
   return (
     <Layout>
       <div className="hotels">
-        <Options inputFunction={inputFunction} />
+        <Options inputFunction={inputFunction}
+                  town = {town} />
         <Hotels hotel={hotel} arrFil={arrFil} isChecked={isChecked} />
       </div>
     </Layout>
@@ -50,6 +51,7 @@ export const query = graphql`
         name
         slug
         grade
+        town
         description {
           description
         }

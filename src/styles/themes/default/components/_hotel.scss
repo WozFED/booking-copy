@@ -1,115 +1,234 @@
 .hotels {
-    padding-top: 50px;
-    width: 90%;
+  padding-top: 50px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  &__wrapper {
+    width: 60%;
+    padding-left: 25px;
+  }
+  &__container {
+    width: 100%;
+    a {
+      padding: 0;
+    }
+  }
+  &__options {
+    width: 20%;
+  }
+  &__window {
+    border: 1px solid #bdbdbd;
+    border-radius: 2px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    &__wrapper {
-        width: 60%;
-        padding-left: 25px;
+    margin: 25px 0;
+  }
+  &__date {
+    &-picker {
+      width: 100%;
+      height: 40px;
+      border: none;
+      position: relative;
+      
+      div {
+          border: none;
+      }
     }
-    &__container {
-        width: 100%;
-        a {
-            padding: 0;
-        }
-    }
-    &__options {
-        width: 17%;
-    }
-    &__window {
-        border: 1px solid black;
-        border-radius: 2px;
-        width: 100%;
-        display: flex;
-        margin: 25px 0;
-        
-    }
-    
+  }
 }
 
 .window {
+  &__image {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
 
-    &__image {
-        width: 225px;
-        height: 100%;
+    &-postcard {
+      margin-left: 15px;
+      width: 200px;
+      height: 200px;
+    }
+
+    a {
+      padding: 0;
+    }
+  }
+  &__description {
+    padding: 25px 10px;
+    width: 50%;
+
+    p {
+      font-size: 14px;
+    }
+    div {
+      display: flex;
+      padding: 5px 0;
+      align-items: baseline;
+      h2{
+        padding-right: 2px;
+        color: #0071c2;
+      }
+    }
+  }
+  &__show {
+    padding: 25px 10px ;
+    display: flex;
+    width: 25%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
+  }
+}
+.show {
+  &__grade {
+    height: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+     
+    &-main {
+      font-size: 18px;
+      font-weight: 500;
+      font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      padding-bottom: 3px;
+    }
+    &-opinion {
+      font-size: 14px;
+      color: gray;
+      font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    &-number {
+      
+      display: flex;
+      justify-content: center;
+      height: 90%;
+      width: 40px;
+      div {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
         display: flex;
         align-items: center;
-        padding: 15px 0;
-        
-        &-postcard {
-        margin-left: 15px;
-        width: 200px;
-        height: 200px;
-        }
-
-        a {
-            padding: 0;
-        }
-    }
-    &__description {
-        padding: 25px 10px;
-        width: 50%;
-        
-        p{
-            font-size: 14px;
-        }
-        div {
-            display: flex;
-            padding: 5px 0;
-        }
-    }
-    &__show {
-        display: flex;
-        width: 33%;
+        background-color: #003580;
+        width: 40px;
         height: 100%;
-        align-items: flex-end;
-        padding-right: 20px;
-        flex-direction: column;
-        p{
-            padding: 40px;
-        }
-    }
-}
-
-.options {
-    &__header {
-        border: 1px solid #bdbdbd;
-        width: 100%;
-        h3 {
-            padding: 5px;
-            font-size: 15px;    
-        }
-    }
-    &__box {
-        border: 1px solid #bdbdbd;
-        border-top: none;
-        display: flex;
-        flex-direction: column;
+        color: white;
+        border-radius: 6px;
         justify-content: center;
-        h4 {
-            padding: 5px;
-            padding-left: 10px;
-            padding-bottom: 0;
-            font-size: 14px;
-        }
-        label {
-        padding: 5px;
-        padding-top: 0;
-        display: flex;
-        p{
-            width: 80%;
-            font-size: 12px;
-            padding-top: 7px;
-            padding-bottom: 10px;
-            font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-        }
-        
+      }
     }
+    &-text{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 10px;
+    }
+  }
+  
+}
+.options {
+  
+  &__header {
+    border: 1px solid #bdbdbd;
+    width: 100%;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    h3 {
+      padding: 5px;
+      font-size: 15px;
+    }
+  }
+  &__box {
+    :last-of-type {
+      border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    }
+    
+    border: 1px solid #bdbdbd;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h4 {
+      padding: 5px;
+      padding-left: 10px;
+      padding-bottom: 0;
+      font-size: 14px;
+    }
+    label {
+      padding: 5px;
+      padding-top: 0;
+      display: flex;
+      p {
+        width: 80%;
+        font-size: 12px;
+        padding-top: 7px;
+        padding-bottom: 10px;
+        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+    }
+    
+  }&__date {
+      background-color: #febb02;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+      border-radius: 2px;
+      p{
+          font-size: 12px;
+        padding-top: 5px;
+        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+        }
+       
+    }
+}
+.date {
+    width: 80%;
+   position:relative;
+    &__selects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        select {
+            width: 49%;
+            border: none;
+            :last-of-type{
+                margin-left: 4.38px
+            }
+        }
+        .first {
+            width: 100%;
+            margin-bottom: 4.38px;
+        }
     }
 }
 
+.nights {
+    padding-bottom: 5px;
+}
+.input-check {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  p{
+    padding-left: 10px;
+    padding-bottom: 5px;
+  }
+}
+.button-check {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
 .checkbox {
-position: relative;
+  position: relative;
   background: white;
   width: 20px;
   height: 20px;
@@ -121,50 +240,50 @@ position: relative;
   border: 1px solid #bdbdbd;
 }
 .checkbox:after {
-    position: absolute;
-    top: 5%;
-    display: block;
-    line-height: 32px;
-    background: #fff;
-    box-sizing: border-box;
-    text-align: center;
-    transition: all 0.3s ease-in 0s;
-    color: black;
-    border: 1px solid #bdbdbd;
-    border-radius: 3px;
-  }
+  position: absolute;
+  top: 5%;
+  display: block;
+  line-height: 32px;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease-in 0s;
+  color: black;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+}
 .image {
-    &-postcard {
-        border-radius: 2px;
-    }
+  &-postcard {
+    border-radius: 2px;
+  }
 }
 .selects {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  margin: 25px 0;
+  &__element {
+    background-color: white;
+    height: 35px;
+    justify-content: center;
     display: flex;
-    margin: 25px 0;
-    &__element {
-        background-color: white;
-        height: 35px;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        border: 0.5px solid #0071c2;
-        border-left: none;
+    align-items: center;
+    border: 0.5px solid #0071c2;
+    border-left: none;
     &:hover {
-        cursor: pointer;
+      cursor: pointer;
     }
     &:first-of-type {
-        width: 25%;
-        background-color: #0071c2;
-        color: white;
+      width: 25%;
+      background-color: #0071c2;
+      color: white;
     }
-    &:nth-child(2){
-        width: 30%;
-        color: #0071c2
+    &:nth-child(2) {
+      width: 30%;
+      color: #0071c2;
     }
-    &:last-child{
-        width: 45%;
-        color: #0071c2
+    &:last-child {
+      width: 45%;
+      color: #0071c2;
     }
-    }
+  }
 }
