@@ -4,8 +4,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Towns = ({towns}) => {
-
+const Towns = ({towns, test, pushTherray}) => {
     const today = new Date()
   return (
     <div className="towns">
@@ -16,6 +15,7 @@ const Towns = ({towns}) => {
             return (
               <Link
                 to={`${el.slug}`}
+                onClick = {()=> pushTherray(el.slug)}
                 style={{
                   width:
                     index <= 1 ? "calc(50% - 20px)" : "calc(33.333% - 20px)",

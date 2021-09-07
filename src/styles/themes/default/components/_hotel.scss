@@ -1,45 +1,53 @@
 .hotels {
-  padding-top: 50px;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   &__wrapper {
-    width: 60%;
+    width: 814px;
     padding-left: 25px;
+    position: relative;
   }
   &__container {
-    width: 100%;
+    width: 814px;
     a {
       padding: 0;
     }
   }
   &__options {
-    width: 20%;
+    width: 17.5%;
   }
   &__window {
     border: 1px solid #bdbdbd;
     border-radius: 2px;
     width: 100%;
     display: flex;
-    margin: 25px 0;
+    margin: 20px 0;
   }
   &__date {
     &-picker {
       width: 100%;
-      height: 40px;
+      height: 35px;
       border: none;
       position: relative;
-      
+      border-radius: 2px;
+
       div {
-          border: none;
+        border: none;
+        border-radius: 2px;
+        height: 35px;
       }
     }
+  }
+  &__pagination {
+    width: 100%;
+    align-items: center;
   }
 }
 
 .window {
   &__image {
-    width: 25%;
+    width: 28%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -66,19 +74,18 @@
       display: flex;
       padding: 5px 0;
       align-items: baseline;
-      h2{
+      h2 {
         padding-right: 2px;
         color: #0071c2;
       }
     }
   }
   &__show {
-    padding: 25px 10px ;
+    padding: 25px 10px;
     display: flex;
-    width: 25%;
+    width: 22%;
     flex-wrap: wrap;
     justify-content: flex-end;
-    
   }
 }
 .show {
@@ -87,20 +94,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-     
+
     &-main {
       font-size: 18px;
       font-weight: 500;
-      font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, sans-serif;
       padding-bottom: 3px;
     }
     &-opinion {
       font-size: 14px;
       color: gray;
-      font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, sans-serif;
     }
     &-number {
-      
       display: flex;
       justify-content: center;
       height: 90%;
@@ -108,7 +116,8 @@
       div {
         font-size: 18px;
         font-weight: 700;
-        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
         display: flex;
         align-items: center;
         background-color: #003580;
@@ -119,17 +128,15 @@
         justify-content: center;
       }
     }
-    &-text{
+    &-text {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       padding-right: 10px;
     }
   }
-  
 }
 .options {
-  
   &__header {
     border: 1px solid #bdbdbd;
     width: 100%;
@@ -143,9 +150,9 @@
   &__box {
     :last-of-type {
       border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+      border-bottom-right-radius: 2px;
     }
-    
+
     border: 1px solid #bdbdbd;
     border-top: none;
     display: flex;
@@ -170,52 +177,56 @@
           Helvetica, Arial, sans-serif;
       }
     }
-    
-  }&__date {
-      background-color: #febb02;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 10px;
-      border-radius: 2px;
-      p{
-          font-size: 12px;
-        padding-top: 5px;
-        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, sans-serif;
-        }
-       
+  }
+  &__date {
+    background-color: #febb02;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    p {
+      font-size: 12px;
+      padding-top: 8px;
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, sans-serif;
     }
+  }
 }
 .date {
-    width: 80%;
-   position:relative;
-    &__selects {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        select {
-            width: 49%;
-            border: none;
-            :last-of-type{
-                margin-left: 4.38px
-            }
-        }
-        .first {
-            width: 100%;
-            margin-bottom: 4.38px;
-        }
+  width: 90%;
+  position: relative;
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 20px;
+  }
+  &__selects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    select {
+      width: 49%;
+      border: none;
+      :last-of-type {
+        margin-left: 4.38px;
+      }
     }
+    .first {
+      width: 100%;
+      margin-bottom: 4.38px;
+    }
+  }
 }
 
 .nights {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 .input-check {
   display: flex;
   align-items: center;
   padding: 5px 0;
-  p{
+  p {
     padding-left: 10px;
     padding-bottom: 5px;
   }
@@ -256,6 +267,10 @@
   &-postcard {
     border-radius: 2px;
   }
+  &-gallery {
+    width: 60px;
+    height: 60px;
+  }
 }
 .selects {
   width: 100%;
@@ -284,6 +299,130 @@
     &:last-child {
       width: 45%;
       color: #0071c2;
+    }
+  }
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__wrapper {
+    display: flex;
+    width: 72%;
+    padding: 10px 0;
+
+    align-items: flex-end;
+    p {
+      font-size: 12px;
+      padding: 0 10px;
+      color: #0071c2;
+    }
+    a {
+      margin: 0;
+      padding: 0;
+      color: #0071c2;
+    }
+  }
+}
+
+.pagination {
+  height: 70px;
+  &__header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    p{
+      font-size: 14px;
+    }
+  }
+  &__list {
+    width: 100%;
+    height: 40px;
+    border: 1px solid lightgray;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    ul {
+      display: flex;
+      list-style-type: none;
+      width: 100%;
+      li {
+        margin: 0 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &-move {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: #0071c2;
+        margin: 0;
+        &:hover {
+          background-color: #0071c2;
+          color: white;
+        }
+      }
+    }
+    &-notcurrent {
+      height: 24px;
+      width: 24px;
+      color: #0071c2;
+      &:hover {
+        background-color: #0071c2;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    &-current {
+      height: 24px;
+      width: 24px;
+      color: #6b6b6b;
+      border: 1px solid lightgray;
+      &:hover {
+        background-color: white;
+        cursor: context-menu
+      }
+    }
+    &-disable {
+      opacity: 0.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: #0071c2;
+        margin: 0;
+      }
+      &:hover {
+        background-color: white;
+        cursor: no-drop;
+      }
     }
   }
 }

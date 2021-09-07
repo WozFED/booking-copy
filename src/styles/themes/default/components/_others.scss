@@ -8,6 +8,7 @@
     background-color: white;
     justify-content: flex-start;
     padding: 50px;
+    z-index: 1;
     &__header {
        padding-bottom: 25px;
         
@@ -61,6 +62,7 @@
     height: 100%;
     
 }
-.test {
-    border: none
+
+.background-op {
+    opacity: 0.4
 }

@@ -47,6 +47,18 @@
         font-weight: 700;
         font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
+    &-footer {
+        height: 48px;
+        width: 30%;
+        background-color: #0071c2;
+        color: white;
+        font-size: 20px;
+        font-weight: 300;
+        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        line-height: 24px;
+        border: none;
+        border-radius: 2px;
+    }
 }
 
 .another {
@@ -54,5 +66,20 @@
     border: 1px solid white;
     p {
         color: white;
+    }
+}
+
+.share {
+    height: 29px;
+    border-radius: 3px;
+    p{
+        margin: 0;
+        padding: 0 15px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    &:hover {
+        background-color: #335d99;
+        cursor: pointer;
     }
 }

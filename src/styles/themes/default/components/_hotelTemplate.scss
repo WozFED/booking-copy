@@ -1,0 +1,121 @@
+.hotel {
+  width: 100%;
+  &__header {
+    display: flex;
+  }
+}
+
+.photos {
+  margin-bottom: 25px;
+  &__big {
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    flex-wrap: wrap;
+  }
+  &__small {
+    display: flex;
+  }
+}
+
+.icons {
+  display: flex;
+  &__element {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    text-align: center;
+    p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #969696;
+    }
+  }
+}
+
+.description {
+    display: flex;
+    &__column {
+     width: 64%;
+     h4 {
+    margin: 5px 0;
+  }
+ }
+ &__info {
+     width: 36%;
+ }
+  
+  &__facilities {
+    ul {
+      list-style-type: none;
+      display: flex;
+      font-size: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+        color: green;
+        p {
+          margin-left: 2px;
+          color: black;
+        }
+      }
+    }
+  }
+  p {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+}
+
+.information {
+    width: 100%;
+    
+    &__booking {
+        border: 1px solid #008009;
+        background-color: #e7fde9;
+        display: flex;
+        padding: 16px;
+        margin-bottom: 15px;
+        
+       div:nth-of-type(1){
+           color: #008009;
+           display: flex;
+           font-size: 25px;
+           justify-content: center;
+           margin-right: 16px;
+
+       }
+       div:nth-of-type(2){
+           color: black;
+        p{
+            margin-top: 10px;
+            font-size: 14px;
+        }
+       }
+    }
+    &__covid {
+        background-color: #fff0e0;
+        border: 1px solid #ff8000;
+        display: flex;
+        padding: 16px;
+        div:nth-of-type(1){
+            color:  #ff8000;
+            display: flex;
+            font-size: 25px;
+            justify-content: center;
+            margin-right: 16px;
+ 
+        }
+        div:nth-of-type(2){
+            color: black;
+            p{
+                font-size: 14px;
+            }
+           }
+    }
+}
