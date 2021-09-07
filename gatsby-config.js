@@ -9,7 +9,7 @@ require("dotenv").config({
   },
   
   plugins: [
-
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -52,7 +52,7 @@ require("dotenv").config({
         plugins: [],
       },
     },
-    
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
