@@ -118,4 +118,46 @@
             }
            }
     }
+    &__availability {
+        
+        padding: 10px 0;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        div {
+            display: flex;
+            align-items: center;
+        }
+        p{
+            padding-left: 2px;
+            font-size: 14px;
+        }
+    }
+    &__date {
+        background-color: #ffe08a;
+        border-top: 1px solid #cd8900;
+        border-bottom: 1px solid #cd8900;
+        h4{
+            padding: 10px;
+        }
+    }
+}
+
+.date-wrapper {
+    display:flex;
+}
+.date-input {
+    width: 200px;
+    height: 40px;
+    background-color: white;
+}
+
+.date-calendar {
+    position: absolute;
+    left: 10px;
+    top: 61px;
+}
+
+.to {
+    left: 359px
 }

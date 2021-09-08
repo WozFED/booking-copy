@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -6,6 +6,9 @@ import Options from "../components/Options"
 import { Icon } from "@iconify/react"
 import marked from "marked"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import DatePicker from "react-date-picker"
+import Calendar from "react-calendar"
+import DateComponent from '../components/DateComponent'
 
 const HotelsTemplate = ({ data }) => {
   const hotel = data.contentfulHotels
@@ -13,6 +16,8 @@ const HotelsTemplate = ({ data }) => {
   const morePhotos = photos.concat(photos).concat(photos).concat(photos)
   const headerPhotos = morePhotos.slice(0, 3)
   const footerPhotos = morePhotos.slice(3, 8)
+
+  const [showCalendar, setShowCalendar] = useState(false)
   const whatNumberGrade = stars => {
     if (stars > 4) {
       return (Math.random() * (9.9 - 9) + 9).toFixed(1)
@@ -22,8 +27,8 @@ const HotelsTemplate = ({ data }) => {
       return (Math.random() * (7.9 - 5) + 5).toFixed(1)
     }
   }
+ 
 
-  console.log(hotel.facilities)
   return (
     <Layout>
       <div className="hotels">
@@ -124,9 +129,7 @@ const HotelsTemplate = ({ data }) => {
                     </ul>
                   </div>
                 </div>
-                <div className = 'description__info'>
-                  dsdasdasdasdas
-                </div>
+                <div className="description__info">dsdasdasdasdas</div>
               </div>
               <div className="information">
                 <div className="information__booking">
@@ -143,13 +146,38 @@ const HotelsTemplate = ({ data }) => {
                 </div>
                 <div className="information__covid">
                   <div>
-                  <Icon icon = "clarity:info-standard-line" />
+                    <Icon icon="clarity:info-standard-line" />
                   </div>
-                    <div>
-                      <p>Od 6 kwietnia 2020 roku zasady odwołania dokonanych rezerwacji będą obowiązywać bez względu na koronawirusa. 
-                    Zalecamy rezerwację opcji z bezpłatnym odwołaniem w razie, gdyby Twoje plany musiały ulec zmianie. Dowiedz się więcej</p>
-                    
+                  <div>
+                    <p>
+                      Od 6 kwietnia 2020 roku zasady odwołania dokonanych
+                      rezerwacji będą obowiązywać bez względu na koronawirusa.
+                      Zalecamy rezerwację opcji z bezpłatnym odwołaniem w razie,
+                      gdyby Twoje plany musiały ulec zmianie. Dowiedz się więcej
+                    </p>
+                  </div>
+                </div>
+                <div className="information__availability">
+                  <h2>Dostępność</h2>
+                  <div>
+                    <Icon icon="el:ok-sign" />
+                    <p>
+                      
+                      <i>Wyrównyjemy ceny</i>
+                    </p>
+                  </div>
+
+
+                  {/* TU TRZEBA ZROBIĆ HOOVERA */}
+                  {false ? (
+                    <div className="availability">
+                      Wyrównyjemy ceny dsdasdasdasdsa
                     </div>
+                  ) : null}
+                </div>
+                <div className="information__date">
+                  <h4>Kiedy chcesz się zatrzymać w obiekcie {hotel.name}?</h4>
+                  <DateComponent />
                 </div>
               </div>
             </div>
@@ -167,6 +195,7 @@ export const query = graphql`
       name
       slug
       grade
+      town
       node_locale
       popularFacilities {
         name

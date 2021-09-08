@@ -1,0 +1,41 @@
+.date {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    &__wrapper {
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    &__input {
+        width: 200px;
+        background-color: white;
+        height: 40px;
+        
+            display: flex;
+            align-items: center;
+            span{
+                margin-right: 5px;
+            }
+        
+    }
+    &__label {
+        label {
+        padding-top: 16px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+        display: flex;
+        align-items: center;
+        }
+        
+        p {
+            font-weight: 200;
+        }
+        
+        select {
+            margin-left: 5px;
+            outline: none;
+        }
+    }
+}

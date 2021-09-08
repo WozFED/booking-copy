@@ -84,7 +84,7 @@ const Options = props => {
                 {howManyPeople.map(el => {
                   return (
                     <option>
-                      {" "}
+                      
                       {el === 0 ? "Bez dzieci" : el}{" "}
                       {el < 2 && el > 0
                         ? "dziecko"
