@@ -4,14 +4,10 @@ import DatePicker from "react-date-picker"
 import { createGlobalStyle } from "styled-components"
 import { Icon } from "@iconify/react"
 import { Link } from "gatsby"
-import {
-  GlobalDispatchContext,
-  GlobalStateContext,
-} from "../../context/context"
+
 
 const Options = props => {
-  const objectState = useContext(GlobalStateContext)
-  const inputFunction = useContext(GlobalDispatchContext)
+
   Date.prototype.addDays = function (days) {
     let date = new Date(this.valueOf())
     date.setDate(date.getDate() + days)

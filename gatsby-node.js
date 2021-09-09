@@ -48,5 +48,14 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
-   
+    data.data.allContentfulHotels.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.parentSlug}/${edge.node.slug}=review`,
+      component: slash(hotelTemplate),
+      context:{
+        slug: edge.node.slug,
+        town: edge.node.slug
+      }
+    })
+  })
   }

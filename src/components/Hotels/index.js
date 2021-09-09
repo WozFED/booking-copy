@@ -98,7 +98,7 @@ const Hotels = ({
                       {Math.floor(Math.random() * (2600 - 250) + 500)} opinii
                     </p>
                   </div>
-                  <div className="show__grade-number">
+                  <div className="rating">
                     <div>
                       <p>{whatNumberGrade(hotel.grade)}</p>
                     </div>

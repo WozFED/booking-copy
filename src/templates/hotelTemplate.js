@@ -1,23 +1,52 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
+import { navigate } from "gatsby-plugin-intl"
 import Img from "gatsby-image"
 import Options from "../components/Options"
 import { Icon } from "@iconify/react"
-import marked from "marked"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import DatePicker from "react-date-picker"
-import Calendar from "react-calendar"
 import DateComponent from '../components/DateComponent'
+import Opinions from "../components/Opinions"
+import { GlobalStateContext } from "../context/GlobalContextProvider"
+import OpinionsReview from '../components/OpinionsReview'
 
 const HotelsTemplate = ({ data }) => {
-  const hotel = data.contentfulHotels
+ 
+  
+  const hotel = data.contentfulHotels 
+  const slug = `/${hotel.parentSlug}/${hotel.slug}`
+  const locale = hotel.node_locale
   const photos = data.contentfulHotels.photos
   const morePhotos = photos.concat(photos).concat(photos).concat(photos)
   const headerPhotos = morePhotos.slice(0, 3)
   const footerPhotos = morePhotos.slice(3, 8)
+  const [openOpinions, setOpenOpinions] = useState(false)
 
-  const [showCalendar, setShowCalendar] = useState(false)
+  const { windowLoc, setWindowLoc } = useContext(GlobalStateContext)
+  const showOpinion = () => {
+    if (window.location.pathname === `/${locale}${slug}`) {
+      setWindowLoc(window.pageYOffset)
+      navigate(`${slug}=review`)
+    } else {
+      setWindowLoc(window.pageYOffset)
+      setOpenOpinions(false)
+      setTimeout(() => {
+        navigate(slug)
+      }, 600)
+    }
+  }
+
+  useEffect(() => {
+    if (window.location.pathname === "/pl/torun/copernicustorunhotel") {
+      window.scrollTo(0, windowLoc)
+    } else {
+      window.scrollTo(0, windowLoc)
+      setOpenOpinions(true)
+    }
+  }, [])
+
+
+
   const whatNumberGrade = stars => {
     if (stars > 4) {
       return (Math.random() * (9.9 - 9) + 9).toFixed(1)
@@ -27,11 +56,12 @@ const HotelsTemplate = ({ data }) => {
       return (Math.random() * (7.9 - 5) + 5).toFixed(1)
     }
   }
- 
+
 
   return (
     <Layout>
       <div className="hotels">
+      
         <Options section={false} />
         <div className="hotels__wrapper">
           <div className="hotels__containter">
@@ -179,6 +209,14 @@ const HotelsTemplate = ({ data }) => {
                   <h4>Kiedy chcesz się zatrzymać w obiekcie {hotel.name}?</h4>
                   <DateComponent />
                 </div>
+                <Opinions 
+                categories = {hotel.categories}
+                showOpinion = {showOpinion}
+                openOpinions = {openOpinions}/>
+                <OpinionsReview 
+                categories = {hotel.categories}
+                showOpinion = {showOpinion}
+                openOpinions = {openOpinions} />
               </div>
             </div>
           </div>
@@ -196,7 +234,12 @@ export const query = graphql`
       slug
       grade
       town
+      parentSlug
       node_locale
+      categories {
+        name
+        grade
+      }
       popularFacilities {
         name
         icon
