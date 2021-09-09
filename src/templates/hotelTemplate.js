@@ -5,16 +5,24 @@ import { navigate } from "gatsby-plugin-intl"
 import Img from "gatsby-image"
 import Options from "../components/Options"
 import { Icon } from "@iconify/react"
-import DateComponent from '../components/DateComponent'
+import DateComponent from "../components/DateComponent"
 import Opinions from "../components/Opinions"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
-import OpinionsReview from '../components/OpinionsReview'
-import Slider from "react-slick";
+import OpinionsReview from "../components/OpinionsReview"
+import Slider from "react-slick"
+import styled from "styled-components"
+import Information from "../components/Information"
+import Facilities from '../components/Facilities'
+import Rules from '../components/Rules'
+
+const Test = styled.div`
+  height: ${props => props.height + "px"};
+  width: 33%;
+  margin: 20px 0;
+`
 
 const HotelsTemplate = ({ data }) => {
- 
-  
-  const hotel = data.contentfulHotels 
+  const hotel = data.contentfulHotels
   const slug = `/${hotel.parentSlug}/${hotel.slug}`
   const locale = hotel.node_locale
   const photos = data.contentfulHotels.photos
@@ -46,8 +54,6 @@ const HotelsTemplate = ({ data }) => {
     }
   }, [])
 
-
-
   const whatNumberGrade = stars => {
     if (stars > 4) {
       return (Math.random() * (9.9 - 9) + 9).toFixed(1)
@@ -62,13 +68,12 @@ const HotelsTemplate = ({ data }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1
-   }
+    slidesToScroll: 1,
+  }
 
   return (
     <Layout>
       <div className="hotels">
-      
         <Options section={false} />
         <div className="hotels__wrapper">
           <div className="hotels__containter">
@@ -151,7 +156,7 @@ const HotelsTemplate = ({ data }) => {
                       hotel.date
                     </strong>
                   </p>
-                  <div className="description__facilities">
+                  <div className="facility-popular">
                     <h4>Najpopularniejsze udogodnienia</h4>
 
                     <ul>
@@ -168,64 +173,20 @@ const HotelsTemplate = ({ data }) => {
                 </div>
                 <div className="description__info">dsdasdasdasdas</div>
               </div>
-              <div className="information">
-                <div className="information__booking">
-                  <div>
-                    <Icon icon="jam:padlock-open-f" />
-                  </div>
-                  <div>
-                    <h4>Zaklep sobie korzystną ofertę na nadchodzący wyjazd</h4>
-                    <p>
-                      Otrzymaj natychmiastowe potwierdzenie i możliwość
-                      BEZPŁATNEGO odwołania rezerwacji większości pokoi!
-                    </p>
-                  </div>
-                </div>
-                <div className="information__covid">
-                  <div>
-                    <Icon icon="clarity:info-standard-line" />
-                  </div>
-                  <div>
-                    <p>
-                      Od 6 kwietnia 2020 roku zasady odwołania dokonanych
-                      rezerwacji będą obowiązywać bez względu na koronawirusa.
-                      Zalecamy rezerwację opcji z bezpłatnym odwołaniem w razie,
-                      gdyby Twoje plany musiały ulec zmianie. Dowiedz się więcej
-                    </p>
-                  </div>
-                </div>
-                <div className="information__availability">
-                  <h2>Dostępność</h2>
-                  <div>
-                    <Icon icon="el:ok-sign" />
-                    <p>
-                      
-                      <i>Wyrównyjemy ceny</i>
-                    </p>
-                  </div>
 
-
-                  {/* TU TRZEBA ZROBIĆ HOOVERA */}
-                  {false ? (
-                    <div className="availability">
-                      Wyrównyjemy ceny dsdasdasdasdsa
-                    </div>
-                  ) : null}
-                </div>
-                <div className="information__date">
-                  <h4>Kiedy chcesz się zatrzymać w obiekcie {hotel.name}?</h4>
-                  <DateComponent />
-                </div>
-                <Opinions 
-                categories = {hotel.categories}
-                showOpinion = {showOpinion}
-                openOpinions = {openOpinions}/>
-                <OpinionsReview 
-                categories = {hotel.categories}
-                showOpinion = {showOpinion}
-                openOpinions = {openOpinions} />
-                
-              </div>
+              <Information hotel={hotel} />
+              <Opinions
+                categories={hotel.categories}
+                showOpinion={showOpinion}
+                openOpinions={openOpinions}
+              />
+              <OpinionsReview
+                categories={hotel.categories}
+                showOpinion={showOpinion}
+                openOpinions={openOpinions}
+              />
+              <Facilities hotel = {hotel}/>
+              <Rules hotel = {hotel}/>
             </div>
           </div>
         </div>
