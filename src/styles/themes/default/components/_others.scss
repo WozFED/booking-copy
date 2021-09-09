@@ -131,3 +131,56 @@
     align-items: center;
 }
 
+
+
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+div.rec.rec-carousel {
+  position: relative;
+  left: -10px;
+}
+
+button.rec-dot{
+ visibility: hidden;
+}
+div.rec.rec-item-wrapper {
+  height: 225px;
+}
+div.rec.rec-carousel-wrapper {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+
+button.rec.rec-arrow {
+  width: 35px; 
+  height: 35px;
+  min-width: 35px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: none;
+  position: absolute;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+  &:focus {
+    background-color: white;
+    color: black;
+  }
+}
+
+button.rec.rec-arrow-left {
+  left: -7px;
+  z-index: 1;
+}
+
+button.rec.rec-arrow-right {
+  right: 3px;
+}

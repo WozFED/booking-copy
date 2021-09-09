@@ -3,19 +3,23 @@ import React, { useState, useContext, useEffect } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { GlobalStateContext } from "../../context/GlobalContextProvider"
+import Carousel from 'react-elastic-carousel'
 const ChartElement = styled.div`
   width: ${props => props.level + "%"};
   background-color: #003580;
   height: 100%;
 `
+const Item = styled.div`
+background-color: red;
+width: 30px;
+`
+
 
 const Opinions = ({ slug, locale, categories, showOpinion }) => {
-  
-
+ 
   return (
     <div className="opinions">
       <h2>Opinie gości</h2>
-      
 
       <div className="opinions__grade" onClick={() => showOpinion()}>
         <div className="rating-opinions">
@@ -29,7 +33,7 @@ const Opinions = ({ slug, locale, categories, showOpinion }) => {
 
         <span>Przeczytaj wszystkie opinie</span>
       </div>
-      <div className="charts">
+      <div className="opinions__charts">
         <h4>Kategorie:</h4>
         <div>
           <ul className="list">
@@ -47,11 +51,77 @@ const Opinions = ({ slug, locale, categories, showOpinion }) => {
           </ul>
         </div>
       </div>
-      <div className = "opinions__comments">
-          <h4>Zobacz co najbardziej podobało się gościom:</h4>
-          <div className = "">
+      <div className="opinions__comments">
+        <h4>Zobacz co najbardziej podobało się gościom:</h4>
+        <Carousel
+        itemsToShow = {3}>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            <div className = "comments">
+              <div className = "comments__wrapper">
+                <p>Fotka</p>
+                <h2>Marcin Test</h2>
+                <p>narodowosc</p>
+                <div className = "comments__description"><p>Opis</p></div>
+              </div>
+            </div>
+            
 
-          </div>
+           </Carousel>
       </div>
     </div>
   )

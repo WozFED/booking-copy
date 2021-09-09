@@ -9,6 +9,7 @@ import DateComponent from '../components/DateComponent'
 import Opinions from "../components/Opinions"
 import { GlobalStateContext } from "../context/GlobalContextProvider"
 import OpinionsReview from '../components/OpinionsReview'
+import Slider from "react-slick";
 
 const HotelsTemplate = ({ data }) => {
  
@@ -56,7 +57,13 @@ const HotelsTemplate = ({ data }) => {
       return (Math.random() * (7.9 - 5) + 5).toFixed(1)
     }
   }
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1
+   }
 
   return (
     <Layout>
@@ -217,6 +224,7 @@ const HotelsTemplate = ({ data }) => {
                 categories = {hotel.categories}
                 showOpinion = {showOpinion}
                 openOpinions = {openOpinions} />
+                
               </div>
             </div>
           </div>
