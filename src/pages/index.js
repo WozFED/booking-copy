@@ -11,7 +11,7 @@ import produce from "immer"
 const IndexPage = ({ data }) => {
   console.log(data)
   const [test, setTest] = useState([])
-  const arraySlugs = data.allContentfulTowns.nodes
+  const arraySlugs = data.towns.nodes
   const slugArray = arraySlugs.map(el => el.slug)
   let newArray = []
   const pushTherray = el => {
@@ -48,8 +48,14 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SearchHotels />
+      {
+        data.categories.nodes.map(node =>
+          {return(
+            <div style = {{width: '300px', height: '300px'}}><Img fluid = {node.photo.fluid} /></div>
+          )})
+      }
       <Towns
-        towns={data.allContentfulTowns.nodes}
+        towns={data.towns.nodes}
         test={test}
         pushTherray={pushTherray}
       />
@@ -60,8 +66,8 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query ($locale: String) {
-    allContentfulTowns(filter: { node_locale: { eq: $locale } }) {
+  query MyQuery($locale: String) {
+    towns: allContentfulTowns(filter: { node_locale: { eq: $locale } }) {
       nodes {
         name
         numberOfObject
@@ -71,6 +77,19 @@ export const query = graphql`
             ...GatsbyContentfulFluid
           }
         }
+      }
+    }
+    
+    categories: allContentfulCateogories(filter: { node_locale: { eq: "pl"} }) {
+      nodes {
+        node_locale
+        photo {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+        name
+        amount
       }
     }
   }
