@@ -1,7 +1,12 @@
 .rules {
     margin-top: 25px;
-    
+    &__wrapper {
+        padding: 35px 15px;
+    }
     &__header {
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
         p {
             color: #6b6b6b;
             font-size: 13px;
@@ -16,19 +21,21 @@
 }
 
 .check {
-    padding: 25px;
+    padding: 15px 0;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+     p{
+            font-size: 14px;
+        }
     &__title {
         width: 20%;
         height: 50px;
         display: flex;
-        align-items: center;
+       
        
     }
     &__chart {
-        width: 80%;
+        width: 75%;
         position: relative;
     }
     &__hour {
@@ -46,11 +53,45 @@
     }
     &__info {
         padding-top: 30px;
-        padding-left: 146px;
+        padding-left: 150px;
+        font-size: 14px;
+        color: #6b6b6b;
     }
     &__icon {
-        width: 40px;
+        font-size: 20px;
+        margin-right: 5px;
     }
+    
+    &__text {
+        width: 70%;
+        text-align: justify;
+        margin-bottom: 20px;
+        div {
+            margin-bottom: 20px;
+        }
+        &-title{
+            font-size: 14px;
+        margin-bottom: 20px;
+        margin-top: 0;
+        font-weight: 600;
+        }
+        &-text {
+            p {
+                margin: 10px 0;
+                font-size: 14px;
+            }
+        }
+        
+       
+    
+            
+            img {
+                border-radius: 5px;
+                margin-right: 5px;
+                width:60px;
+            }
+        }    
+    
 }
 
 

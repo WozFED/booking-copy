@@ -5,9 +5,10 @@ const Facilities = ({hotel}) => {
     return (
         <div className="facilities">
                 <div className="facilities__header">
-                  <h3>Udogodnienia w obiekcie {hotel.name}</h3>{" "}
-                  <p>Świetne udogodnienia! Ocena hotel.ocena</p>
+                  <h2>Udogodnienia w obiekcie {hotel.name}</h2>
                   <button className="button-avaiable">Zobacz dostępność</button>
+                  <p>Świetne udogodnienia! Ocena hotel.ocena</p>
+                  
                 </div>
                 <div className="facility-popular">
                   <h4>Najpopularniejsze udogodnienia</h4>

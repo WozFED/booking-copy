@@ -205,6 +205,18 @@ export const query = graphql`
       town
       parentSlug
       node_locale
+      rules {
+        name
+        icon
+        hoour
+        text
+        textrules {
+          title
+          rules
+        }
+        image 
+        
+      }
       categories {
         name
         grade
