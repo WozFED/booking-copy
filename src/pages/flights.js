@@ -1,11 +1,13 @@
+import { FormattedMessage } from "gatsby-plugin-intl"
 import * as React from "react"
 import Layout from "../components/Layout"
+
 
 
 const FlightsPage = () => {
   return (
     <Layout>
-      LOTY
+    <FormattedMessage id = 'build' />
     </Layout>
   )
 }

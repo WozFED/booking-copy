@@ -27,7 +27,7 @@ const Options = props => {
     <div className="hotels__options">
       <div className="options">
         <div className="options__date">
-          <div className="date">
+          <div className="filter">
             <h2>Szukaj</h2>
             <p>Cel podróży</p>
             <input
@@ -66,7 +66,7 @@ const Options = props => {
             <p className="nights">
               Pobyt na {Math.ceil((dateOff - dateIn) / 1000 / 60 / 60 / 24)} noc
             </p>
-            <div className="date__selects">
+            <div className="filter__selects">
               <select className="hotels__date-picker first">
                 {howManyPeople.map(el => {
                   return (

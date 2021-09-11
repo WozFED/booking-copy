@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import Layout from "../components/Layout"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { navigate } from "gatsby-plugin-intl"
 import Img from "gatsby-image"
 import Options from "../components/Options"
@@ -14,6 +14,8 @@ import styled from "styled-components"
 import Information from "../components/Information"
 import Facilities from '../components/Facilities'
 import Rules from '../components/Rules'
+import StarRatings from "react-star-ratings"
+import Links from "../components/Links"
 
 const Test = styled.div`
   height: ${props => props.height + "px"};
@@ -63,26 +65,41 @@ const HotelsTemplate = ({ data }) => {
       return (Math.random() * (7.9 - 5) + 5).toFixed(1)
     }
   }
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  }
-
   return (
     <Layout>
       <div className="hotels">
+      <Links hotel = {hotel} />
+        <div className = "hotels__general">
+          <div className = "hotels__table">Informacje i ceny</div>
+          <div className = "hotels__table">Udogodnienia</div>
+          <div className = "hotels__table">Zasady pobytu</div>
+          <div className = "hotels__table">Ważne informacje</div>
+          <div className = "hotels__table">Opinie gości ({hotel.ratings})</div>
+        </div>
+        
         <Options section={false} />
         <div className="hotels__wrapper">
           <div className="hotels__containter">
             <div className="hotel">
               <div className="hotel__header">
-                <h1>{hotel.name}</h1>
-                <p>Serduszko</p>
-                <p>Udostępnij dalej</p>
-                <button>Zarezerwuj treraz</button>
+                <div className = "hotel__info">
+                <h2>{hotel.name}</h2>
+                <StarRatings
+                      numberOfStars={hotel.grade}
+                      starDimension={15}
+                      starSpacing={0}
+                      starEmptyColor="#febb02"
+                    />
+                    </div>
+                <div className = "hotel__social">
+                  <span><Icon icon="ant-design:like-filled" style = {{color: 'orange', fontSize: '20px'}} /></span>
+                <span><Icon icon="akar-icons:heart" style = {{color: '#0071c2',fontSize: '20px'}}/></span>
+                <span><Icon icon="bi:share" style = {{color: '#0071c2',fontSize: '20px'}}/></span>
+                <button className = "button-avaiable">Zarezerwuj treraz</button>
+                </div>
+                <div className = "hotel__adress">
+                <Icon icon="eva:pin-outline" /><p>adres</p>
+                </div>
               </div>
               <div className="photos">
                 <div className="photos__big">
@@ -171,7 +188,6 @@ const HotelsTemplate = ({ data }) => {
                     </ul>
                   </div>
                 </div>
-                <div className="description__info">dsdasdasdasdas</div>
               </div>
 
               <Information hotel={hotel} />
@@ -205,6 +221,7 @@ export const query = graphql`
       town
       parentSlug
       node_locale
+      ratings
       rules {
         name
         icon

@@ -105,22 +105,7 @@ const TownTemplate = ({ data, pageContext }) => {
         
        
       </div>
-      <div className = "footer">
-        <div className = "footer__contact">
-          <h2>Oszczędzaj czas i pieniądze!</h2>
-          <p>Zaprenumeruj nasz biuletyn, a będziemy przesyłać Ci najlepsze oferty</p>
-          <div className = "footer__text">
-            <input type = 'text' className ="input-text" placeholder = 'Adres mailowy'></input>
-            <button className = 'button-footer'>Zaprenumeruj</button><label>
-             
-          <input type ='checkbox' className = 'input-checkbox'></input>
-             Wyślij mi link do pobrania BEZPŁATNEJ aplikacji Booking.com!
-          </label>
-          
-          </div>
-         
-        </div>
-      </div>
+      
     </Layout>
   )
 }
