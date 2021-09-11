@@ -19,15 +19,15 @@ const ChartElement = styled.div`
   background-color: #003580;
   height: 100%;
 `
-const OpinionsReview = ({ openOpinions, showOpinion, categories }) => {
+const OpinionsReview = ({ openOpinions, categories, setOpenOpinions}) => {
   return (
     <div>
-      <div className={openOpinions ? "opinions__show" : null}>
+      <div id = "opinions" className={openOpinions ? "opinions__show" : null}>
         <ButtonClose
           left={openOpinions ? 568 : 650}
           opacity={openOpinions ? 1 : 0}
         >
-          <button className="button-close" onClick={() => showOpinion()}>
+          <button className="button-close" onClick={() => setOpenOpinions(false)}>
             <p>X</p>
           </button>
         </ButtonClose>

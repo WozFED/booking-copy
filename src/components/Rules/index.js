@@ -76,7 +76,7 @@ const Rules = ({ hotel }) => {
       return (100/24 * hourStart) + 100 - 100/24 * hourEnd
   }
   return (
-    <div className="rules">
+    <div id = "rules" className="rules">
       <div className="rules__header">
         <h2>Zasady pobytu</h2>
         <button className="button-avaiable">Zobacz dostępność </button>

@@ -2,6 +2,9 @@
     margin-top: 25px;
     &__wrapper {
         padding: 35px 15px;
+        p {
+            font-size: 14px;
+        }
     }
     &__header {
         display: flex;
@@ -31,7 +34,9 @@
         width: 20%;
         height: 50px;
         display: flex;
-       
+       p {
+           margin: 0;
+       }
        
     }
     &__chart {
@@ -142,4 +147,9 @@ left: 50%;
     position: absolute;
     font-size: 13px;
     top: -20px;  
+}
+
+.imp {
+    padding: 15px 15px;
+    p { margin: 5px 0}
 }

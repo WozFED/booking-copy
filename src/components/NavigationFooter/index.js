@@ -29,7 +29,7 @@ const NavigationFooter = () => {
             className = {localStorage.getItem('classClick') === el.name ? 'click' : ''}
               key={index}
             >
-              <Link to={el.path} style={{ textDecoration: "none" }}>
+              <Link to={el.path} style={{ textDecoration: "none", padding: '15px', paddingBottom: '10px' }}>
                 <span>
                   <Icon
                     icon={`${el.image}`}

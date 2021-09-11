@@ -9,7 +9,12 @@ require("dotenv").config({
   },
   
   plugins: [
-    
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 2500
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -52,6 +57,7 @@ require("dotenv").config({
         plugins: [],
       },
     },
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,

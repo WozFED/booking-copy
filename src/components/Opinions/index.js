@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { GlobalStateContext } from "../../context/GlobalContextProvider"
 import Carousel from 'react-elastic-carousel'
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 const ChartElement = styled.div`
   width: ${props => props.level + "%"};
   background-color: #003580;
@@ -15,13 +16,14 @@ width: 30px;
 `
 
 
-const Opinions = ({ slug, locale, categories, showOpinion }) => {
+const Opinions = ({categories, setOpenOpinions}) => {
  
   return (
     <div className="opinions">
       <h2>Opinie gości</h2>
-
-      <div className="opinions__grade" onClick={() => showOpinion()}>
+<AnchorLink to = "#opinions" >
+      <div className="opinions__grade" onClick={() => setOpenOpinions(true)}>
+     
         <div className="rating-opinions">
           <div>9.5</div>
         </div>
@@ -32,7 +34,7 @@ const Opinions = ({ slug, locale, categories, showOpinion }) => {
         </div>
 
         <span>Przeczytaj wszystkie opinie</span>
-      </div>
+      </div> </AnchorLink>
       <div className="opinions__charts">
         <h4>Kategorie:</h4>
         <div>

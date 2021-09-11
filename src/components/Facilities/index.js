@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react'
  
 const Facilities = ({hotel}) => {
     return (
-        <div className="facilities">
+        <div id = "facility" className="facilities">
                 <div className="facilities__header">
                   <h2>Udogodnienia w obiekcie {hotel.name}</h2>
                   <button className="button-avaiable">Zobacz dostępność</button>

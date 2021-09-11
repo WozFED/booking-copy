@@ -16,6 +16,8 @@ import Facilities from '../components/Facilities'
 import Rules from '../components/Rules'
 import StarRatings from "react-star-ratings"
 import Links from "../components/Links"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import Important from "../components/Important"
 
 const Test = styled.div`
   height: ${props => props.height + "px"};
@@ -25,36 +27,12 @@ const Test = styled.div`
 
 const HotelsTemplate = ({ data }) => {
   const hotel = data.contentfulHotels
-  const slug = `/${hotel.parentSlug}/${hotel.slug}`
-  const locale = hotel.node_locale
   const photos = data.contentfulHotels.photos
   const morePhotos = photos.concat(photos).concat(photos).concat(photos)
   const headerPhotos = morePhotos.slice(0, 3)
   const footerPhotos = morePhotos.slice(3, 8)
   const [openOpinions, setOpenOpinions] = useState(false)
-
-  const { windowLoc, setWindowLoc } = useContext(GlobalStateContext)
-  const showOpinion = () => {
-    if (window.location.pathname === `/${locale}${slug}`) {
-      setWindowLoc(window.pageYOffset)
-      navigate(`${slug}=review`)
-    } else {
-      setWindowLoc(window.pageYOffset)
-      setOpenOpinions(false)
-      setTimeout(() => {
-        navigate(slug)
-      }, 600)
-    }
-  }
-
-  useEffect(() => {
-    if (window.location.pathname === "/pl/torun/copernicustorunhotel") {
-      window.scrollTo(0, windowLoc)
-    } else {
-      window.scrollTo(0, windowLoc)
-      setOpenOpinions(true)
-    }
-  }, [])
+  
 
   const whatNumberGrade = stars => {
     if (stars > 4) {
@@ -69,16 +47,21 @@ const HotelsTemplate = ({ data }) => {
     <Layout>
       <div className="hotels">
       <Links hotel = {hotel} />
-        <div className = "hotels__general">
-          <div className = "hotels__table">Informacje i ceny</div>
-          <div className = "hotels__table">Udogodnienia</div>
-          <div className = "hotels__table">Zasady pobytu</div>
-          <div className = "hotels__table">Ważne informacje</div>
-          <div className = "hotels__table">Opinie gości ({hotel.ratings})</div>
-        </div>
         
-        <Options section={false} />
+        
+        <Options section={false} hotel = {hotel} />
         <div className="hotels__wrapper">
+          {/* <button style = {{position: 'fixed'}} onClick = {() => console.log(window.pageYOffset)}>Pokaż kordy</button> */}
+          <div className = "hotels__general">
+          <ul>
+          <li className = "hotels__table"><p>Informacje i ceny</p></li>
+          <li className = "hotels__table"><AnchorLink to = "#facility" ><p>Udogodnienia</p></AnchorLink></li>
+          <li className = "hotels__table"><AnchorLink to = "#rules" ><p>Zasady pobytu</p></AnchorLink></li>
+          <li className = "hotels__table"><AnchorLink to = "#important" ><p>Ważne informacje</p></AnchorLink></li>
+          <li className = "hotels__table" onClick = {() => setOpenOpinions(true)}><AnchorLink to = "#opinions" ><p>Opinie gości ({hotel.opinions})</p></AnchorLink></li>
+          </ul>
+          
+        </div>
           <div className="hotels__containter">
             <div className="hotel">
               <div className="hotel__header">
@@ -89,10 +72,10 @@ const HotelsTemplate = ({ data }) => {
                       starDimension={15}
                       starSpacing={0}
                       starEmptyColor="#febb02"
-                    />
+                    />  <span style = {{marginLeft: '3px'}}><Icon icon="ant-design:like-filled" style = {{color: 'orange', fontSize: '20px'}} /></span>
                     </div>
                 <div className = "hotel__social">
-                  <span><Icon icon="ant-design:like-filled" style = {{color: 'orange', fontSize: '20px'}} /></span>
+                
                 <span><Icon icon="akar-icons:heart" style = {{color: '#0071c2',fontSize: '20px'}}/></span>
                 <span><Icon icon="bi:share" style = {{color: '#0071c2',fontSize: '20px'}}/></span>
                 <button className = "button-avaiable">Zarezerwuj treraz</button>
@@ -193,16 +176,17 @@ const HotelsTemplate = ({ data }) => {
               <Information hotel={hotel} />
               <Opinions
                 categories={hotel.categories}
-                showOpinion={showOpinion}
+                setOpenOpinions ={setOpenOpinions }
                 openOpinions={openOpinions}
               />
               <OpinionsReview
+              setOpenOpinions = {setOpenOpinions}
                 categories={hotel.categories}
-                showOpinion={showOpinion}
                 openOpinions={openOpinions}
               />
               <Facilities hotel = {hotel}/>
               <Rules hotel = {hotel}/>
+              <Important />
             </div>
           </div>
         </div>
@@ -222,6 +206,7 @@ export const query = graphql`
       parentSlug
       node_locale
       ratings
+      opinions
       rules {
         name
         icon

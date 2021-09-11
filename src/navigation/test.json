@@ -1,42 +1,47 @@
 [
     {
-      "id": "blah blah blah",
-      "userId": 100,
-      "name": "VOILA!!!"
+      "name": "Hotele",
+      "background": "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
+      "amount": "80000 hoteli"
     },
     {
-      "id": "blahdsa bdsadsalah blah",
-      "userId": 101,
-      "name": "VOILA!!!"
+      "name": "Apartamenty",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg",
+      "amount": "12121 apartamentów"
     },
     {
-      "id": "blah blah blah",
-      "userId": 102,
-      "name": "VOILA!!!"
+      "name": "Ośrodki wypoczynkowe",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_resorts/6f87c6143fbd51a0bb5d15ca3b9cf84211ab0884.jpg",
+      "amount": "12000 ośrodków wypoczynkowych"
     },
     {
-      "id": "blah blah blah",
-      "userId": 103,
-      "name": "VOILA!!!"
+      "name": "Wille",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg",
+      "amount": "10000 willi"
     },
     {
-      "id": "blah blah blah",
-      "userId": 104,
-      "name": "VOILA!!!"
+      "name": "Domki",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg",
+      "amount": "111111 domków"
     },
     {
-      "id": "blah blah blah",
-      "userId": 105,
-      "name": "VOILA!!!"
+      "name": "Domki wiejskie",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_cottages/5e1fd9cd716f4825c6c7eac5abe692c52cc64516.jpg",
+      "amount": "34921 domków wiejskich"
     },
     {
-      "id": "blah blah blah",
-      "userId": 106,
-      "name": "VOILA!!!"
+      "name": "Luksusowy kemping",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_glamping/6e181b9e942c160f4605239be7ddc1728cbcc4c8.jpg",
+      "amount": "11111 luksusowych kempingów"
     },
     {
-      "id": "blah blah blah",
-      "userId": 107,
-      "name": "VOILA!!!"
+      "name": "Pensjonaty",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_guest_house/70618d86d515349ce56296a56d2eaaf283fd1542.jpg",
+      "amount": "12345 pensjonatów"
+    },
+    {
+      "name": "Motele",
+      "background": "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_motels/9673cd1b55cbc1e1cdaeae09d87d16aa9d84d5f7.jpg",
+      "amount": "12345123 moteli"
     }
   ]

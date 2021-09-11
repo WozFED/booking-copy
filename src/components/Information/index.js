@@ -30,7 +30,7 @@ const Information = ({hotel}) =>{
                     </p>
                   </div>
                 </div>
-                <div className="information__availability">
+                <div id = "avaiable" className="information__availability">
                   <h2>Dostępność</h2>
                   <div>
                     <Icon icon="el:ok-sign" />

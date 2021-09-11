@@ -44,9 +44,54 @@
   }
   &__general {
       width: 100%;
-      display: flex;
-      justify-content: center;
+      display: table;
+    width: 100%;
+      ul {
+        background-color: #ebf3ff;
+    display: table-row;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    li{
+      display: table-cell;
+    border-right: 1px solid #fff;
+    text-align: center;
+    a {
+      display: block;
+    }
+    p {
+    text-decoration: none;
+    font-weight: normal;
+    position: relative;
+    color: #0071c2;
+    font-weight: 700;
+    }
+    }
+      }
   }
+  &__table {
+    a {
+      padding: 10px;
+    }
+    
+  }
+  &__equal {
+    border-radius: 3px;
+    background: #ebf3ff;
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+      padding: 10px 5px;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      
+    }
+  }
+  
 }
 
 .window {

@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react"
 import { Link } from "gatsby"
 
 
-const Options = props => {
+const Options = ({hotel, section, inputFunction}) => {
 
   Date.prototype.addDays = function (days) {
     let date = new Date(this.valueOf())
@@ -25,6 +25,7 @@ const Options = props => {
 
   return (
     <div className="hotels__options">
+      <div className = "hotels__equal"><Icon icon = "el:ok-sign"  /><p><i>Wyrównyjemy ceny</i></p></div>
       <div className="options">
         <div className="options__date">
           <div className="filter">
@@ -34,6 +35,7 @@ const Options = props => {
               style={{ paddingLeft: "30px" }}
               className="hotels__date-picker"
               type="text"
+              placeholder = {`${hotel.town}`}
             />
             <Icon
               icon="ant-design:search-outlined"
@@ -112,7 +114,7 @@ const Options = props => {
           </div>
         </div>
 
-        {props.section ? (
+        {section ? (
           <div>
             <div className="options__header">
               <h3>Filtruj według nasępujących kryteriów</h3>
@@ -134,7 +136,7 @@ const Options = props => {
                 <input
                   type="checkbox"
                   className="checkbox"
-                  onChange={() => props.inputFunction(5, 0)}
+                  onChange={() => inputFunction(5, 0)}
                 ></input>
 
                 <p>5 gwiazdkowy</p>
@@ -143,7 +145,7 @@ const Options = props => {
                 <input
                   type="checkbox"
                   className="checkbox"
-                  onChange={() => props.inputFunction(4, 1)}
+                  onChange={() => inputFunction(4, 1)}
                 ></input>
                 <p>4 gwiazdkowy</p>
               </label>
@@ -151,7 +153,7 @@ const Options = props => {
                 <input
                   type="checkbox"
                   className="checkbox"
-                  onChange={() => props.inputFunction(3, 2)}
+                  onChange={() => inputFunction(3, 2)}
                 ></input>
                 <p>3 gwiazdkowy</p>
               </label>
