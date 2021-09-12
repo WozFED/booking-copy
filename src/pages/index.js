@@ -8,33 +8,7 @@ import CarouselPhoto from "../components/CarouselPhoto"
 import InspirationPosts from "../components/InspirationPosts"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
-  const [test, setTest] = useState([])
-  const arraySlugs = data.towns.nodes
-  const slugArray = arraySlugs.map(el => el.slug)
-  const pushTherray = el => {
-    if (localStorage.getItem(el) === el) {
-      return
-    }
-    localStorage.setItem(el, el)
-    setTest([...test, localStorage.getItem(el)])
-  }
-
-  useEffect(() => {
-    let timer1 = setTimeout(
-      () =>
-        setTest(
-          [
-            ...test,
-            slugArray.filter(el => el === localStorage.getItem(el)),
-          ].flat()
-        ),
-      200
-    )
-    return () => {
-      clearTimeout(timer1)
-    }
-  }, [])
+ 
 
   return (
     <Layout>
@@ -43,8 +17,6 @@ const IndexPage = ({ data }) => {
         <CarouselPhoto array={data.categories.nodes} section={"category"} />
         <Towns
           towns={data.towns.nodes.filter(el => el.slug !== null)}
-          test={test}
-          pushTherray={pushTherray}
         />
 
         <CarouselPhoto

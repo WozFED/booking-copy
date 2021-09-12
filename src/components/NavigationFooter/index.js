@@ -24,8 +24,7 @@ const NavigationFooter = () => {
           return (
             
             <li
-            onClick = {()=> localStorage.setItem('classClick', el.name)}
-            className = {localStorage.getItem('classClick') === el.name ? 'click' : ''}
+           
               key={index}
             >
               <Link to={el.path} style={{ textDecoration: "none", padding: '15px', paddingBottom: '10px' }}>

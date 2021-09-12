@@ -23,15 +23,6 @@ require("dotenv").config({
         ignore: [`**/\.*`],
       },
     },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-        ignore: [`**/\.*`],
-      },
-    },
     
     {
       resolve: `gatsby-plugin-intl`,

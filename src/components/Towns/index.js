@@ -12,7 +12,6 @@ const Towns = ({ towns, pushTherray }) => {
           return (
             <Link
               to={`${el.slug}`}
-              onClick={() => pushTherray(el.slug)}
               style={{
                 width: index <= 1 ? "calc(50% - 20px)" : "calc(33.333% - 20px)",
                 height: "270px",
