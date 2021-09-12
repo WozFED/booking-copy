@@ -1,7 +1,14 @@
 import React from "react"
 import { Icon } from "@iconify/react"
 
-const Pager = ({ postsPerPage, totalPosts, paginate, currentPage, town, loading }) => {
+const Pager = ({
+  postsPerPage,
+  totalPosts,
+  paginate,
+  currentPage,
+  town,
+  loading,
+}) => {
   const pageNumbers = []
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -22,7 +29,11 @@ const Pager = ({ postsPerPage, totalPosts, paginate, currentPage, town, loading 
                 ? "pagination__list-disable"
                 : "pagination__list-move"
             }`}
-            onClick={currentPage > 1 && loading ? () => paginate(currentPage - 1) : null}
+            onClick={
+              currentPage > 1 && loading
+                ? () => paginate(currentPage - 1)
+                : null
+            }
           >
             <span>
               <Icon icon="ic:baseline-greater-than" rotate={2} />
@@ -38,7 +49,15 @@ const Pager = ({ postsPerPage, totalPosts, paginate, currentPage, town, loading 
                     : "pagination__list-notcurrent"
                 }
               >
-                <a onClick={!loading && number !== currentPage ? () => paginate(number) :null}>{number}</a>
+                <a
+                  onClick={
+                    !loading && number !== currentPage
+                      ? () => paginate(number)
+                      : null
+                  }
+                >
+                  {number}
+                </a>
               </li>
             )
           })}

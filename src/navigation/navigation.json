@@ -9,24 +9,24 @@
     "name": "flights",
     "path": "/flights",
     "image": "fa-solid:plane",
-"test": 1
+    "test": 1
   },
   {
     "name": "rent",
     "path": "/cars",
     "image": "bx:bxs-car",
-"test": 2
+    "test": 2
   },
   {
     "name": "attraction",
     "path": "/atractive",
-    "image": "ic:sharp-attractions" ,
-"test": 3
+    "image": "ic:sharp-attractions",
+    "test": 3
   },
   {
     "name": "taxi",
     "path": "/taxi",
     "image": "cil:taxi",
-      "test": 4
+    "test": 4
   }
 ]

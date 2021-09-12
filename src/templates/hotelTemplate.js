@@ -1,38 +1,28 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useState } from "react"
 import Layout from "../components/Layout"
-import { graphql, Link } from "gatsby"
-import { navigate } from "gatsby-plugin-intl"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Options from "../components/Options"
 import { Icon } from "@iconify/react"
-import DateComponent from "../components/DateComponent"
 import Opinions from "../components/Opinions"
-import { GlobalStateContext } from "../context/GlobalContextProvider"
 import OpinionsReview from "../components/OpinionsReview"
-import Slider from "react-slick"
 import styled from "styled-components"
 import Information from "../components/Information"
-import Facilities from '../components/Facilities'
-import Rules from '../components/Rules'
+import Facilities from "../components/Facilities"
+import Rules from "../components/Rules"
 import StarRatings from "react-star-ratings"
 import Links from "../components/Links"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Important from "../components/Important"
-
-const Test = styled.div`
-  height: ${props => props.height + "px"};
-  width: 33%;
-  margin: 20px 0;
-`
 
 const HotelsTemplate = ({ data }) => {
   const hotel = data.contentfulHotels
+  console.log(hotel)
   const photos = data.contentfulHotels.photos
   const morePhotos = photos.concat(photos).concat(photos).concat(photos)
   const headerPhotos = morePhotos.slice(0, 3)
   const footerPhotos = morePhotos.slice(3, 8)
   const [openOpinions, setOpenOpinions] = useState(false)
-  
 
   const whatNumberGrade = stars => {
     if (stars > 4) {
@@ -46,42 +36,77 @@ const HotelsTemplate = ({ data }) => {
   return (
     <Layout>
       <div className="hotels">
-      <Links hotel = {hotel} />
-        
-        
-        <Options section={false} hotel = {hotel} />
+        <Links hotel={hotel} />
+
+        <Options section={false} hotel={hotel} />
         <div className="hotels__wrapper">
           {/* <button style = {{position: 'fixed'}} onClick = {() => console.log(window.pageYOffset)}>Pokaż kordy</button> */}
-          <div className = "hotels__general">
-          <ul>
-          <li className = "hotels__table"><p>Informacje i ceny</p></li>
-          <li className = "hotels__table"><AnchorLink to = "#facility" ><p>Udogodnienia</p></AnchorLink></li>
-          <li className = "hotels__table"><AnchorLink to = "#rules" ><p>Zasady pobytu</p></AnchorLink></li>
-          <li className = "hotels__table"><AnchorLink to = "#important" ><p>Ważne informacje</p></AnchorLink></li>
-          <li className = "hotels__table" onClick = {() => setOpenOpinions(true)}><AnchorLink to = "#opinions" ><p>Opinie gości ({hotel.opinions})</p></AnchorLink></li>
-          </ul>
-          
-        </div>
+          <div className="hotels__general">
+            <ul>
+              <li className="hotels__table">
+                <p>Informacje i ceny</p>
+              </li>
+              <li className="hotels__table">
+                <AnchorLink to="#facility">
+                  <p>Udogodnienia</p>
+                </AnchorLink>
+              </li>
+              <li className="hotels__table">
+                <AnchorLink to="#rules">
+                  <p>Zasady pobytu</p>
+                </AnchorLink>
+              </li>
+              <li className="hotels__table">
+                <AnchorLink to="#important">
+                  <p>Ważne informacje</p>
+                </AnchorLink>
+              </li>
+              <li
+                className="hotels__table"
+                onClick={() => setOpenOpinions(true)}
+              >
+                <AnchorLink to="#opinions">
+                  <p>Opinie gości ({hotel.opinions})</p>
+                </AnchorLink>
+              </li>
+            </ul>
+          </div>
           <div className="hotels__containter">
             <div className="hotel">
               <div className="hotel__header">
-                <div className = "hotel__info">
-                <h2>{hotel.name}</h2>
-                <StarRatings
-                      numberOfStars={hotel.grade}
-                      starDimension={15}
-                      starSpacing={0}
-                      starEmptyColor="#febb02"
-                    />  <span style = {{marginLeft: '3px'}}><Icon icon="ant-design:like-filled" style = {{color: 'orange', fontSize: '20px'}} /></span>
-                    </div>
-                <div className = "hotel__social">
-                
-                <span><Icon icon="akar-icons:heart" style = {{color: '#0071c2',fontSize: '20px'}}/></span>
-                <span><Icon icon="bi:share" style = {{color: '#0071c2',fontSize: '20px'}}/></span>
-                <button className = "button-avaiable">Zarezerwuj treraz</button>
+                <div className="hotel__info">
+                  <h2>{hotel.name}</h2>
+                  <StarRatings
+                    numberOfStars={hotel.grade}
+                    starDimension={15}
+                    starSpacing={0}
+                    starEmptyColor="#febb02"
+                  />{" "}
+                  <span style={{ marginLeft: "3px" }}>
+                    <Icon
+                      icon="ant-design:like-filled"
+                      style={{ color: "orange", fontSize: "20px" }}
+                    />
+                  </span>
                 </div>
-                <div className = "hotel__adress">
-                <Icon icon="eva:pin-outline" /><p>adres</p>
+                <div className="hotel__social">
+                  <span>
+                    <Icon
+                      icon="akar-icons:heart"
+                      style={{ color: "#0071c2", fontSize: "20px" }}
+                    />
+                  </span>
+                  <span>
+                    <Icon
+                      icon="bi:share"
+                      style={{ color: "#0071c2", fontSize: "20px" }}
+                    />
+                  </span>
+                  <button className="button-avaiable">Zarezerwuj treraz</button>
+                </div>
+                <div className="hotel__adress">
+                  <Icon icon="eva:pin-outline" />
+                  <p>adres</p>
                 </div>
               </div>
               <div className="photos">
@@ -176,16 +201,16 @@ const HotelsTemplate = ({ data }) => {
               <Information hotel={hotel} />
               <Opinions
                 categories={hotel.categories}
-                setOpenOpinions ={setOpenOpinions }
+                setOpenOpinions={setOpenOpinions}
                 openOpinions={openOpinions}
               />
               <OpinionsReview
-              setOpenOpinions = {setOpenOpinions}
+                setOpenOpinions={setOpenOpinions}
                 categories={hotel.categories}
                 openOpinions={openOpinions}
               />
-              <Facilities hotel = {hotel}/>
-              <Rules hotel = {hotel}/>
+              <Facilities hotel={hotel} />
+              <Rules hotel={hotel} />
               <Important />
             </div>
           </div>
@@ -207,6 +232,9 @@ export const query = graphql`
       node_locale
       ratings
       opinions
+      shortdescription {
+        shortdescription
+      }
       rules {
         name
         icon
@@ -216,8 +244,7 @@ export const query = graphql`
           title
           rules
         }
-        image 
-        
+        image
       }
       categories {
         name

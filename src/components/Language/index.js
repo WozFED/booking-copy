@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React from "react"
 import { IntlContextConsumer, changeLocale, FormattedMessage } from "gatsby-plugin-intl"
 import { Icon } from "@iconify/react"
 
@@ -19,7 +19,7 @@ const setTheLanguage = (language) =>{
         <h3><FormattedMessage id= "suggested" /></h3>
           </div>
         
-        <button className = "button-choose" onClick = {() => props.languageF(false)}><Icon icon="eva:close-fill" /></button></div>
+        <button className = "button-choose" onClick = {() => props.languageF(false)}><Icon icon="eva:close-fill" />{null}</button></div>
        
         <div className="choose__wrapper">
       <IntlContextConsumer>
@@ -30,7 +30,7 @@ const setTheLanguage = (language) =>{
               key={language}
               onClick={() => setTheLanguage(language)}
             >
-              <img src = {`/${languageName[language]}.png`}></img>
+              <img alt = "flaga" src = {`/${languageName[language]}.png`}></img>
               <p> {languageName[language]}</p>
             </div>
           ))

@@ -1,5 +1,5 @@
-import { graphql, Link } from "gatsby"
-import React, { useState, useEffect} from "react"
+import { graphql } from "gatsby"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
 import SearchHotels from "../components/SearchHotels"
@@ -12,20 +12,12 @@ const IndexPage = ({ data }) => {
   const [test, setTest] = useState([])
   const arraySlugs = data.towns.nodes
   const slugArray = arraySlugs.map(el => el.slug)
-  let newArray = []
   const pushTherray = el => {
-    
     if (localStorage.getItem(el) === el) {
       return
     }
     localStorage.setItem(el, el)
     setTest([...test, localStorage.getItem(el)])
-  }
-
-  const deleteItem = el => {
-    localStorage.removeItem(el)
-    let filteredArr = test.filter(el => el === localStorage.getItem(el))
-    setTest(filteredArr)
   }
 
   useEffect(() => {
@@ -45,22 +37,22 @@ const IndexPage = ({ data }) => {
   }, [])
 
   return (
-    <Layout >
-      <div className = "homepage">
-      <SearchHotels />
-      <CarouselPhoto 
-      array = {data.categories.nodes}
-      section = {'category'}/>
-      <Towns
-        towns={data.towns.nodes.filter(el => el.slug !== null)}
-        test={test}
-        pushTherray={pushTherray}
-      />
-      
-      <CarouselPhoto 
-      array = {data.towns.nodes.sort( () => .5 - Math.random() )}
-      section = {'poland'}/>
-      <InspirationPosts posts = {data.posts.nodes}/></div>
+    <Layout>
+      <div className="homepage">
+        <SearchHotels />
+        <CarouselPhoto array={data.categories.nodes} section={"category"} />
+        <Towns
+          towns={data.towns.nodes.filter(el => el.slug !== null)}
+          test={test}
+          pushTherray={pushTherray}
+        />
+
+        <CarouselPhoto
+          array={data.towns.nodes.sort(() => 0.5 - Math.random())}
+          section={"poland"}
+        />
+        <InspirationPosts posts={data.posts.nodes} />
+      </div>
     </Layout>
   )
 }
@@ -81,8 +73,10 @@ export const query = graphql`
         }
       }
     }
-    
-    categories: allContentfulCateogories(filter: { node_locale: { eq: "pl"} }) {
+
+    categories: allContentfulCateogories(
+      filter: { node_locale: { eq: "pl" } }
+    ) {
       nodes {
         node_locale
         photo {
@@ -94,7 +88,7 @@ export const query = graphql`
         amount
       }
     }
-    posts: allContentfulBlogPosts(filter: { node_locale: { eq: "pl"} }) {
+    posts: allContentfulBlogPosts(filter: { node_locale: { eq: "pl" } }) {
       nodes {
         background {
           fluid {

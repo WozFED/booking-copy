@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { navigationFooter } from "../../navigation/navigation"
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 import { Icon } from "@iconify/react"
 
 const NavigationFooter = () => {

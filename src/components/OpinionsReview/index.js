@@ -19,15 +19,18 @@ const ChartElement = styled.div`
   background-color: #003580;
   height: 100%;
 `
-const OpinionsReview = ({ openOpinions, categories, setOpenOpinions}) => {
+const OpinionsReview = ({ openOpinions, categories, setOpenOpinions }) => {
   return (
     <div>
-      <div id = "opinions" className={openOpinions ? "opinions__show" : null}>
+      <div id="opinions" className={openOpinions ? "opinions__show" : null}>
         <ButtonClose
           left={openOpinions ? 568 : 650}
           opacity={openOpinions ? 1 : 0}
         >
-          <button className="button-close" onClick={() => setOpenOpinions(false)}>
+          <button
+            className="button-close"
+            onClick={() => setOpenOpinions(false)}
+          >
             <p>X</p>
           </button>
         </ButtonClose>
@@ -63,17 +66,12 @@ const OpinionsReview = ({ openOpinions, categories, setOpenOpinions}) => {
               </ul>
             </div>
           </div>
-          <div className = "all__posts">
-              <h4>Opinie gości</h4>
-              <div className = "posts">
-                <div className = "posts__data">
-                    Aleksandra Szewczun
-                </div>
-                <div className = "posts__post">
-                    No tak, fajny hotel
-                </div>
-              </div>
-
+          <div className="all__posts">
+            <h4>Opinie gości</h4>
+            <div className="posts">
+              <div className="posts__data">Aleksandra Szewczun</div>
+              <div className="posts__post">No tak, fajny hotel</div>
+            </div>
           </div>
         </div>
       </div>

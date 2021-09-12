@@ -1,6 +1,5 @@
 [
-    {
-    
+  {
     "sLeft": 49,
     "image": null,
     "textHover": "Wybierz walutę",
@@ -9,9 +8,8 @@
     "formatID": null,
     "block": "header__button",
     "buttonClass": "button-icons"
-
-},
-{
+  },
+  {
     "sLeft": 49,
     "image": "/poland.png",
     "textHover": "Wybierz język",
@@ -20,8 +18,8 @@
     "formatID": null,
     "block": "header__button",
     "buttonClass": "button-icons"
-},
-{
+  },
+  {
     "sLeft": 96,
     "image": null,
     "textHover": "Skonsultuj się z Obsługą klienta",
@@ -30,10 +28,8 @@
     "formatID": null,
     "block": "header__button",
     "buttonClass": "button-icons"
-
-},
-{
-
+  },
+  {
     "sLeft": null,
     "textHover": null,
     "image": null,
@@ -42,9 +38,8 @@
     "formatID": "share",
     "block": null,
     "buttonClass": "button-header another"
-},
-{
- 
+  },
+  {
     "sLeft": null,
     "textHover": null,
     "image": null,
@@ -53,9 +48,8 @@
     "formatID": "register",
     "block": null,
     "buttonClass": "button-header"
-},
-{
-
+  },
+  {
     "sLeft": null,
     "textHover": null,
     "image": null,
@@ -64,5 +58,5 @@
     "formatID": "login",
     "block": null,
     "buttonClass": "button-header"
-}
+  }
 ]

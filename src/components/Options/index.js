@@ -1,13 +1,8 @@
-import { FormattedMessage } from "gatsby-plugin-intl"
-import React, { useEffect, useState, useContext } from "react"
+import React, { useEffect, useState } from "react"
 import DatePicker from "react-date-picker"
-import { createGlobalStyle } from "styled-components"
 import { Icon } from "@iconify/react"
-import { Link } from "gatsby"
 
-
-const Options = ({town, section, inputFunction}) => {
-
+const Options = ({ town, section, inputFunction }) => {
   Date.prototype.addDays = function (days) {
     let date = new Date(this.valueOf())
     date.setDate(date.getDate() + days)
@@ -25,7 +20,12 @@ const Options = ({town, section, inputFunction}) => {
 
   return (
     <div className="hotels__options">
-      <div className = "hotels__equal"><Icon icon = "el:ok-sign"  /><p><i>Wyrównyjemy ceny</i></p></div>
+      <div className="hotels__equal">
+        <Icon icon="el:ok-sign" />
+        <p>
+          <i>Wyrównyjemy ceny</i>
+        </p>
+      </div>
       <div className="options">
         <div className="options__date">
           <div className="filter">
@@ -35,7 +35,7 @@ const Options = ({town, section, inputFunction}) => {
               style={{ paddingLeft: "30px" }}
               className="hotels__date-picker"
               type="text"
-              placeholder = {`${town}`}
+              placeholder={`${town}`}
             />
             <Icon
               icon="ant-design:search-outlined"
@@ -82,7 +82,6 @@ const Options = ({town, section, inputFunction}) => {
                 {howManyPeople.map(el => {
                   return (
                     <option>
-                      
                       {el === 0 ? "Bez dzieci" : el}{" "}
                       {el < 2 && el > 0
                         ? "dziecko"
