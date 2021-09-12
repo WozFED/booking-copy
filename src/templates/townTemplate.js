@@ -97,7 +97,8 @@ const TownTemplate = ({ data, pageContext }) => {
             <p style={{ color: "#0071c2" }}>wyniki wyszukiwania</p>
           </div>
         </div>
-        <Options inputFunction={inputFunction} section = {true} />
+        <Options inputFunction={inputFunction}
+        town = {pageContext.town} section = {true} />
         
         <Hotels hotel={currentHotels} arrFil={arrFil} isChecked={isChecked} currentPage = {currentPage}
         postsPerPage = {postsPerPage} totalPosts = {hotelsFilter.length} paginate = {paginate}

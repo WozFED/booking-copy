@@ -1,12 +1,11 @@
 import { graphql, Link } from "gatsby"
-import Img from 'gatsby-image'
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
 import SearchHotels from "../components/SearchHotels"
 import Towns from "../components/Towns"
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
-import produce from "immer"
+import CarouselPhoto from "../components/CarouselPhoto"
+import InspirationPosts from "../components/InspirationPosts"
 
 const IndexPage = ({ data }) => {
   console.log(data)
@@ -47,18 +46,22 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <div className = "homepage">
+
       <SearchHotels />
-      {
-        data.categories.nodes.map(node =>
-          {return(
-            <div style = {{width: '300px', height: '300px'}}><Img fluid = {node.photo.fluid} /></div>
-          )})
-      }
+      <CarouselPhoto 
+      array = {data.categories.nodes}
+      section = {'category'}/>
       <Towns
-        towns={data.towns.nodes}
+        towns={data.towns.nodes.filter(el => el.slug !== null)}
         test={test}
         pushTherray={pushTherray}
       />
+      </div>
+      <CarouselPhoto 
+      array = {data.towns.nodes.sort( () => .5 - Math.random() )}
+      section = {'poland'}/>
+      <InspirationPosts />
     </Layout>
   )
 }
@@ -66,13 +69,13 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query MyQuery($locale: String) {
-    towns: allContentfulTowns(filter: { node_locale: { eq: $locale } }) {
+  query {
+    towns: allContentfulTowns(filter: { node_locale: { eq: "pl" } }) {
       nodes {
         name
-        numberOfObject
+        amount
         slug
-        background {
+        photo {
           fluid {
             ...GatsbyContentfulFluid
           }

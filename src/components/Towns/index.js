@@ -20,7 +20,8 @@ const Towns = ({towns, test, pushTherray}) => {
                   width:
                     index <= 1 ? "calc(50% - 20px)" : "calc(33.333% - 20px)",
                   height: "270px",
-                  margin: "10px",
+                  marginTop: "20px",
+                  marginRight: '20px',
                   boxSizing: "border-box",
                   padding: "0",
                 }}
@@ -30,12 +31,12 @@ const Towns = ({towns, test, pushTherray}) => {
                     width: "100%",
                     height: "100%",
                   }}
-                  fluid={el.background.fluid}
+                  fluid={el.photo.fluid}
                 >
                   <div className="towns__photo">
                     <div className="towns__photo-text">
                       <h2>{el.name}</h2>
-                      <h3>{`${el.numberOfObject} obiektów`}</h3>
+                      <h3>{`${el.amount} obiektów`}</h3>
                     </div>
                     <StaticImage
                       width={25}

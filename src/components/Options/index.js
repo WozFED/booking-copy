@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react"
 import { Link } from "gatsby"
 
 
-const Options = ({hotel, section, inputFunction}) => {
+const Options = ({town, section, inputFunction}) => {
 
   Date.prototype.addDays = function (days) {
     let date = new Date(this.valueOf())
@@ -35,7 +35,7 @@ const Options = ({hotel, section, inputFunction}) => {
               style={{ paddingLeft: "30px" }}
               className="hotels__date-picker"
               type="text"
-              placeholder = {`${hotel.town}`}
+              placeholder = {`${town}`}
             />
             <Icon
               icon="ant-design:search-outlined"
