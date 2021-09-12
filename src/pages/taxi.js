@@ -12,17 +12,7 @@ const Taxi = ({data}) => {
 
   return (
       <Layout blog = {true}>
-         <div style = {{width: '100%', height: '300px'}}>
-           <BackgroundImage style = {{width: '100%', height: '100%', backgroundSize: 'cover'}} fluid = {data.allContentfulBlogPosts.nodes[0].background.fluid} />
-         </div>
-         
-         <div className = "article">
-           <div className = "article__wrapper">
-             <div dangerouslySetInnerHTML={{__html: data.allContentfulBlogPosts.nodes[0].description.childMarkdownRemark.html}} />
-            </div>
-          
-          </div>
-         
+        <FormattedMessage id = "build" />
       </Layout>
       
   )

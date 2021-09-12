@@ -47,7 +47,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout >
       <div className = "homepage">
-
       <SearchHotels />
       <CarouselPhoto 
       array = {data.categories.nodes}

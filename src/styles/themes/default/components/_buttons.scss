@@ -16,6 +16,7 @@
         height: 38px;
         margin: 5px;
         p{
+            font-weight: 500;
             padding: 10px;
             color: rgb(0, 50, 130)
         }
@@ -98,7 +99,10 @@
         top: 7px;
         right: 15px;
     }
-    
+    &-input {
+        height: 100%;
+        width: 100%;
+    }
     
 }
 
