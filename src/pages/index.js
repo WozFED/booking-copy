@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
   }, [])
 
   return (
-    <Layout>
+    <Layout >
       <div className = "homepage">
 
       <SearchHotels />
@@ -57,11 +57,11 @@ const IndexPage = ({ data }) => {
         test={test}
         pushTherray={pushTherray}
       />
-      </div>
+      
       <CarouselPhoto 
       array = {data.towns.nodes.sort( () => .5 - Math.random() )}
       section = {'poland'}/>
-      <InspirationPosts />
+      <InspirationPosts posts = {data.posts.nodes}/></div>
     </Layout>
   )
 }
@@ -93,6 +93,18 @@ export const query = graphql`
         }
         name
         amount
+      }
+    }
+    posts: allContentfulBlogPosts(filter: { node_locale: { eq: "pl"} }) {
+      nodes {
+        background {
+          fluid {
+            src
+          }
+        }
+        name
+        node_locale
+        paragraph
       }
     }
   }

@@ -4,12 +4,13 @@ import NavigationFooter from '../NavigationFooter'
 import NavigationHeader from '../NavigationHeader'
 
 
-const Header = () =>{
+const Header = ({blog}) =>{
     return (
         <div className = "header">
             <div className = "header__navigation">
             <NavigationHeader />
-            <NavigationFooter />
+            {!blog ? <NavigationFooter />: null}
+            
             </div>
         </div>
 

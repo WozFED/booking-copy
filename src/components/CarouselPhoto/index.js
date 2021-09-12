@@ -5,7 +5,7 @@ import { FormattedMessage } from 'gatsby-plugin-intl'
 
 const CarouselPhoto = ({array, section}) =>{
     return (
-        <div className = "homepage__slider">
+        <div className = "slider">
             {section === 'category' ?
             <h2><FormattedMessage id = "searchbycategory"/></h2>:
             <div>
@@ -16,7 +16,7 @@ const CarouselPhoto = ({array, section}) =>{
         {
           array.map((element, index) => {
             return (
-              <div className = "slider" key = {index}>
+              <div className = "slider__wrapper" key = {index}>
               <div className = {`slider__photo-${section}`}><Img style = {{width: '100%', height: '100%'}} fluid = {element.photo.fluid} /></div>
               <p>{element.name}</p>
               <p>{element.amount}</p>

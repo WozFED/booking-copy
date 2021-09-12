@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled, { keyframes } from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Language from "../Language"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const downup = keyframes`
     from {top: 66px;}
@@ -90,11 +90,13 @@ const NavigationHeader = () => {
   return (
     <div className="header__navigation-header">
       <div className="header__title">
+        <Link to = '/'>
         <StaticImage
           src="https://logo-logos.com/wp-content/uploads/2016/10/Booking_logo_blue.png"
           alt="booking.com"
           width={180}
         />
+        </Link>
       </div>
       <div className="header__options">
         {nodes.map(el => {
