@@ -36,7 +36,7 @@ const Towns = ({towns, test, pushTherray}) => {
                   <div className="towns__photo">
                     <div className="towns__photo-text">
                       <h2>{el.name}</h2>
-                      <h3>{`${el.amount} obiektów`}</h3>
+                      <h3>{`${el.amount}`}</h3>
                     </div>
                     <StaticImage
                       width={25}

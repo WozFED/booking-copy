@@ -105,6 +105,7 @@ export const query = graphql`
         name
         node_locale
         paragraph
+        slug
       }
     }
   }

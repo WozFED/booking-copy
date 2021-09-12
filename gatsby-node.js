@@ -1,15 +1,11 @@
-const { paginate } = require("gatsby-awesome-pagination")
-const { node } = require("prop-types")
 const slash = require("slash")
 const path = require(`path`)
-const { EDEADLK } = require("constants")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const townTemplate = path.resolve("./src/templates/townTemplate.js")
   const hotelTemplate = path.resolve("./src/templates/hotelTemplate.js")
-  const testTown = path.resolve("./src/templates/testTemplate.js")
-  const categorized = path.resolve("./src/templates/categorized.js")
+  const articleTemplate = path.resolve("./src/templates/articleTemplate.js")
 
 
   const data = await graphql(`
@@ -24,6 +20,18 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   }
+  `)
+
+  const article = await graphql(`
+   {
+    allContentfulBlogPosts {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
+   }
   `)
   
   data.data.allContentfulHotels.edges.forEach(edge => {
@@ -48,13 +56,12 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
-    data.data.allContentfulHotels.edges.forEach(edge => {
+    article.data.allContentfulBlogPosts.edges.forEach(edge => {
     createPage({
-      path: `/${edge.node.parentSlug}/${edge.node.slug}=review`,
-      component: slash(hotelTemplate),
+      path: `/${edge.node.slug}`,
+      component: slash(articleTemplate),
       context:{
         slug: edge.node.slug,
-        town: edge.node.slug
       }
     })
   })

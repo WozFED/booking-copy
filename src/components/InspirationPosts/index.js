@@ -10,12 +10,12 @@ const InspirationPosts = ({posts}) =>{
             <div className = "inspirations__wrapper">
                 <h2><FormattedMessage id ="inspiration" /></h2>
                 <div className = "inspirations__container">
-
+                
                 {
                     posts.map((post, index) =>{
                         return (
                             <Link
-                                to={`${post.slug}`}
+                                to={`/${post.slug}`}
                                 style={{
                                 width: index <= 2 ? "calc(33.333% - 15px)": "calc(50% - 15px)" ,
                                 height: "320px",
