@@ -1,272 +1,293 @@
-@media only screen and (max-width: 1200px) {
-    .another {
-        display: none;
+@media only screen and (max-width: 1100px) {
+  .another {
+    display: none;
+  }
+  .article__wrapper {
+      width: 80%;
+  }
+  .inputs {
+    height: 200px;
+    align-items: center;
+    &__wrapper {
+      width: 80%;
+      height: 80%;
+      padding: 0;
     }
-    .inputs{
-        height: 200px;
-        align-items: center;
-        &__wrapper {
-            width: 80%;
-            height: 80%;
-            padding: 0;
-        }
-        &__element {
-            height: 40px;
-            font-size: 10px;
-            input {
-                font-size: 10px
-            }
-        }
+    &__element {
+      height: 40px;
+      font-size: 10px;
+      input {
+        font-size: 10px;
+      }
+    }
   }
   .slider {
     button.rec.rec-arrow-right {
-        top: 70px;
-        right: -1%;
-      }
+      top: 70px;
+      right: -1%;
+    }
+    width: 80%;
+    &__wrapper {
       width: 80%;
-      &__wrapper {
-          width: 80%;
+    }
+    &__photo {
+      &-category {
+        width: 150px;
       }
-    &__photo{
-        &-category {
+      &-poland {
         width: 150px;
+      }
     }
-    &-poland {
-        width: 150px;
-    }
-}
-}
     .towns {
-        &__wrapper {
-           width: 80%;
-        }
+      &__wrapper {
+        width: 80%;
+      }
     }
     .inspirations {
-        &__wrapper {
-            width: 80%;
-        }
+      &__wrapper {
+        width: 80%;
+      }
     }
     .footer__contact {
-        width: 100%;
+      width: 100%;
     }
-}
-
-.react-date-picker__inputGroup {
-    font-size: 12px;
-}
-.hotels {
+  }
+  .hotels {
     width: 100%;
     display: flex;
     /* justify-content: center; */
     flex-wrap: wrap;
     &__options {
-        width: 20%;
+      width: 20%;
     }
     &__wrapper {
-        width: 80%;
-        padding-left: 5px;
+      width: 80%;
+      padding-left: 5px;
     }
     &__container {
-        width: 100%;
+      width: 100%;
     }
     .window {
-        &__image {
+      &__image {
         width: auto;
-    }
-        &__description {
-            div {
-            flex-direction: column;
+      }
+      &__description {
+        div {
+          flex-direction: column;
         }
+      }
     }
-    
-}
-    
+    .react-date-picker__inputGroup {
+      font-size: 12px;
+    }
+  }
+  .opinions__comments {
+    div.rec.rec-carousel {
+        left: 0;
+    }
+  }
+  .facilities__all {
+      width: 75%;
+  }
+  .hotel {
+      width: 100%;
+  }
+  .gallery-big {
+      width: 60%;
+
+  }
+  .gallery-small {
+      width: 38%;
+  }
 }
 
-@media only screen and (max-width: 880px){
-    .button-header {
-        p {
-            padding: 0;
-        }
+@media only screen and (max-width: 880px) {
+  .button-header {
+    p {
+      padding: 0;
     }
-    .header {
-        &__navigation {
-            width: 90%;
-            &-footer {
-                width: 100%;
-            }
-        }
-        &__button {
-            display: none;
-        }
-        &__list {
-            li{
-                a {
-                    padding: 0;
-                    p {
-                        font-size: 10px;}
-                    span {
-                        font-size: 15px;
-                    }
-                }
-            }
-            
-        }
-
+  }
+  .header {
+    &__navigation {
+      width: 90%;
+      &-footer {
+        width: 100%;
+      }
     }
-    .slider {
-        
-          button.rec.rec-arrow-left {
-            top: 40px;
-            left: -15px;
+    &__button {
+      display: none;
+    }
+    &__list {
+      li {
+        a {
+          padding: 0;
+          p {
+            font-size: 10px;
           }
-        &__wrapper {
-            p:first-of-type {
-                font-size: 12px;
-            }
-            p:last-of-type {
-              font-size: 10px;
+          span {
+            font-size: 15px;
           }
         }
-      &__photo{
-          &-category {
-            width: 130px;
-            height: 180px; 
-          
-      }&-poland {
+      }
+    }
+  }
+  .slider {
+    button.rec.rec-arrow-left {
+      top: 40px;
+      left: -15px;
+    }
+    &__wrapper {
+      p:first-of-type {
+        font-size: 12px;
+      }
+      p:last-of-type {
+        font-size: 10px;
+      }
+    }
+    &__photo {
+      &-category {
         width: 130px;
-        height: 180px; 
-          }
-        }
+        height: 180px;
+      }
+      &-poland {
+        width: 130px;
+        height: 180px;
+      }
     }
-    .towns__wrapper {
-        width: 100%;
-    }
-    .footer__contact {
-        width: 100%;
-    }
-    .show__grade-text {
-        padding: 0;
-    }
-    .rating {
-        height: 40px
-    }
+  }
+  .towns__wrapper {
+    width: 100%;
+  }
+  .footer__contact {
+    width: 100%;
+  }
+  .show__grade-text {
+    padding: 0;
+  }
+  .rating {
+    height: 40px;
+  }
+  .facilities__all {
+      display: none;
+  }
+
 }
 
 @media only screen and (max-width: 600px) {
-    .header__navigation-footer {
+  .header__navigation-footer {
+    display: none;
+  }
+  .article__footer {
+      display: none;
+  }
+  .inputs {
+    height: 400px;
+    &__wrapper {
+      p {
         display: none;
+      }
     }
-    .inputs {
-        height: 400px;
-        &__wrapper {
-            p {
-                display: none;
-            } 
-        }
-        &__inputs {
-            flex-direction: column;
-            align-items: center;
-        }
-        &__element {
-            margin: 5px;
-            font-size: 14px;
-            width: 200px;
-            border: 4px solid #febb02;
-            border-radius: 3px;
-            p {
-                display: inline;
-            }
-        }
+    &__inputs {
+      flex-direction: column;
+      align-items: center;
     }
-    .towns__wrapper {
-        justify-content: center;
-        a {
-           margin: 0 !important;
-           width: 50% !important; 
-        }
-        
+    &__element {
+      margin: 5px;
+      font-size: 14px;
+      width: 200px;
+      border: 4px solid #febb02;
+      border-radius: 3px;
+      p {
+        display: inline;
+      }
     }
-    .slider {
-        display: none;
+  }
+  .towns__wrapper {
+    justify-content: center;
+    a {
+      margin: 0 !important;
+      width: 50% !important;
     }
-    .inspirations__container{
-        a {
-            width: 100% !important;
-        }
+  }
+  .slider {
+    display: none;
+  }
+  .inspirations__container {
+    a {
+      width: 100% !important;
     }
+  }
 
-    .footer__text {
-        width: 100%;
-        flex-direction: column;
+  .footer__text {
+    width: 100%;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     button {
-        font-size: 14px;
+      font-size: 14px;
     }
+  }
+  .sharing {
+    display: none;
+  }
+  .hotels {
+    &__wrapper {
+      width: 100%;
     }
-    .sharing {
-        display: none;
+    &__window {
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .hotels {
-        &__wrapper {
-            width: 100%;
-        }
-        &__window {
-            flex-wrap:wrap;
-            justify-content: center;
-        }
 
-        &__options {
-            width: 100%;
-        }
-        &__equal {
-        display: none;
+    &__options {
+      width: 100%;
     }
+    &__equal {
+      display: none;
     }
-    .window {
-        &__image {
-            width: 100% !important;
-            display: flex;
-            justify-content: center;
-            &-postcard {
-                width: 100% !important;
-                margin: 0;
-            }
-            a {
-                width: 90%;
-            }
-        }
-        &__description {
-            width: 90%;
-            padding: 0;
-        }
-        &__show {
-            width: 90%;
-            justify-content: space-between;
-            padding: 25px 0;
-        }
-
-    }
-    .show__grade {
-        width: 30%;
-        justify-content: space-between;
-    }
-    .button-price {
+  }
+  .window {
+    &__image {
+      width: 100% !important;
+      display: flex;
+      justify-content: center;
+      &-postcard {
+        width: 100% !important;
         margin: 0;
+      }
+      a {
+        width: 90%;
+      }
     }
+    &__description {
+      width: 90%;
+      padding: 0;
+    }
+    &__show {
+      width: 90%;
+      justify-content: space-between;
+      padding: 25px 0;
+    }
+  }
+  .show__grade {
+    width: 30%;
+    justify-content: space-between;
+  }
+  .button-price {
+    margin: 0;
+  }
 
-    .options {
-        width: 100%;
-        display: flex;
+  .options {
+    width: 100%;
+    display: flex;
+  }
+
+  .options__date {
+    margin: 0;
+  }
+  .selects__element {
+    p {
+      font-size: 12px;
     }
-    
-    .options__date {
-        margin: 0;
-    }
-    .selects__element {
-        p {
-            font-size: 12px;
-        }
-    }
+  }
 }
