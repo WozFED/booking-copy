@@ -5,23 +5,15 @@ import Hotels from "../components/Hotels"
 import Options from "../components/Options"
 import produce from "immer"
 import { Icon } from "@iconify/react"
+import Links from "../components/Links"
 
 const TownTemplate = ({ data, pageContext }) => {
   const [loading, setLoading] = useState(false)
   console.log(pageContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(6)
-  const [hotel, setHotel] = useState(data.polish.nodes)
-  useEffect(() => {
-    const fetchPosts = () => {
-      if (window.location.pathname.includes("pl")) {
-        setHotel(data.polish.nodes)
-      } else {
-        setHotel(data.english.nodes)
-      }
-    }
-    fetchPosts()
-  }, [])
+  const hotel = data.allContentfulHotels.nodes
+  
 
   const [isChecked, setIsChecked] = useState([false, false, false])
   const [arrFil, setArrFil] = useState([])
@@ -61,32 +53,8 @@ const TownTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <div className="hotels">
-        <div className="links">
-          <div className="links__wrapper">
-            <Link to="/" className="nostyle">
-              <p>Stronga główna </p>
-            </Link>
-            <Icon
-              icon="ic:baseline-greater-than"
-              style={{ fontSize: "12px" }}
-            />
-            <Link to="/" className="nostyle">
-              <p>Polska </p>
-            </Link>
-            <Icon
-              icon="ic:baseline-greater-than"
-              style={{ fontSize: "12px" }}
-            />
-            <Link to="/" className="nostyle">
-              <p>{pageContext.town}</p>
-            </Link>
-            <Icon
-              icon="ic:baseline-greater-than"
-              style={{ fontSize: "12px" }}
-            />
-            <p style={{ color: "#0071c2" }}>wyniki wyszukiwania</p>
-          </div>
-        </div>
+        <Links hotel = {hotel}
+                town = {pageContext.town}/>
         <Options
           inputFunction={inputFunction}
           town={pageContext.town}
@@ -111,38 +79,17 @@ const TownTemplate = ({ data, pageContext }) => {
 
 export default TownTemplate
 export const query = graphql`
-  query HotelList($slug: String) {
-    polish: allContentfulHotels(
-      filter: { node_locale: { eq: "pl" }, parentSlug: { eq: $slug } }
+  query ($slug: String, $locale: String) {
+    allContentfulHotels(
+      filter: { node_locale: { eq: $locale }, parentSlug: { eq: $slug } }
     ) {
       nodes {
         name
         slug
         grade
         town
-        parentSlug
-        node_locale
-        shortdescription {
-          shortdescription
-        }
-        description {
-          description
-        }
-        background {
-          fluid {
-            src
-          }
-        }
-      }
-    }
-    english: allContentfulHotels(
-      filter: { node_locale: { eq: "en" }, parentSlug: { eq: $slug } }
-    ) {
-      nodes {
-        name
-        slug
-        grade
-        town
+        ratings 
+        opinions
         parentSlug
         node_locale
         shortdescription {

@@ -167,12 +167,12 @@ const HotelsTemplate = ({ data }) => {
                   />
                   <p>
                     Z autentycznych opinii naszych Gości wynika, że to ich
-                    ulubiona część miasta Gdańsk.
+                    ulubiona część miasta {hotel.town}.
                   </p>
 
                   <p>
                     Parom bardzo się podoba ta lokalizacja – za pobyt dla 2 osób
-                    oceniają ją na {whatNumberGrade(hotel.grade)}
+                    oceniają ją na {hotel.ratings}
                   </p>
                   {hotel.node_locale ? <p>Mówimy w twoim języku!</p> : null}
                   <p>

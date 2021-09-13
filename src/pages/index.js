@@ -32,8 +32,8 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query {
-    towns: allContentfulTowns(filter: { node_locale: { eq: "pl" } }) {
+  query ($locale: String) {
+    towns: allContentfulTowns(filter: { node_locale: { eq: $locale } }) {
       nodes {
         name
         amount
@@ -45,9 +45,9 @@ export const query = graphql`
         }
       }
     }
-
+    
     categories: allContentfulCateogories(
-      filter: { node_locale: { eq: "pl" } }
+      filter: { node_locale: { eq: $locale } }
     ) {
       nodes {
         node_locale
@@ -60,7 +60,7 @@ export const query = graphql`
         amount
       }
     }
-    posts: allContentfulBlogPosts(filter: { node_locale: { eq: "pl" } }) {
+    posts: allContentfulBlogPosts(filter: { node_locale: { eq: $locale } }) {
       nodes {
         background {
           fluid {

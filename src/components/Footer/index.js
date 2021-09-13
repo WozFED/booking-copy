@@ -1,3 +1,4 @@
+import { FormattedMessage } from "gatsby-plugin-intl"
 import React from "react"
 
 const Footer = () => {
@@ -5,9 +6,9 @@ const Footer = () => {
     <div>
       <div className="footer">
         <div className="footer__contact">
-          <h2>Oszczędzaj czas i pieniądze!</h2>
+          <h2><FormattedMessage id = "savemoney" /></h2>
           <p>
-            Zaprenumeruj nasz biuletyn, a będziemy przesyłać Ci najlepsze oferty
+            <FormattedMessage id = "exchangeinfo"/>
           </p>
           <div className="footer__text">
             <input
@@ -15,10 +16,10 @@ const Footer = () => {
               className="input-text"
               placeholder="Adres mailowy"
             ></input>
-            <button className="button-footer">Zaprenumeruj</button>
+            <button className="button-footer"><FormattedMessage id = "subscribe" /></button>
             <label>
               <input type="checkbox" className="input-checkbox"></input>
-              Wyślij mi link do pobrania BEZPŁATNEJ aplikacji Booking.com!
+              <FormattedMessage id = "linkforapp" />
             </label>
           </div>
         </div>
@@ -26,17 +27,18 @@ const Footer = () => {
       <div className="sharing">
         <div className="sharing__share">
           <button className="button-header another share">
-            <p>Udostępnij obiekt</p>
+            <p><FormattedMessage id = "share" /></p>
           </button>
         </div>
         <div className="sharing__options">
           <div className="sharing__links">
-            <p>Wersja na telefon</p>
-            <p>Twoje konto</p>
-            <p>Wprowadzaj zmiany w rezerwacji online</p>
-            <p>Skontaktuj się z obsługą klienta</p>
-            <p>Zostań naszym Partnerem Afiliacyjnym</p>
-            <p>Booking.com dla biznesu</p>
+            <p><FormattedMessage id = "mobileversion"/></p>
+            <p><FormattedMessage id = "youraccount"/></p>
+            <p><FormattedMessage id = "changeres"/></p>
+            <p><FormattedMessage id = "contact"/></p>
+            <p><FormattedMessage id = "beourpartner"/></p>
+            <p><FormattedMessage id = "forbiznes"/></p>
+            
           </div>
         </div>
       </div>

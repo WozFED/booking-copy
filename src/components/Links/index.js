@@ -1,26 +1,31 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Icon } from "@iconify/react"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
-const Links = ({ hotel }) => {
+const Links = ({ hotel, town }) => {
   return (
     <div className="links">
       <div className="links__wrapper">
         <Link to="/" className="nostyle">
-          <p>Stronga główna </p>
+        <p><FormattedMessage id = "mainsite" /></p>
         </Link>
-        <Icon icon="ic:baseline-greater-than" style={{ fontSize: "12px" }} />
+        &#62;
         <Link to="/" className="nostyle">
-          <p>Polska </p>
+        <p><FormattedMessage id = "country" /></p>
         </Link>
-        <Icon icon="ic:baseline-greater-than" style={{ fontSize: "12px" }} />
+        &#62;
         <Link to={`/${hotel.parentSlug}`} className="nostyle">
-          <p>{hotel.town}</p>
+          <p>{town ? town : hotel.town}</p>
         </Link>
-        <Icon icon="ic:baseline-greater-than" style={{ fontSize: "12px" }} />
-        <Link to={`/${hotel.parentSlug}/${hotel.slug}`}>
-          <p style={{ color: "#0071c2" }}>{hotel.name}</p>
-        </Link>
+        &#62;
+        {town ? null : <Link to={`/${hotel.parentSlug}/${hotel.slug}`}>
+          <p>{hotel.name}</p>&#62;
+        </Link> }
+        
+        
+          <p><FormattedMessage id = "resultsearch" /></p>
+        
       </div>
     </div>
   )

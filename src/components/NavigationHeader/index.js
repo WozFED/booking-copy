@@ -22,7 +22,6 @@ const NavigationHeader = () => {
     }
   `)
   const { nodes } = data.allHeaderJson
-
   const [language, setLanguage] = useState(false)
 
   const [image, setImage] = useState("/polski.png")
@@ -33,17 +32,11 @@ const NavigationHeader = () => {
 
 
   useEffect(() => {
-    if (window.location.pathname.includes("/english/")) {
+    if (window.location.pathname.includes("/en/")) {
       setImage("/english.png")
-    }
-    if (window.location.pathname.includes("/russia/")) {
-      setImage("/русский.png")
     }
     if (window.location.pathname.includes("/polish/")) {
       setImage("/polski.png")
-    }
-    if (window.location.pathname.includes("/french")) {
-      setImage("/français.png")
     }
   }, [])
 

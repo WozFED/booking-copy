@@ -1,6 +1,21 @@
 const slash = require("slash")
 const path = require(`path`)
 
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+  deletePage(page)
+  // You can access the variable "locale" in your page queries now
+  createPage({
+      ...page,
+      context: {
+          ...page.context,
+          locale: page.context.intl.language,
+      },
+  })
+}
+
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const townTemplate = path.resolve("./src/templates/townTemplate.js")
@@ -28,6 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
       edges {
         node {
           slug
+          
         }
       }
     }
@@ -41,12 +57,12 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(townTemplate),
         context: {
           slug: edge.node.parentSlug,
-          town: edge.node.town
+          town: edge.node.town,
         },
       })
     })
+
     data.data.allContentfulHotels.edges.forEach(edge => {
-    
       createPage({
         path: `/${edge.node.parentSlug}/${edge.node.slug}`,
         component: slash(hotelTemplate),
@@ -56,6 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     })
+
     article.data.allContentfulBlogPosts.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.slug}`,

@@ -23,20 +23,12 @@ const Hotels = ({
       ? "Dobry"
       : null
   }
-  const whatNumberGrade = stars => {
-    if (stars > 4) {
-      return (Math.random() * (9.9 - 9) + 9).toFixed(1)
-    } else if (stars === 4) {
-      return (Math.random() * (8.9 - 8) + 8).toFixed(1)
-    } else {
-      return (Math.random() * (7.9 - 5) + 5).toFixed(1)
-    }
-  }
+  console.log(hotel)
   return (
     <div className="hotels__wrapper">
       {loading ? <Loading /> : null}
       <div className={`${loading ? "background-op" : null}`}>
-        <h2>{town}: znaleziono x obiektów</h2>
+        <h2>{town}: znaleziono {hotel.length} obiektów</h2>
         <div className="selects">
           <div className="selects__element">
             <p>Wybrane przez nas</p>
@@ -88,15 +80,15 @@ const Hotels = ({
                   <div className="show__grade">
                     <div className="show__grade-text">
                       <p className="show__grade-main">
-                        {whatGrade(hotel.grade)}
+                      {whatGrade(hotel.grade)}
                       </p>
                       <p className="show__grade-opinion">
-                        {Math.floor(Math.random() * (2600 - 250) + 500)} opinii
+                        {hotel.opinions} opinii
                       </p>
                     </div>
                     <div className="rating">
                       <div>
-                        <p>{whatNumberGrade(hotel.grade)}</p>
+                        <p>{hotel.ratings}</p>
                       </div>
                     </div>
                   </div>
