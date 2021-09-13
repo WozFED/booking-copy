@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useState } from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { Icon } from "@iconify/react"
+import { GlobalStateContext } from "../../context/GlobalContextProvider"
 
 const NavigationFooter = () => {
   const data = useStaticQuery(graphql`
@@ -17,21 +18,7 @@ const NavigationFooter = () => {
     }
   `)
   const { nodes } = data.allNavigationJson
-    const [active, setActive] = useState({
-      id: 0,
-      bool: false
-    })
-
-
-  const changeClassFunction = (index) =>{ 
-    const path = window.location.pathname
-    if(path === '/pl/' || path === '/en/'){
-      setActive({id: index, bool: true})
-    }
-    else console.log('nie mamy, ale mamy to')
-    
-  }
-
+   
   return (
     <div className="header__navigation-footer">
       <ul className="header__list">
@@ -39,7 +26,8 @@ const NavigationFooter = () => {
           return (
             
             <li
-              className = 'click1'
+              className = {index === parseInt(localStorage.getItem("value")) ? "click" : null}
+              onClick = {() =>  localStorage.setItem("value", index)}
               key={index}
             >
               <Link to={el.path} style={{ textDecoration: "none", padding: '15px', paddingBottom: '10px' }}>

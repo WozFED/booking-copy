@@ -7,25 +7,25 @@
   },
   {
     "name": "flights",
-    "path": "/flights",
+    "path": "/flights/",
     "image": "fa-solid:plane",
     "test": 1
   },
   {
     "name": "rent",
-    "path": "/cars",
+    "path": "/cars/",
     "image": "bx:bxs-car",
     "test": 2
   },
   {
     "name": "attraction",
-    "path": "/atractive",
+    "path": "/atractive/",
     "image": "ic:sharp-attractions",
     "test": 3
   },
   {
     "name": "taxi",
-    "path": "/taxi",
+    "path": "/taxi/",
     "image": "cil:taxi",
     "test": 4
   }
