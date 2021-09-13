@@ -415,6 +415,9 @@
       height: 24px;
       width: 24px;
       color: #0071c2;
+      a {
+        color: #0071c2;
+      }
       &:hover {
         background-color: #0071c2;
         color: white;
@@ -425,6 +428,9 @@
       height: 24px;
       width: 24px;
       color: #6b6b6b;
+      a {
+        color: #6b6b6b;
+      }
       border: 1px solid lightgray;
       &:hover {
         background-color: white;
