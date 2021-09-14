@@ -51,10 +51,8 @@ const Options = ({ town, section, inputFunction }) => {
               value={dateIn}
               onChange={setDateIn}
               format="y/MMM/d"
-              className="hotels__date-picker"
               minDate={new Date()}
               placeholder="Data zameldowania"
-              wrapperClassName="test"
             ></DatePicker>
             <p>Do</p>
             <DatePicker
@@ -62,8 +60,6 @@ const Options = ({ town, section, inputFunction }) => {
               onChange={setDateOff}
               minDate={dateOff}
               format={"y/MMM/d"}
-              className="hotels__date-picker"
-              style={{ border: "none" }}
             />
             <p className="nights">
               Pobyt na {Math.ceil((dateOff - dateIn) / 1000 / 60 / 60 / 24)} noc
