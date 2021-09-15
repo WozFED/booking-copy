@@ -69,7 +69,7 @@ const OpinionsReview = ({ openOpinions, categories, setOpenOpinions }) => {
           <div className="all__posts">
             <h4>Opinie gości</h4>
             <div className="posts">
-              <div className="posts__data">Aleksandra Szewczun</div>
+              <div className="posts__data">Marek</div>
               <div className="posts__post">No tak, fajny hotel</div>
             </div>
           </div>
