@@ -3,10 +3,9 @@ import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Towns = ({ towns, pushTherray }) => {
+const Towns = ({ towns }) => {
   return (
     <div className="towns">
-      <Link to="https://www.booking.com/hotel/pl/filmartorun.pl.html?aid=356980;label=gog235jc-1DCAMotgFCBXRvcnVuSB5YA2i2AYgBAZgBHrgBF8gBDNgBA-gBAfgBAogCAagCA7gCturEiAbAAgHSAiQxYWVhMWNhYi1jMzE4LTRkNzktYjk0Yi01NmM5MzY3ODE2NzHYAgTgAgE;sid=879e601b1e34649f0c4da7d1c1bb65eb#map_opened-hotel_header" />
       <div className="towns__wrapper">
         {towns.map((el, index) => {
           return (

@@ -36,7 +36,7 @@ const OpinionsReview = ({ openOpinions, categories, setOpenOpinions }) => {
         </ButtonClose>
       </div>
 
-      <div className={openOpinions ? "opinions__all" : "opinions__test"}>
+      <div className={openOpinions ? "opinions__all" : "opinions__review"}>
         <div className="all">
           <div className="all__header">
             <div className="rating-opinions">
