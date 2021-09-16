@@ -23,21 +23,21 @@ const Facilities = ({ hotel }) => {
         </ul>
       </div>
       <div className="facilities__all">
-        {hotel.facilities.map((el, index) => {
+        {hotel.facilities.map((hotel, index) => {
           return (
             <div style={{ width: 33 + "%" }}>
               <p>
-                <Icon icon={el.icon} /> {el.name}
+                <Icon icon={hotel.icon} /> {hotel.name}
               </p>
               <ul>
-                {el.facilities.map((el, index) => {
+                {hotel.facilities.map((facility, index) => {
                   return (
                     <div>
                       <li>
-                        <p>{el}</p>
+                        <p>{facility}</p>
                       </li>
 
-                      {el.includes("Dodatkowa opłata") ? (
+                      {facility.includes("Dodatkowa opłata") ? (
                         <div className="additional">
                           <p>Dodatkowa opłata</p>
                         </div>

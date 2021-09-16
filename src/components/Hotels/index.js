@@ -23,12 +23,14 @@ const Hotels = ({
       ? "Dobry"
       : null
   }
-  console.log(hotel)
+
   return (
     <div className="hotels__wrapper">
       {loading ? <Loading /> : null}
       <div className={`${loading ? "background-op" : null}`}>
-        <h2>{town}: znaleziono {hotel.length} obiektów</h2>
+        <h2>
+          {town}: znaleziono {hotel.length} obiektów
+        </h2>
         <div className="selects">
           <div className="selects__element">
             <p>Wybrane przez nas</p>
@@ -80,7 +82,7 @@ const Hotels = ({
                   <div className="show__grade">
                     <div className="show__grade-text">
                       <p className="show__grade-main">
-                      {whatGrade(hotel.grade)}
+                        {whatGrade(hotel.grade)}
                       </p>
                       <p className="show__grade-opinion">
                         {hotel.opinions} opinii

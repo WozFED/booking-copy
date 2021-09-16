@@ -1,7 +1,6 @@
 const slash = require("slash")
 const path = require(`path`)
 
-
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
@@ -53,6 +52,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
    }
   `)
+
+ 
   
   data.data.allContentfulHotels.edges.forEach(edge => {
     

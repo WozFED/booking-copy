@@ -1,19 +1,20 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-  
-  module.exports = {
+
+module.exports = {
   siteMetadata: {
     title: `Booking.com`,
     author: `Patryk Woźniak`,
+    description: `Gatsby project`
   },
-  
+
   plugins: [
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        duration: 2500
-      }
+        duration: 2500,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -23,7 +24,7 @@ require("dotenv").config({
         ignore: [`**/\.*`],
       },
     },
-    
+
     {
       resolve: `gatsby-plugin-intl`,
       options: {

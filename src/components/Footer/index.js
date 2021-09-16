@@ -6,9 +6,11 @@ const Footer = () => {
     <div>
       <div className="footer">
         <div className="footer__contact">
-          <h2><FormattedMessage id = "savemoney" /></h2>
+          <h2>
+            <FormattedMessage id="savemoney" />
+          </h2>
           <p>
-            <FormattedMessage id = "exchangeinfo"/>
+            <FormattedMessage id="exchangeinfo" />
           </p>
           <div className="footer__text">
             <input
@@ -16,10 +18,12 @@ const Footer = () => {
               className="input-text"
               placeholder="Adres mailowy"
             ></input>
-            <button className="button-footer"><FormattedMessage id = "subscribe" /></button>
+            <button className="button-footer">
+              <FormattedMessage id="subscribe" />
+            </button>
             <label>
               <input type="checkbox" className="input-checkbox"></input>
-              <FormattedMessage id = "linkforapp" />
+              <FormattedMessage id="linkforapp" />
             </label>
           </div>
         </div>
@@ -27,18 +31,31 @@ const Footer = () => {
       <div className="sharing">
         <div className="sharing__share">
           <button className="button-header another share">
-            <p><FormattedMessage id = "share" /></p>
+            <p>
+              <FormattedMessage id="share" />
+            </p>
           </button>
         </div>
         <div className="sharing__options">
           <div className="sharing__links">
-            <p><FormattedMessage id = "mobileversion"/></p>
-            <p><FormattedMessage id = "youraccount"/></p>
-            <p><FormattedMessage id = "changeres"/></p>
-            <p><FormattedMessage id = "contact"/></p>
-            <p><FormattedMessage id = "beourpartner"/></p>
-            <p><FormattedMessage id = "forbiznes"/></p>
-            
+            <p>
+              <FormattedMessage id="mobileversion" />
+            </p>
+            <p>
+              <FormattedMessage id="youraccount" />
+            </p>
+            <p>
+              <FormattedMessage id="changeres" />
+            </p>
+            <p>
+              <FormattedMessage id="contact" />
+            </p>
+            <p>
+              <FormattedMessage id="beourpartner" />
+            </p>
+            <p>
+              <FormattedMessage id="forbiznes" />
+            </p>
           </div>
         </div>
       </div>

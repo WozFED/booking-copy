@@ -37,10 +37,8 @@ const Information = ({ hotel }) => {
             <i>Wyrównyjemy ceny</i>
           </p>
         </div>
-
-        {/* TU TRZEBA ZROBIĆ HOOVERA */}
         {false ? (
-          <div className="availability">Wyrównyjemy ceny dsdasdasdasdsa</div>
+          <div className="availability">Wyrównyjemy ceny</div>
         ) : null}
       </div>
       <div className="information__date">

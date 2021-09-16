@@ -6,6 +6,7 @@ import SearchHotels from "../components/SearchHotels"
 import Towns from "../components/Towns"
 import CarouselPhoto from "../components/CarouselPhoto"
 import InspirationPosts from "../components/InspirationPosts"
+import SEO from "../components/SEO"
 
 const IndexPage = ({ data }) => {
  

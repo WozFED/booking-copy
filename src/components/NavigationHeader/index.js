@@ -30,7 +30,6 @@ const NavigationHeader = () => {
     id === "2" ? setLanguage(true) : setLanguage(false)
   }
 
-
   useEffect(() => {
     if (window.location.pathname.includes("/en/")) {
       setImage("/english.png")
@@ -66,9 +65,10 @@ const NavigationHeader = () => {
                     <FormattedMessage id={`${el.formatID}`} />
                   ) : null}
                 </p>
-                {el.image !== null ? <img alt = "obrazek" src={image}></img> : null}
+                {el.image !== null ? (
+                  <img alt="obrazek" src={image}></img>
+                ) : null}
               </button>
-              
             </div>
           )
         })}

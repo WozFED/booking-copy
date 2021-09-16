@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Carousel from "react-elastic-carousel"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+
 const ChartElement = styled.div`
   width: ${props => props.level + "%"};
   background-color: #003580;
@@ -9,6 +10,8 @@ const ChartElement = styled.div`
 `
 
 const Opinions = ({ categories, setOpenOpinions }) => {
+
+  const exampleComments = Array(10).fill({"photo": "Zjęcie", "name": "Marcin", "nationality": "Kraj", "comment": "Fajny hotel"})
   return (
     <div className="opinions">
       <h2>Opinie gości</h2>
@@ -24,7 +27,7 @@ const Opinions = ({ categories, setOpenOpinions }) => {
           </div>
 
           <span>Przeczytaj wszystkie opinie</span>
-        </div>{" "}
+        </div>
       </AnchorLink>
       <div className="opinions__charts">
         <h4>Kategorie:</h4>
@@ -47,86 +50,23 @@ const Opinions = ({ categories, setOpenOpinions }) => {
       <div className="opinions__comments">
         <h4>Zobacz co najbardziej podobało się gościom:</h4>
         <Carousel itemsToShow={3}>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
+          {
+          exampleComments.map((el, index)=>{
+            return (
+              <div key = {el.name + index} className = "comments">
+                <div className = "comments__wrapper">
+                <p>{el.photo}</p>
+              <h2>{el.name}</h2>
+              <p>{el.nationality}</p>
               <div className="comments__description">
-                <p>Opis</p>
+                <p>{el.comment}</p>
               </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
+                  </div>
               </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
-              </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
-              </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
-              </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
-              </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
-              </div>
-            </div>
-          </div>
-          <div className="comments">
-            <div className="comments__wrapper">
-              <p>Fotka</p>
-              <h2>Marcin Test</h2>
-              <p>narodowosc</p>
-              <div className="comments__description">
-                <p>Opis</p>
-              </div>
-            </div>
-          </div>
+            )
+          })
+          }
+         
         </Carousel>
       </div>
     </div>

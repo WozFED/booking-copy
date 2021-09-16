@@ -31,7 +31,6 @@ const InspirationPosts = ({ posts }) => {
                     fluid={post.background.fluid}
                   >
                     <div className="inspiration__element-text">
-                      {" "}
                       <h3>{post.name}</h3>
                       <p>{post.paragraph}</p>
                     </div>

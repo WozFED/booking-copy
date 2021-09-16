@@ -18,7 +18,7 @@ const Loading = () => {
               <h4>Bezpieczna rezerwacja</h4>
               <p>
                 Gdy dokonujesz rezerwacji przez nasz portal. Twoje dane
-                chronione są za pomocą bezpiecznego połączenia{" "}
+                chronione są za pomocą bezpiecznego połączenia
               </p>
             </div>
           </div>
