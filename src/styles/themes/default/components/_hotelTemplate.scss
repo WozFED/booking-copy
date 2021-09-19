@@ -1,7 +1,7 @@
 .hotel {
   width: 100%;
   &__header {
-    margin-top: 10px;
+    margin-top: $space-x-small;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@
 }
 
 .photos {
-  margin-bottom: 25px;
+  margin-bottom: $space-x-standard;
   &__big {
     display: flex;
     flex-direction: column;
@@ -43,146 +43,141 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 25px;
+    font-size: $space-x-standard;
     text-align: center;
     p {
-      margin-top: 10px;
+      margin-top: $space-x-small;
       font-size: 14px;
-      color: #969696;
+      color: $c-dustyGray;
     }
   }
 }
 
 .description {
-    display: flex;
-    &__column {
-     width: 64%;
-     h4 {
-    margin: 5px 0;
+  display: flex;
+  &__column {
+    width: 64%;
+    h4 {
+      margin: $space-xsx-small 0;
+    }
   }
- }
- &__info {
-     width: 36%;
- }
-  
+  &__info {
+    width: 36%;
+  }
+
   &__facilities {
     ul {
       list-style-type: none;
       display: flex;
-      font-size: 20px;
+      font-size: $space-standard;
       width: 100%;
       flex-wrap: wrap;
       li {
         display: flex;
         align-items: center;
         margin-right: 8px;
-        color: green;
+        color: $c-japaneseLaurel;
         p {
           font-size: 14px;
           margin-left: 2px;
-          color: black;
+          color: $c-black;
         }
       }
     }
   }
   p {
-    margin: 10px 0;
+    margin: $space-x-small 0;
     font-size: 14px;
   }
 }
 
 .information {
-    width: 100%;
-    
-    &__footer {
-       float: right;
-     }  
-     
-    
-    &__booking {
-        border: 1px solid #008009;
-        background-color: #e7fde9;
-        display: flex;
-        padding: 16px;
-        margin-bottom: 15px;
-        
-       div:nth-of-type(1){
-           color: #008009;
-           display: flex;
-           font-size: 25px;
-           justify-content: center;
-           margin-right: 16px;
+  width: 100%;
 
-       }
-       div:nth-of-type(2){
-           color: black;
-        p{
-            margin-top: 10px;
-            font-size: 14px;
-        }
-       }
+  &__footer {
+    float: right;
+  }
+
+  &__booking {
+    border: 1px solid $c-japaneseLaurel;
+    background-color: $c-feta;
+    display: flex;
+    padding: 16px;
+    margin-bottom: $space-small;
+
+    div:nth-of-type(1) {
+      color: $c-japaneseLaurel;
+      display: flex;
+      font-size: $space-x-standard;
+      justify-content: center;
+      margin-right: 16px;
     }
-    &__covid {
-        background-color: #fff0e0;
-        border: 1px solid #ff8000;
-        display: flex;
-        padding: 16px;
-        div:nth-of-type(1){
-            color:  #ff8000;
-            display: flex;
-            font-size: 25px;
-            justify-content: center;
-            margin-right: 16px;
- 
-        }
-        div:nth-of-type(2){
-            color: black;
-            p{
-                font-size: 14px;
-            }
-           }
+    div:nth-of-type(2) {
+      color: $c-black;
+      p {
+        margin-top: $space-x-small;
+        font-size: 14px;
+      }
     }
-    &__availability {
-        
-        padding: 10px 0;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        div {
-            display: flex;
-            align-items: center;
-        }
-        p{
-            padding-left: 2px;
-            font-size: 14px;
-        }
+  }
+  &__covid {
+    background-color: $c-peachCream;
+    border: 1px solid $c-flushOrange;
+    display: flex;
+    padding: 16px;
+    div:nth-of-type(1) {
+      color: $c-flushOrange;
+      display: flex;
+      font-size: $space-x-standard;
+      justify-content: center;
+      margin-right: 16px;
     }
-    &__date {
-        background-color: #ffe08a;
-        border-top: 1px solid #cd8900;
-        border-bottom: 1px solid #cd8900;
-        h4{
-            padding: 10px;
-        }
+    div:nth-of-type(2) {
+      color: $c-black;
+      p {
+        font-size: 14px;
+      }
     }
-   
+  }
+  &__availability {
+    padding: $space-x-small 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+    }
+    p {
+      padding-left: 2px;
+      font-size: 14px;
+    }
+  }
+  &__date {
+    background-color: $c-salomie;
+    border-top: 1px solid $c-pirateGold;
+    border-bottom: 1px solid $c-pirateGold;
+    h4 {
+      padding: $space-x-small;
+    }
+  }
 }
 
 .date-wrapper {
-    display:flex;
+  display: flex;
 }
 .date-input {
-    width: 200px;
-    height: 40px;
-    background-color: white;
+  width: 200px;
+  height: $space-large;
+  background-color: $c-white;
 }
 
 .date-calendar {
-    position: absolute;
-    left: 10px;
-    top: 61px;
+  position: absolute;
+  left: $space-x-small;
+  top: 61px;
 }
 
 .to {
-    left: 359px
+  left: 359px;
 }

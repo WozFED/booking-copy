@@ -1,138 +1,139 @@
 .button {
-    &-search {
-        background-color: #0071c2;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        width: 100%;
-        height: 50px;
-        font-size: 20px;
+  &-search {
+    background-color: $c-lochmara;
+    color: $c-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 100%;
+    height: $space-x-large;
+    font-size: $space-standard;
+  }
+  &-header {
+    background-color: $c-white;
+    border: 1px solid blue;
+    height: 38px;
+    margin: $space-xsx-small;
+    p {
+      font-weight: 500;
+      padding: $space-x-small;
+      color: $c-resolutionBlue;
     }
-    &-header {
-        background-color: white;
-        border: 1px solid blue;
-        height: 38px;
-        margin: 5px;
-        p{
-            font-weight: 500;
-            padding: 10px;
-            color: rgb(0, 50, 130)
-        }
+  }
+  &-icons {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      cursor: pointer;
     }
-    &-icons {
-        background-color: transparent;
-        border: none; 
-        width: 100%;
-        height: 100%;
-        &:hover {
-            cursor: pointer;
-        }
-        img {
-            width: 25px;
-            height: 25px;
-            border-radius: 50px;
-        }
-    
+    img {
+      width: $space-x-standard;
+      height: $space-x-standard;
+      border-radius: $space-x-large;
     }
-    &-price {
-        margin-top: 90px;
-        width: 125px;
-        height: 40px;
-        background-color: #0071c2;
-        border: none;
-        border-radius: 2px;
-        color: white;
-        font-size: 16px;
-        font-weight: 700;
-        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  &-price {
+    margin-top: 90px;
+    width: 125px;
+    height: $space-large;
+    background-color: $c-lochmara;
+    border: none;
+    border-radius: 2px;
+    color: $c-white;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif;
+  }
+  &-footer {
+    height: 48px;
+    width: 30%;
+    background-color: $c-lochmara;
+    color: $c-white;
+    font-size: $space-standard;
+    font-weight: 300;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif;
+    line-height: 24px;
+    border: none;
+    border-radius: 2px;
+  }
+  &-avaiable {
+    background-color: $c-lochmara;
+    color: $c-white;
+    width: 170px;
+    height: 35px;
+    margin-bottom: $space-xsx-small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif;
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $space-large;
+    height: $space-large;
+    background: $c-lochmara;
+    border-radius: $space-xsx-small 0 0 $space-xsx-small;
+    color: $c-white;
+    cursor: pointer;
+    text-align: center;
+    font-size: $space-standard;
+    line-height: 16px;
+    outline: none;
+    border: none;
+    &:hover {
+      cursor: pointer;
     }
-    &-footer {
-        height: 48px;
-        width: 30%;
-        background-color: #0071c2;
-        color: white;
-        font-size: 20px;
-        font-weight: 300;
-        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-        line-height: 24px;
-        border: none;
-        border-radius: 2px;
-    }
-    &-avaiable {
-        background-color: #0071c2;
-        color: white;
-        width: 170px;
-        height: 35px;
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        border: none;
-        border-radius: 2px;
-        font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    
-       &-close {
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           width: 40px;
-           height: 40px;
-        background: #0071c2;
-        border-radius: 5px 0 0 5px;
-        color: #fff;
-        cursor: pointer;
-        text-align: center;
-        font-size: 20px;
-        line-height: 16px;
-        outline: none;
-        border: none;
-        &:hover {
-            cursor: pointer
-        }
-       }
-    &-article {
-        position: absolute;
-        top: 7px;
-        right: 15px;
-    }
-    &-input {
-        height: 100%;
-        width: 100%;
-    }
-    &-choose {
-        width: 25px;
-        height: 25px;
-        background-color: transparent;
-        border: none;
-        outline:rgb(0, 50, 130);
-        font-size: 20px;
-    }
-    
+  }
+  &-article {
+    position: absolute;
+    top: 7px;
+    right: $space-small;
+  }
+  &-input {
+    height: 100%;
+    width: 100%;
+  }
+  &-choose {
+    width: $space-x-standard;
+    height: $space-x-standard;
+    background-color: transparent;
+    border: none;
+    outline: $c-resolutionBlue;
+    font-size: $space-standard;
+  }
 }
 
 .another {
-    background-color: transparent;
-    border: 1px solid white;
-    p {
-        color: white;
-    }
+  background-color: transparent;
+  border: 1px solid $c-white;
+  p {
+    color: $c-white;
+  }
 }
 
 .share {
-    height: 29px;
-    border-radius: 3px;
-    p{
-        margin: 0;
-        padding: 0 15px;
-        font-size: 13px;
-        font-weight: 400;
-    }
-    &:hover {
-        background-color: #335d99;
-        cursor: pointer;
-    }
+  height: 29px;
+  border-radius: 3px;
+  p {
+    margin: 0;
+    padding: 0 $space-small;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  &:hover {
+    background-color: $c-azure;
+    cursor: pointer;
+  }
 }

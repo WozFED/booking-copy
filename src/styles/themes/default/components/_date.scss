@@ -1,31 +1,31 @@
 .date {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding:$space-x-small;
     width: 90%;
   position: relative;
     &__wrapper {
-        margin-right: 30px;
+        margin-right: $space-medium;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
     }
     &__input {
         width: 200px;
-        background-color: white;
-        height: 40px;
+        background-color: $c-white;
+        height: $space-large;
         
             display: flex;
             align-items: center;
             span{
-                margin-right: 5px;
+                margin-right: $space-xsx-small;
             }
         
     }
     &__label {
         label {
         padding-top: 16px;
-        padding-right: 10px;
+        padding-right:$space-x-small;
         padding-bottom: 6px;
         display: flex;
         align-items: center;
@@ -36,7 +36,7 @@
         }
         
         select {
-            margin-left: 5px;
+            margin-left: $space-xsx-small;
             outline: none;
         }
     }

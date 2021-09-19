@@ -2,8 +2,8 @@
   margin-top: 25px;
   width: 100%;
   height: 254px;
-  background-color: #00224f;
-  color: white;
+  background-color: $c-prussianBlue;
+  color: $c-white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
       font-weight: 300;
     }
     p {
-      color: #bdbdbd;
+      color: $c-silver;
     }
   }
   &__text {
@@ -26,7 +26,7 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: $space-x-small;
     flex-wrap: wrap;
   }
 }
@@ -36,24 +36,24 @@
   height: 48px;
   border-radius: 2px;
   border: none;
-  margin-right: 5px;
-  font-size: 20px;
-  padding: 5px;
+  margin-right: $space-xsx-small;
+  font-size: $space-standard;
+  padding: $space-xsx-small;
   font-weight: 300;
   font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
     Arial, sans-serif;
 }
 
 .input-checkbox {
-  margin-top: 10px;
+  margin-top: $space-x-small;
 }
 
 .sharing {
   width: 100%;
-  background-color: #003580;
+  background-color: $c-resolutionBlue;
   &__share {
-    border-bottom: 1px solid #bad4f7;
-    height: 60px;
+    border-bottom: 1px solid $c-tropicalBlue;
+    height: $space-xs-large;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,9 +68,9 @@
     flex-wrap: wrap;
     p {
       text-decoration: underline;
-      padding: 10px 10px;
+      padding: $space-x-small$space-x-small;
       font-size: 13px;
-      color: white;
+      color: $c-white;
       font-weight: 700;
       cursor: pointer;
       display: inline-block;

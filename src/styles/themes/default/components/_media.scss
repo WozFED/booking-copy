@@ -3,7 +3,7 @@
     display: none;
   }
   .article__wrapper {
-      width: 80%;
+    width: 80%;
   }
   .inputs {
     height: 200px;
@@ -14,10 +14,10 @@
       padding: 0;
     }
     &__element {
-      height: 40px;
-      font-size: 10px;
+      height: $space-large;
+      font-size: $space-x-small;
       input {
-        font-size: 10px;
+        font-size: $space-x-small;
       }
     }
   }
@@ -62,7 +62,7 @@
     }
     &__wrapper {
       width: 80%;
-      padding-left: 5px;
+      padding-left: $space-xsx-small;
     }
     &__container {
       width: 100%;
@@ -83,21 +83,20 @@
   }
   .opinions__comments {
     div.rec.rec-carousel {
-        left: 0;
+      left: 0;
     }
   }
   .facilities__all {
-      width: 75%;
+    width: 75%;
   }
   .hotel {
-      width: 100%;
+    width: 100%;
   }
   .gallery-big {
-      width: 60%;
-
+    width: 60%;
   }
   .gallery-small {
-      width: 38%;
+    width: 38%;
   }
 }
 
@@ -122,10 +121,10 @@
         a {
           padding: 0;
           p {
-            font-size: 10px;
+            font-size: $space-x-small;
           }
           span {
-            font-size: 15px;
+            font-size: $space-small;
           }
         }
       }
@@ -133,15 +132,15 @@
   }
   .slider {
     button.rec.rec-arrow-left {
-      top: 40px;
-      left: -15px;
+      top: $space-large;
+      left: -$space-small;
     }
     &__wrapper {
       p:first-of-type {
         font-size: 12px;
       }
       p:last-of-type {
-        font-size: 10px;
+        font-size: $space-x-small;
       }
     }
     &__photo {
@@ -165,12 +164,11 @@
     padding: 0;
   }
   .rating {
-    height: 40px;
+    height: $space-large;
   }
   .facilities__all {
-      display: none;
+    display: none;
   }
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -178,7 +176,7 @@
     display: none;
   }
   .article__footer {
-      display: none;
+    display: none;
   }
   .inputs {
     height: 400px;
@@ -192,7 +190,7 @@
       align-items: center;
     }
     &__element {
-      margin: 5px;
+      margin: $space-xsx-small;
       font-size: 14px;
       width: 200px;
       border: 4px solid #febb02;
@@ -266,7 +264,7 @@
     &__show {
       width: 90%;
       justify-content: space-between;
-      padding: 25px 0;
+      padding: $space-x-standard 0;
     }
   }
   .show__grade {

@@ -1,155 +1,146 @@
 .rules {
-    margin-top: 25px;
-    &__wrapper {
-        padding: 35px 15px;
-        p {
-            font-size: 14px;
-        }
+  margin-top: $space-x-standard;
+  &__wrapper {
+    padding: 35px $space-small;
+    p {
+      font-size: 14px;
     }
-    &__header {
-        display: flex;
+  }
+  &__header {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-        p {
-            color: #6b6b6b;
-            font-size: 13px;
-            font-weight: 700;
-            margin: 10px 0;
-        }
+    p {
+      color: $c-doveGray;
+      font-size: 13px;
+      font-weight: 700;
+      margin: $space-x-small 0;
     }
-    &__section {
-        display: inline-block;
-        background-color: #ebf3ff;
-    }
+  }
+  &__section {
+    display: inline-block;
+    background-color: $c-zumthor;
+  }
 }
 
 .check {
-    padding: 15px 0;
+  padding: $space-small 0;
+  display: flex;
+  flex-wrap: wrap;
+  p {
+    font-size: 14px;
+  }
+  &__title {
+    width: 20%;
+    height: $space-x-large;
     display: flex;
-    flex-wrap: wrap;
-     p{
-            font-size: 14px;
-        }
-    &__title {
-        width: 20%;
-        height: 50px;
-        display: flex;
-       p {
-           margin: 0;
-       }
-       
+    p {
+      margin: 0;
     }
-    &__chart {
-        width: 75%;
-        position: relative;
+  }
+  &__chart {
+    width: 75%;
+    position: relative;
+  }
+  &__hour {
+    width: 300px;
+    background-color: $c-gray;
+    border-radius: $space-xsx-small;
+    height: $space-small;
+    &-hour {
+      background-color: $c-japaneseLaurel;
+      width: 50%;
+      height: 100%;
+      border-top-left-radius: $space-xsx-small;
+      border-bottom-left-radius: $space-xsx-small;
     }
-    &__hour {
-        width: 300px;
-        background-color: gray;
-        border-radius: 5px;
-        height: 15px;
-        &-hour{
-            background-color: green;
-            width: 50%;
-            height: 100%;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
+  }
+  &__info {
+    padding-top: $space-medium;
+    padding-left: 150px;
+    font-size: 14px;
+    color: $c-doveGray;
+  }
+  &__icon {
+    font-size: $space-standard;
+    margin-right: $space-xsx-small;
+  }
+
+  &__text {
+    width: 70%;
+    text-align: justify;
+    div {
+      margin-bottom: $space-standard;
     }
-    &__info {
-        padding-top: 30px;
-        padding-left: 150px;
+    &-title {
+      font-size: 14px;
+      margin-bottom: $space-standard;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    &-text {
+      p {
+        margin: $space-x-small 0;
         font-size: 14px;
-        color: #6b6b6b;
+      }
     }
-    &__icon {
-        font-size: 20px;
-        margin-right: 5px;
+
+    img {
+      border-radius: $space-xsx-small;
+      margin-right: $space-xsx-small;
+      width: 60px;
     }
-    
-    &__text {
-        width: 70%;
-        text-align: justify;
-        div {
-            margin-bottom: 20px;
-        }
-        &-title{
-            font-size: 14px;
-        margin-bottom: 20px;
-        margin-top: 0;
-        font-weight: 600;
-        }
-        &-text {
-            p {
-                margin: 10px 0;
-                font-size: 14px;
-            }
-        }
-        
-       
-    
-            
-            img {
-                border-radius: 5px;
-                margin-right: 5px;
-                width:60px;
-            }
-        }    
-    
+  }
 }
-
-
-
-    
 
 .bubble {
-    position: relative;
-    left: 115px;
-    top: 5px;
-    width: 65px;
-    height: 28px;
-    padding: 0px;
-    background: #FFFFFF;
-    border-radius: 2px;
-    border: #7E7F7F solid 1px;
+  position: relative;
+  left: 1$space-small;
+  top: $space-xsx-small;
+  width: $space-xsx-large;
+  height: 28px;
+  padding: 0px;
+  background: $c-white;
+  border-radius: 2px;
+  border: 1px solid $c-gunsmoke;
 }
-.bubble:after
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 0 8px 6px;
-border-color: #FFFFFF transparent;
-display: block;
-width: 0;
-z-index: 1;
-margin-left: -8px;
-top: -6px;
-left: 50%;
+.bubble:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 0 8px 6px;
+  border-color: $c-white transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-left: -8px;
+  top: -6px;
+  left: 50%;
 }
 
-.bubble:before
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 0 8px 6px;
-border-color: #7E7F7F transparent;
-display: block;
-width: 0;
-z-index: 0;
-margin-left: -8px;
-top: -7px;
-left: 50%;
+.bubble:before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 0 8px 6px;
+  border-color: $c-gunsmoke transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  margin-left: -8px;
+  top: -7px;
+  left: 50%;
 }
 
 .checkinout {
-    position: absolute;
-    font-size: 13px;
-    top: -20px;  
+  position: absolute;
+  font-size: 13px;
+  top: -20px;
 }
 
 .imp {
-    padding: 15px 15px;
-    p { margin: 5px 0}
+  padding: $space-small $space-small;
+  p {
+    margin: $space-xsx-small 0;
+  }
 }

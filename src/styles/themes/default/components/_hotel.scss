@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   &__wrapper {
     width: 814px;
-    padding-left: 25px;
+    padding-left: $space-x-standard;
   }
   &__container {
     width: 814px;
@@ -17,11 +17,11 @@
     width: 17.5%;
   }
   &__window {
-    border: 1px solid #bdbdbd;
+    border: 1px solid $c-silver;
     border-radius: 2px;
     width: 100%;
     display: flex;
-    margin: 20px 0;
+    margin: $space-standard 0;
   }
   &__date {
     &-picker {
@@ -43,55 +43,52 @@
     align-items: center;
   }
   &__general {
-      width: 100%;
-      display: table;
     width: 100%;
-      ul {
-        background-color: #ebf3ff;
-    display: table-row;
-    padding: 0;
-    list-style: none;
-    font-size: 14px;
-    li{
-      display: table-cell;
-    border-right: 1px solid #fff;
-    text-align: center;
-    a {
-      display: block;
-    }
-    p {
-    text-decoration: none;
-    font-weight: normal;
-    position: relative;
-    color: #0071c2;
-    font-weight: 700;
-    }
-    }
+    display: table;
+    width: 100%;
+    ul {
+      background-color: $c-zumthor;
+      display: table-row;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      li {
+        display: table-cell;
+        border-right: 1px solid $c-white;
+        text-align: center;
+        a {
+          display: block;
+        }
+        p {
+          text-decoration: none;
+          font-weight: normal;
+          position: relative;
+          color: $c-lochmara;
+          font-weight: 700;
+        }
       }
+    }
   }
   &__table {
     a {
-      padding: 10px;
+      padding: $space-x-small;
     }
-    
   }
   &__equal {
     border-radius: 3px;
-    background: #ebf3ff;
+    background: $c-zumthor;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: $space-x-small;
     display: flex;
     align-items: center;
     justify-content: center;
-    p{
-      padding: 10px 5px;
+    p {
+      padding: $space-x-small $space-xsx-small;
       margin: 0;
       font-size: 14px;
       font-weight: 600;
-      
     }
   }
-  
 }
 
 .window {
@@ -100,10 +97,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: $space-small 0;
 
     &-postcard {
-      margin-left: 15px;
+      margin-left: $space-small;
       width: 200px;
       height: 200px;
     }
@@ -113,7 +110,7 @@
     }
   }
   &__description {
-    padding: 25px 10px;
+    padding: $space-x-standard$space-x-small;
     width: 50%;
 
     p {
@@ -124,12 +121,12 @@
       align-items: baseline;
       h2 {
         padding-right: 2px;
-        color: #0071c2;
+        color: $c-lochmara;
       }
     }
   }
   &__show {
-    padding: 25px 10px;
+    padding: $space-x-standard$space-x-small;
     display: flex;
     width: 22%;
     flex-wrap: wrap;
@@ -152,28 +149,28 @@
     }
     &-opinion {
       font-size: 14px;
-      color: gray;
+      color: $c-gray;
       font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
         Helvetica, Arial, sans-serif;
     }
-    
+
     &-text {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      padding-right: 10px;
+      padding-right: $space-x-small;
     }
   }
 }
 .options {
   &__header {
-    border: 1px solid #bdbdbd;
+    border: 1px solid $c-silver;
     width: 100%;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     h3 {
-      padding: 5px;
-      font-size: 15px;
+      padding: $space-xsx-small;
+      font-size: $space-small;
     }
   }
   &__box {
@@ -182,37 +179,37 @@
       border-bottom-right-radius: 2px;
     }
 
-    border: 1px solid #bdbdbd;
+    border: 1px solid $c-silver;
     border-top: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     h4 {
-      padding: 5px;
-      padding-left: 10px;
+      padding: $space-xsx-small;
+      padding-left: $space-x-small;
       padding-bottom: 0;
       font-size: 14px;
     }
     label {
-      padding: 5px;
+      padding: $space-xsx-small;
       padding-top: 0;
       display: flex;
       p {
         width: 80%;
         font-size: 12px;
         padding-top: 7px;
-        padding-bottom: 10px;
+        padding-bottom: $space-x-small;
         font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
           Helvetica, Arial, sans-serif;
       }
     }
   }
   &__date {
-    background-color: #febb02;
+    background-color: $c-selectiveYellow;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: $space-x-small;
     border-radius: 2px;
     p {
       font-size: 12px;
@@ -226,9 +223,9 @@
   width: 90%;
   position: relative;
   h2 {
-    font-size: 20px;
+    font-size: $space-standard;
     font-weight: 500;
-    padding-top: 20px;
+    padding-top: $space-standard;
   }
   &__selects {
     display: flex;
@@ -249,15 +246,15 @@
 }
 
 .nights {
-  padding-bottom: 5px;
+  padding-bottom: $space-xsx-small;
 }
 .input-check {
   display: flex;
   align-items: center;
-  padding: 5px 0;
+  padding: $space-xsx-small 0;
   p {
-    padding-left: 10px;
-    padding-bottom: 5px;
+    padding-left: $space-x-small;
+    padding-bottom: $space-xsx-small;
   }
 }
 .button-check {
@@ -265,31 +262,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: $space-standard;
 }
 .checkbox {
   position: relative;
-  background: white;
-  width: 20px;
-  height: 20px;
+  background: $c-white;
+  width: $space-standard;
+  height: $space-standard;
   border-radius: 3px;
   font-size: 14px;
-  margin: 5px;
+  margin: $space-xsx-small;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid #bdbdbd;
+  border: 1px solid $c-silver;
 }
 .checkbox:after {
   position: absolute;
   top: 5%;
   display: block;
   line-height: 32px;
-  background: #fff;
+  background: $c-white;
   box-sizing: border-box;
   text-align: center;
   transition: all 0.3s ease-in 0s;
-  color: black;
-  border: 1px solid #bdbdbd;
+  color: $c-black;
+  border: 1px solid $c-silver;
   border-radius: 3px;
 }
 .image {
@@ -297,37 +294,37 @@
     border-radius: 2px;
   }
   &-gallery {
-    width: 60px;
-    height: 60px;
+    width: $space-xs-large;
+    height: $space-xs-large;
   }
 }
 .selects {
   width: 100%;
   display: flex;
-  margin: 25px 0;
+  margin: $space-x-standard 0;
   &__element {
-    background-color: white;
+    background-color: $c-white;
     height: 35px;
     justify-content: center;
     display: flex;
     align-items: center;
-    border: 0.5px solid #0071c2;
+    border: 0.5px solid $c-lochmara;
     border-left: none;
     &:hover {
       cursor: pointer;
     }
     &:first-of-type {
       width: 25%;
-      background-color: #0071c2;
-      color: white;
+      background-color: $c-lochmara;
+      color: $c-white;
     }
     &:nth-child(2) {
       width: 30%;
-      color: #0071c2;
+      color: $c-lochmara;
     }
     &:last-child {
       width: 45%;
-      color: #0071c2;
+      color: $c-lochmara;
     }
   }
 }
@@ -339,18 +336,18 @@
   &__wrapper {
     display: flex;
     width: 1100px;
-    padding: 10px 0;
-    color: rgb(0, 113, 194);
+    padding: $space-x-small 0;
+    color: $c-lochmara;
     align-items: center;
     p {
       font-size: 12px;
-      padding: 0 10px;
-      color: #0071c2;
+      padding: 0$space-x-small;
+      color: $c-lochmara;
     }
     a {
       margin: 0;
       padding: 0;
-      color: #0071c2;
+      color: $c-lochmara;
     }
   }
 }
@@ -358,17 +355,17 @@
 .pagination {
   height: 70px;
   &__header {
-    height: 30px;
+    height: $space-medium;
     display: flex;
     align-items: center;
-    p{
+    p {
       font-size: 14px;
     }
   }
   &__list {
     width: 100%;
-    height: 40px;
-    border: 1px solid lightgray;
+    height: $space-large;
+    border: 1px solid $c-alto;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -377,7 +374,7 @@
       list-style-type: none;
       width: 100%;
       li {
-        margin: 0 5px;
+        margin: 0 $space-xsx-small;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -403,41 +400,41 @@
         justify-content: center;
         width: 100%;
         height: 100%;
-        color: #0071c2;
+        color: $c-lochmara;
         margin: 0;
         &:hover {
-          background-color: #0071c2;
-          color: white;
+          background-color: $c-lochmara;
+          color: $c-white;
         }
       }
     }
     &-notcurrent {
       height: 24px;
       width: 24px;
-      color: #0071c2;
+      color: $c-lochmara;
       a {
-        color: #0071c2;
+        color: $c-lochmara;
       }
       &:hover {
-        background-color: #0071c2;
-        color: white;
+        background-color: $c-lochmara;
+        color: $c-white;
         cursor: pointer;
         a {
-          color: white;
+          color: $c-white;
         }
       }
     }
     &-current {
       height: 24px;
       width: 24px;
-      color: #6b6b6b;
+      color: $c-doveGray;
       a {
-        color: #6b6b6b;
+        color: $c-doveGray;
       }
       border: 1px solid lightgray;
       &:hover {
-        background-color: white;
-        cursor: context-menu
+        background-color: $c-white;
+        cursor: context-menu;
       }
     }
     &-disable {
@@ -454,11 +451,11 @@
         justify-content: center;
         width: 100%;
         height: 100%;
-        color: #0071c2;
+        color: $c-lochmara;
         margin: 0;
       }
       &:hover {
-        background-color: white;
+        background-color: $c-white;
         cursor: no-drop;
       }
     }

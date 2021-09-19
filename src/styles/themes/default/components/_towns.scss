@@ -1,39 +1,39 @@
 .towns {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__wrapper {
+    width: 1100px;
     display: flex;
-    justify-content: center;
-    &__wrapper {
-        width: 1100px;
-        display: flex;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  &__photo {
+    display: flex;
+    align-items: center;
+    &-text {
+      padding-top: $space-x-standard;
+      padding-left: $space-small;
+      padding-right: $space-small;
+      h2,
+      h3 {
+        margin-bottom: $space-xsx-small;
+        color: $c-white;
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 1.78em;
+        line-height: 1;
+        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+        text-shadow: 1px 1px 1px $c-black;
+      }
+      h3 {
+        font-weight: normal;
+        font-size: 16px;
+        text-shadow: 1px 1px 1px $c-black;
+        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+      }
     }
-    &__photo {
-        display: flex;
-        align-items: center;
-        &-text {
-        padding-top: 25px;
-        padding-left: 15px;
-        padding-right: 15px;
-        h2, h3{
-            margin-bottom: 5px;
-            color: white
-        }
-        h2 {
-            font-weight: bold;
-            font-size: 1.78em;
-            line-height: 1;
-            font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-            text-shadow: 1px 1px 1px black;
-        }
-        h3 {
-            font-weight: normal;
-            font-size: 16px;
-            text-shadow: 1px 1px 1px black;
-            font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-        }  
-        }
-        
-        
-    }
-    
+  }
 }

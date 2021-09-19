@@ -1,30 +1,26 @@
 .opinions {
   &__grade {
-    height: 30px;
+    height: $space-medium;
     display: flex;
     align-items: center;
-    margin: 25px 0;
+    margin: $space-x-standard 0;
     a {
-      color: black
+      color: black;
     }
     p {
-        font-size: 16px;
-        font-weight: 500;
-        
+      font-size: 16px;
+      font-weight: 500;
     }
     span {
-        font-size: 14px;
-        font-weight: 500;
-        color: #0071c2;
+      font-size: 14px;
+      font-weight: 500;
+      color: $c-lochmara;
     }
     &:hover {
-       cursor: pointer;
-       span {
-           color: #bc5b01;
-       }
-            
-           
-       
+      cursor: pointer;
+      span {
+        color: $c-roseSharon;
+      }
     }
   }
   &__show {
@@ -39,7 +35,7 @@
     opacity: 1;
   }
   &__all {
-    background-color: white;
+    background-color: $c-white;
     width: 60%;
     height: 100%;
     overflow: scroll;
@@ -56,7 +52,7 @@
     opacity: 1;
   }
   &__review {
-    background-color: white;
+    background-color: $c-white;
     width: 60%;
     height: 100%;
     overflow: scroll;
@@ -73,38 +69,31 @@
     transition: right 1s, opacity 1s;
   }
   &__charts {
-    margin: 25px 0;
-    h4{
+    margin: $space-x-standard 0;
+    h4 {
       font-size: 16px;
       font-weight: 700;
-      margin: 15px 0;
+      margin: $space-small 0;
     }
-    
-}
+  }
   &__comments {
-      width: 100%;
-    }
+    width: 100%;
+  }
 }
 
 .all {
   width: 100%;
   height: 100%;
-  padding: 25px;
+  padding: $space-x-standard;
   &__header {
     display: flex;
   }
 }
 
-
-
-
-
-
 .list {
-   
-    h4{
-        margin: 25px 0;
-    }
+  h4 {
+    margin: $space-x-standard 0;
+  }
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -118,17 +107,17 @@
       width: 100%;
       padding: 0;
       margin: 0;
-      white-space: nowrap;
+      $c-white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: 14px;
-      line-height: 20px;
+      line-height: $space-standard;
       font-weight: 400;
     }
     p:last-of-type {
       float: right;
       vertical-align: top;
-      width: 30px;
+      width: $space-medium;
       text-align: right;
       font-size: 12px;
       line-height: 18px;
@@ -137,8 +126,8 @@
   }
   &-element {
     vertical-align: top;
-    height: 10px;
-    background-color: #ebf3ff;
+    height: $space-x-small;
+    background-color: $c-zumthor;
     position: relative;
     overflow: hidden;
     margin-top: 3px;
@@ -146,10 +135,9 @@
   }
 }
 
-
 .comments {
   width: 100%;
   height: 100%;
-  margin-right: 10px;
-  border: 1px solid gray;
+  margin-right: $space-x-small;
+  border: 1px solid $c-gray;
 }
