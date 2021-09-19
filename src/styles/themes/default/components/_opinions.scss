@@ -8,11 +8,11 @@
       color: black;
     }
     p {
-      font-size: 16px;
+      font-size: pxToRem(16px);
       font-weight: 500;
     }
     span {
-      font-size: 14px;
+      font-size: pxToRem(14px);
       font-weight: 500;
       color: $c-lochmara;
     }
@@ -71,7 +71,7 @@
   &__charts {
     margin: $space-x-standard 0;
     h4 {
-      font-size: 16px;
+      font-size: pxToRem(16px);
       font-weight: 700;
       margin: $space-small 0;
     }
@@ -110,7 +110,7 @@
       $c-white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 14px;
+      font-size: pxToRem(14px);
       line-height: $space-standard;
       font-weight: 400;
     }
@@ -119,7 +119,7 @@
       vertical-align: top;
       width: $space-medium;
       text-align: right;
-      font-size: 12px;
+      font-size: pxToRem(12px);
       line-height: 18px;
       font-weight: 500;
     }

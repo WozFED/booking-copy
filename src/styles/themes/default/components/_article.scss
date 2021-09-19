@@ -10,7 +10,7 @@
     div {
       margin: $space-xsx-small 0;
       h1 {
-        font-size: 48px !important;
+        font-size: pxToRem(48px) !important;
         line-height: 62px !important;
         color: $c-mineShaft;
         font-weight: 700;
@@ -20,7 +20,7 @@
         margin: $space-x-small 0;
       }
       p:first-of-type {
-        font-size: 13px;
+        font-size: pxToRem(13px);
         font-weight: 400;
         color: $c-mineShaft;
         display: flex;
@@ -34,7 +34,7 @@
       h2 {
         color: $c-mineShaft;
         font-weight: bold;
-        font-size: 24px !important;
+        font-size: pxToRem(24px) !important;
         line-height: 32px !important;
         margin-top: 16px;
       }
@@ -74,7 +74,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 18px;
+    font-size: pxToRem(18px);
     box-shadow: 0 1px 8px 0 rgb(0 0 0 / 12%), 0 2px 3px -1px rgb(0 0 0 / 20%);
 
     input {
@@ -82,7 +82,7 @@
       height: 80%;
       margin-left: $space-standard;
       border: none;
-      font-size: 16px;
+      font-size: pxToRem(16px);
       font-weight: 600;
     }
   }
@@ -101,7 +101,7 @@
     align-items: center;
     justify-content: center;
     span {
-      font-size: 18px;
+      font-size: pxToRem(18px);
       color: $c-mineShaft;
       padding: 0$space-x-small;
     }

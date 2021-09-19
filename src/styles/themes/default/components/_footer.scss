@@ -13,7 +13,7 @@
     flex-direction: column;
     align-items: center;
     h2 {
-      font-size: 24px;
+      font-size: pxToRem(24px);
       font-weight: 300;
     }
     p {
@@ -37,7 +37,7 @@
   border-radius: 2px;
   border: none;
   margin-right: $space-xsx-small;
-  font-size: $space-standard;
+  font-size: pxToRem($space-standard);
   padding: $space-xsx-small;
   font-weight: 300;
   font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
@@ -69,7 +69,7 @@
     p {
       text-decoration: underline;
       padding: $space-x-small$space-x-small;
-      font-size: 13px;
+      font-size: pxToRem(13px);
       color: $c-white;
       font-weight: 700;
       cursor: pointer;

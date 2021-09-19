@@ -1,5 +1,5 @@
 .slider {
-  width: 1100px;
+  width: $grid-lg;
   margin: 0 auto;
   padding-top: $space-x-standard;
   &__wrapper {
@@ -21,11 +21,11 @@
   }
   p:first-of-type {
     margin-top: $space-x-small;
-    font-size: 16px;
+    font-size: pxToRem(16px);
     font-weight: 700;
   }
   p:last-of-type {
-    font-size: 14px;
+    font-size: pxToRem(14px);
     font-weight: 400;
     line-height: $space-standard;
     color: $c-doveGray;

@@ -4,11 +4,11 @@
   justify-content: center;
   flex-wrap: wrap;
   &__wrapper {
-    width: 814px;
+    width: $grid-md;
     padding-left: $space-x-standard;
   }
   &__container {
-    width: 814px;
+    width: $grid-md;
     a {
       padding: 0;
     }
@@ -51,7 +51,7 @@
       display: table-row;
       padding: 0;
       list-style: none;
-      font-size: 14px;
+      font-size: pxToRem(14px);
       li {
         display: table-cell;
         border-right: 1px solid $c-white;
@@ -85,7 +85,7 @@
     p {
       padding: $space-x-small $space-xsx-small;
       margin: 0;
-      font-size: 14px;
+      font-size: pxToRem(14px);
       font-weight: 600;
     }
   }
@@ -114,7 +114,7 @@
     width: 50%;
 
     p {
-      font-size: 14px;
+      font-size:pxToRem(14px);
     }
     div {
       display: flex;
@@ -141,14 +141,14 @@
     justify-content: flex-end;
 
     &-main {
-      font-size: 18px;
+      font-size: pxToRem(18px);
       font-weight: 500;
       font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
         Helvetica, Arial, sans-serif;
       padding-bottom: 3px;
     }
     &-opinion {
-      font-size: 14px;
+      font-size: pxToRem(14px);
       color: $c-gray;
       font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
         Helvetica, Arial, sans-serif;
@@ -170,7 +170,7 @@
     border-top-right-radius: 2px;
     h3 {
       padding: $space-xsx-small;
-      font-size: $space-small;
+      font-size: pxToRem($space-small);
     }
   }
   &__box {
@@ -188,7 +188,7 @@
       padding: $space-xsx-small;
       padding-left: $space-x-small;
       padding-bottom: 0;
-      font-size: 14px;
+      font-size: pxToRem(14px);
     }
     label {
       padding: $space-xsx-small;
@@ -196,7 +196,7 @@
       display: flex;
       p {
         width: 80%;
-        font-size: 12px;
+        font-size: pxToRem(12px);
         padding-top: 7px;
         padding-bottom: $space-x-small;
         font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
@@ -212,7 +212,7 @@
     margin-bottom: $space-x-small;
     border-radius: 2px;
     p {
-      font-size: 12px;
+      font-size: pxToRem(12px);
       padding-top: 8px;
       font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
         Helvetica, Arial, sans-serif;
@@ -223,7 +223,7 @@
   width: 90%;
   position: relative;
   h2 {
-    font-size: $space-standard;
+    font-size: pxToRem($space-standard);
     font-weight: 500;
     padding-top: $space-standard;
   }
@@ -270,7 +270,7 @@
   width: $space-standard;
   height: $space-standard;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: pxToRem(14px);
   margin: $space-xsx-small;
   font-weight: bold;
   cursor: pointer;
@@ -335,12 +335,12 @@
   justify-content: center;
   &__wrapper {
     display: flex;
-    width: 1100px;
+    width: $grid-lg;
     padding: $space-x-small 0;
     color: $c-lochmara;
     align-items: center;
     p {
-      font-size: 12px;
+      font-size: pxToRem(12px);
       padding: 0$space-x-small;
       color: $c-lochmara;
     }
@@ -359,7 +359,7 @@
     display: flex;
     align-items: center;
     p {
-      font-size: 14px;
+      font-size: pxToRem(14px);
     }
   }
   &__list {
