@@ -16,7 +16,7 @@
     p {
       color: $c-white;
       font-family: "Kanit", sans-serif;
-      font-size: pxToRem(16px);
+      font-size: pxToRem(16);
       font-weight: 900;
     }
   }
@@ -53,7 +53,7 @@
           }
           p {
             color: $c-white;
-            font-size: pxToRem(14px);
+            font-size: pxToRem(14);
             font-weight: 500;
             line-height: $space-standard;
             font-family: "Kanit", sans-serif;
@@ -74,7 +74,7 @@
     flex-basis: 80%;
   }
   &__list {
-    font-size: pxToRem($space-x-standard);
+    font-size: pxToRem(25);
     color: $c-white;
   }
 }

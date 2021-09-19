@@ -1,19 +1,15 @@
-@mixin flexDisplay ($align-items, $justify-content){
-    display: flex;
-    align-items: $align-items;
-    justify-content: $justify-content;
+@mixin flexDisplay($align-items, $justify-content) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
 }
 
 @function pxToRem($pxsize, $rembase: 16) {
-    @return ($pxsize/$rembase) + rem;
-  }
-  
-  @mixin buttonparam($text-align, $width, $height, $margin){
-      align-items: center;
-      text-align: $text-align;
-      border: none;
-      width: $width;
-      height: $height;
-      transition: 1s all;
-      margin: $margin;
-  }
+  @return ($pxsize/$rembase) + rem;
+}
+
+@mixin buttonparam($text-align, $width, $height, $margin) {
+  width: $width;
+  height: $height;
+  background-color: $background;
+}

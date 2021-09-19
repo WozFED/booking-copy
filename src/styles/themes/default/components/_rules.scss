@@ -3,7 +3,7 @@
   &__wrapper {
     padding: 35px $space-small;
     p {
-      font-size: pxToRem(14px);
+      font-size: pxToRem(14);
     }
   }
   &__header {
@@ -12,7 +12,7 @@
     justify-content: space-between;
     p {
       color: $c-doveGray;
-      font-size: pxToRem(13px);
+      font-size: pxToRem(13);
       font-weight: 700;
       margin: $space-x-small 0;
     }
@@ -28,7 +28,7 @@
   display: flex;
   flex-wrap: wrap;
   p {
-    font-size: pxToRem(14px);
+    font-size: pxToRem(14);
   }
   &__title {
     width: 20%;
@@ -58,7 +58,7 @@
   &__info {
     padding-top: $space-medium;
     padding-left: 150px;
-    font-size: pxToRem(14px);
+    font-size: pxToRem(14);
     color: $c-doveGray;
   }
   &__icon {
@@ -73,7 +73,7 @@
       margin-bottom: $space-standard;
     }
     &-title {
-      font-size: pxToRem(14px);
+      font-size: pxToRem(14);
       margin-bottom: $space-standard;
       margin-top: 0;
       font-weight: 600;
@@ -81,7 +81,7 @@
     &-text {
       p {
         margin: $space-x-small 0;
-        font-size: pxToRem(14px);
+        font-size: pxToRem(14);
       }
     }
 
@@ -134,7 +134,7 @@
 
 .checkinout {
   position: absolute;
-  font-size: pxToRem(13px);
+  font-size: pxToRem(13);
   top: -20px;
 }
 
