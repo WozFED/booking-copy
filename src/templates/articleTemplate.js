@@ -76,7 +76,7 @@ export default ArticleTemplate
 
 export const query = graphql`
   query ($slug: String) {
-    contentfulBlogPosts(slug: { eq: $slug }) {
+    contentfulBlogPosts(slug: { eq: $slug }, node_locale: { eq: "pl" }) {
       name
       slug
       description {
