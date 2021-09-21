@@ -8,6 +8,7 @@ import Loading from "../Loader"
 const Hotels = ({
   town,
   hotel,
+  hotelLength,
   postsPerPage,
   totalPosts,
   paginate,
@@ -29,7 +30,7 @@ const Hotels = ({
       {loading ? <Loading /> : null}
       <div className={`${loading ? "background-op" : null}`}>
         <h2>
-          {town}: znaleziono {hotel.length} obiektów
+          {town}: znaleziono {hotelLength} obiektów
         </h2>
         <div className="selects">
           <div className="selects__element">

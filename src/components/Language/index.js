@@ -7,8 +7,8 @@ import {
 import { Icon } from "@iconify/react"
 
 const languageName = {
-  en: "en",
-  pl: "pl",
+  en: "english",
+  pl: "polski",
 }
 const Language = props => {
   const setTheLanguage = language => {

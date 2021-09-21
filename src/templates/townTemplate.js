@@ -62,6 +62,7 @@ const TownTemplate = ({ data, pageContext }) => {
         />
 
         <Hotels
+          hotelLength = {hotel.length}
           hotel={currentHotels}
           arrFil={arrFil}
           isChecked={isChecked}
