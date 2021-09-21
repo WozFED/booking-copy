@@ -7,8 +7,8 @@ import {
 import { Icon } from "@iconify/react"
 
 const languageName = {
-  en: "english",
-  pl: "polski",
+  en: "en",
+  pl: "pl",
 }
 const Language = props => {
   const setTheLanguage = language => {
@@ -49,7 +49,7 @@ const Language = props => {
             ))
           }
         </IntlContextConsumer>
-      </div>{" "}
+      </div>
       <FormattedMessage id="languagebuild" />
     </div>
   )
