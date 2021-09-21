@@ -6,7 +6,10 @@ const Taxi = ({ data }) => {
 
   return (
     <Layout>
+      <div className = "homepage">
+
       <FormattedMessage id="build" />
+      </div>
     </Layout>
   )
 }
