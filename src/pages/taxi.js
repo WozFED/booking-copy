@@ -5,7 +5,7 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 const Taxi = ({ data }) => {
 
   return (
-    <Layout blog={true}>
+    <Layout>
       <FormattedMessage id="build" />
     </Layout>
   )

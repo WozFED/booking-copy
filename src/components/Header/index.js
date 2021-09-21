@@ -7,7 +7,7 @@ const Header = ({ blog }) => {
     <div className="header">
       <div className="header__navigation">
         <NavigationHeader />
-        {!blog ? <NavigationFooter /> : null}
+        <NavigationFooter /> 
       </div>
     </div>
   )

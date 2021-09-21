@@ -3,12 +3,12 @@ import Footer from "../Footer"
 import Header from "../Header"
 import SEO from "../SEO"
 
-const Layout = ({ children, blog }) => {
+const Layout = ({ children }) => {
   return (
    
     <div>
       <SEO />
-      <Header blog={blog} />
+      <Header />
       {children}
       <Footer />
     </div>
