@@ -18,7 +18,7 @@ const ArticleTemplate = ({ data }) => {
   ]
 
   return (
-    <Layout>
+    <Layout blog = {true}>
       <div style={{ width: "100%", height: "300px" }}>
         <BackgroundImage
           style={{ width: "100%", height: "100%", backgroundSize: "cover" }}

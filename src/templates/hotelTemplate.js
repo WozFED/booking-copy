@@ -222,8 +222,8 @@ const HotelsTemplate = ({ data }) => {
 export default HotelsTemplate
 
 export const query = graphql`
-  query ($slug: String) {
-    contentfulHotels(slug: { eq: $slug }, node_locale: { eq: "pl" }) {
+  query ($slug: String,  $locale: String) {
+    contentfulHotels(slug: { eq: $slug }, node_locale: { eq: $locale }) {
       name
       slug
       grade

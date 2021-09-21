@@ -79,9 +79,9 @@ const TownTemplate = ({ data, pageContext }) => {
 
 export default TownTemplate
 export const query = graphql`
-  query ($slug: String) {
+  query ($slug: String, $locale: String) {
     allContentfulHotels(
-      filter: { node_locale: { eq: "pl" }, parentSlug: { eq: $slug } }
+      filter: { node_locale: { eq: $locale }, parentSlug: { eq: $slug } }
     ) {
       nodes {
         name
