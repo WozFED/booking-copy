@@ -9,11 +9,9 @@ import Links from "../components/Links"
 
 const TownTemplate = ({ data, pageContext }) => {
   const [loading, setLoading] = useState(false)
-  console.log(pageContext)
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(6)
   const hotel = data.allContentfulHotels.nodes
-  
 
   const [isChecked, setIsChecked] = useState([false, false, false])
   const [arrFil, setArrFil] = useState([])

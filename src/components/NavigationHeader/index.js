@@ -3,6 +3,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Language from "../Language"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { Icon } from "@iconify/react"
+import { format } from "prettier"
 
 const NavigationHeader = () => {
   const data = useStaticQuery(graphql`
@@ -14,9 +16,8 @@ const NavigationHeader = () => {
           formatID
           id
           image
-          sLeft
           text
-          textHover
+          icon
         }
       }
     }
@@ -34,7 +35,7 @@ const NavigationHeader = () => {
     if (window.location.pathname.includes("/en/")) {
       setImage("/english.png")
     }
-    if (window.location.pathname.includes("/polish/")) {
+    if (window.location.pathname.includes("/pl/")) {
       setImage("/polski.png")
     }
   }, [])
@@ -58,16 +59,15 @@ const NavigationHeader = () => {
                 className={`${el.buttonClass}`}
                 onClick={() => setValuePage(el.id)}
               >
-                <p>
-                  {el.text ? (
-                    el.text
-                  ) : el.formatID ? (
-                    <FormattedMessage id={`${el.formatID}`} />
-                  ) : null}
-                </p>
-                {el.image !== null ? (
-                  <img alt="obrazek" src={image}></img>
-                ) : null}
+               {el.text ? <p>{el.text}</p> : 
+               el.icon ? <span style = {{color: "white", fontSize: "30px", display: "flex", alignItems: "center", justifyContent: "center",
+               margin: 0}}>
+                 
+                <Icon icon = {el.icon} /></span> :
+               el.image ? <img src = {image}></img> :
+               el.formatID ? <p><FormattedMessage id = {`${el.formatID}`}/></p>
+              : null}
+                 
               </button>
             </div>
           )
