@@ -25,6 +25,7 @@ const NavigationFooter = () => {
           return (
             <li key={index}>
               <Link
+              activeStyle = 'click'
                 to={el.path}
                 style={{
                   textDecoration: "none",

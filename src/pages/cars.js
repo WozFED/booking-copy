@@ -5,7 +5,9 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 const CarsPage = () => {
   return (
     <Layout>
+     <div style = {{height: '100vw'}}> 
       <FormattedMessage id="build" />
+      </div>
     </Layout>
   )
 }

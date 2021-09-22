@@ -59,15 +59,28 @@ const NavigationHeader = () => {
                 className={`${el.buttonClass}`}
                 onClick={() => setValuePage(el.id)}
               >
-               {el.text ? <p>{el.text}</p> : 
-               el.icon ? <span style = {{color: "white", fontSize: "30px", display: "flex", alignItems: "center", justifyContent: "center",
-               margin: 0}}>
-                 
-                <Icon icon = {el.icon} /></span> :
-               el.image ? <img src = {image}></img> :
-               el.formatID ? <p><FormattedMessage id = {`${el.formatID}`}/></p>
-              : null}
-                 
+                {el.text ? (
+                  <p>{el.text}</p>
+                ) : el.icon ? (
+                  <span
+                    style={{
+                      color: "white",
+                      fontSize: "30px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: 0,
+                    }}
+                  >
+                    <Icon icon={el.icon} />
+                  </span>
+                ) : el.image ? (
+                  <img src={image}></img>
+                ) : el.formatID ? (
+                  <p>
+                    <FormattedMessage id={`${el.formatID}`} />
+                  </p>
+                ) : null}
               </button>
             </div>
           )
