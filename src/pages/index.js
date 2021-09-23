@@ -1,13 +1,15 @@
 import { graphql } from "gatsby"
 import loadable from '@loadable/component'
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, lazy, Suspense } from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
-import SearchHotels from "../components/SearchHotels"
-import CarouselPhoto from "../components/CarouselPhoto"
 import InspirationPosts from "../components/InspirationPosts"
 
-const Towns = loadable(() => import("../components/Towns"))
+
+const CarouselPhoto = lazy(()=> import('../components/CarouselPhoto'))
+const SearchHotels = lazy(()=> import('../components/SearchHotels'))
+const Towns = lazy(() => import('../components/Towns'))
+
 
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
@@ -28,6 +30,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <Suspense fallback = {<div>Loading...</div>}>
+        
       <div className="homepage">
         
         <SearchHotels />
@@ -42,6 +46,7 @@ const IndexPage = ({ data }) => {
         />
         <InspirationPosts posts={data.posts.nodes} />
       </div>
+      </Suspense>
     </Layout>
   )
 }
