@@ -15,9 +15,9 @@
     }
     &__element {
       height: $space-large;
-      font-size: pxToRem(10);
+      font-size: 10px;
       input {
-        font-size: pxToRem(10);
+        font-size: 10px;
       }
     }
   }
@@ -78,7 +78,7 @@
       }
     }
     .react-date-picker__inputGroup {
-      font-size: pxToRem(12);
+      font-size: 12px;
     }
   }
   .opinions__comments {
@@ -121,10 +121,10 @@
         a {
           padding: 0;
           p {
-            font-size: pxToRem(10);
+            font-size: 10px;
           }
           span {
-            font-size: pxToRem(10);
+            font-size: 10px;
           }
         }
       }
@@ -137,10 +137,10 @@
     }
     &__wrapper {
       p:first-of-type {
-        font-size: pxToRem(12);
+        font-size: 12px;
       }
       p:last-of-type {
-        font-size: pxToRem(10);
+        font-size: 10px;
       }
     }
     &__photo {
@@ -191,7 +191,7 @@
     }
     &__element {
       margin: $space-xsx-small;
-      font-size: pxToRem(14);
+      font-size: 14px;
       width: 200px;
       border: 4px solid #febb02;
       border-radius: 3px;
@@ -222,7 +222,7 @@
     justify-content: flex-start;
     align-items: center;
     button {
-      font-size: pxToRem(14);
+      font-size: 14px;
     }
   }
   .sharing {
@@ -285,7 +285,7 @@
   }
   .selects__element {
     p {
-      font-size: pxToRem(12);
+      font-size: 12px;
     }
   }
 }

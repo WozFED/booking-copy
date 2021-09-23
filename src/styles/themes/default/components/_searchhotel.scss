@@ -20,7 +20,7 @@
     justify-content: flex-end;
     height: 52px;
     width: 300px;
-    font-size: pxToRem($space-standard);
+    font-size: 20px;
     border: 4px solid $c-selectiveYellow;
     box-sizing: content-box;
     background: $c-white;
@@ -41,7 +41,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    font-size: pxToRem($space-standard);
+    font-size: 20px;
     padding: $space-xsx-small;
   }
 }

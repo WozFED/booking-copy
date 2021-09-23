@@ -4,10 +4,6 @@
   justify-content: $justify-content;
 }
 
-@function pxToRem($pxsize, $rembase: 16) {
-  @return ($pxsize/$rembase) + rem;
-}
-
 @mixin buttonparam($text-align, $width, $height, $margin) {
   width: $width;
   height: $height;

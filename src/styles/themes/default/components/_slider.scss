@@ -21,11 +21,11 @@
   }
   p:first-of-type {
     margin-top: $space-x-small;
-    font-size: pxToRem(16px);
+    font-size: 16px;
     font-weight: 700;
   }
   p:last-of-type {
-    font-size: pxToRem(14px);
+    font-size: 14px;
     font-weight: 400;
     line-height: $space-standard;
     color: $c-doveGray;

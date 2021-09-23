@@ -8,7 +8,7 @@
     border: none;
     width: 100%;
     height: $space-x-large;
-    font-size: pxToRem(20);
+    font-size: 20px;
   }
   &-header {
     background-color: $c-white;
@@ -46,7 +46,7 @@
     border: none;
     border-radius: 2px;
     color: $c-white;
-    font-size: pxToRem(16);
+    font-size: 16px;
     font-weight: 700;
     font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
       Arial, sans-serif;
@@ -56,7 +56,7 @@
     width: 30%;
     background-color: $c-lochmara;
     color: $c-white;
-    font-size: pxToRem(20);
+    font-size: 20px;
     font-weight: 300;
     font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
       Arial, sans-serif;
@@ -91,7 +91,7 @@
     color: $c-white;
     cursor: pointer;
     text-align: center;
-    font-size: pxToRem(20);
+    font-size: 20px;
     line-height: 16px;
     outline: none;
     border: none;
@@ -114,7 +114,7 @@
     background-color: transparent;
     border: none;
     outline: $c-resolutionBlue;
-    font-size: pxToRem(20);
+    font-size: 20px;
   }
 }
 
@@ -132,7 +132,7 @@
   p {
     margin: 0;
     padding: 0 $space-small;
-    font-size: pxToRem(13);
+    font-size: 13px;
     font-weight: 400;
   }
   &:hover {

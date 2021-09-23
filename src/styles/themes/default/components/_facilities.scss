@@ -27,7 +27,7 @@
         padding-left: 20px;
         margin: $space-x-small 0;
         p {
-          font-size: pxToRem(12);
+          font-size: 12px;
         }
       }
     }
@@ -42,7 +42,7 @@
   ul {
     list-style-type: none;
     display: flex;
-    font-size: pxToRem(20);
+    font-size: 20px;
     width: 100%;
     flex-wrap: wrap;
     li {
@@ -51,7 +51,7 @@
       margin-right: 8px;
       color: $c-japaneseLaurel;
       p {
-        font-size: pxToRem(14);
+        font-size: 14px;
         margin-left: 2px;
         color: $c-black;
       }
