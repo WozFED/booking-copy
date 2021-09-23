@@ -32,10 +32,6 @@ const Towns = ({ towns }) => {
                     <h2>{el.name}</h2>
                     <h3>{`${el.amount}`}</h3>
                   </div>
-                  <StaticImage
-                    width={25}
-                    src="C:\Kurs Front-End\gatsby-new-project\static\polski.png"
-                  />
                 </div>
               </BackgroundImage>
             </Link>

@@ -6,18 +6,30 @@ import SearchHotels from "../components/SearchHotels"
 import Towns from "../components/Towns"
 import CarouselPhoto from "../components/CarouselPhoto"
 import InspirationPosts from "../components/InspirationPosts"
-import SEO from "../components/SEO"
 
 const IndexPage = ({ data }) => {
- 
+  const towns = data.towns.nodes
+  const [filteredTown, setFilteredTown] = useState(towns)
+  const filterArrayFunction = (towns) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(towns.filter(el => el.slug !== null).sort())
+      }, 50)
+    })
+  }
+
+  useEffect(()=>{
+    filterArrayFunction(towns).then(array => setFilteredTown(array))
+  },[data])
 
   return (
     <Layout>
       <div className="homepage">
+        
         <SearchHotels />
         <CarouselPhoto array={data.categories.nodes} section={"category"} />
         <Towns
-          towns={data.towns.nodes.filter(el => el.slug !== null)}
+          towns={filteredTown}
         />
 
         <CarouselPhoto
@@ -65,7 +77,7 @@ export const query = graphql`
       nodes {
         background {
           fluid {
-            src
+            ...GatsbyContentfulFluid
           }
         }
         name
