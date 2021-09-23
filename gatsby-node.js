@@ -1,7 +1,7 @@
 const slash = require("slash")
 const path = require(`path`)
 
-exports.onCreatePage = ({ page, actions }) => {
+exports.onCreatePage = async ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
   deletePage(page)
