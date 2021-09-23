@@ -1,19 +1,23 @@
 import { graphql } from "gatsby"
+import loadable from '@loadable/component'
 import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
 import SearchHotels from "../components/SearchHotels"
-import Towns from "../components/Towns"
 import CarouselPhoto from "../components/CarouselPhoto"
 import InspirationPosts from "../components/InspirationPosts"
+
+const Towns = loadable(() => import("../components/Towns"))
 
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
   const [filteredTown, setFilteredTown] = useState(towns)
+
+
   const filterArrayFunction = (towns) => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(towns.filter(el => el.slug !== null).sort())
+        resolve(towns.filter(el => el.slug !== null).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)))
       }, 50)
     })
   }
@@ -52,7 +56,7 @@ export const query = graphql`
         amount
         slug
         photo {
-          fluid {
+          fluid(maxWidth: 100) {
             ...GatsbyContentfulFluid
           }
         }

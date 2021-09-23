@@ -9,10 +9,11 @@ const Towns = ({ towns }) => {
       <div className="towns__wrapper">
         {towns.map((el, index) => {
           return (
-            <Link
+            <Link 
+              key = {index}
               to={`${el.slug}`}
               style={{
-                width: index <= 1 ? "calc(50% - 20px)" : "calc(33.333% - 20px)",
+                width: "100px",
                 height: "270px",
                 marginTop: "20px",
                 marginRight: "20px",
