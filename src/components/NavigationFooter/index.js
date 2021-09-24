@@ -4,19 +4,7 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 import { Icon } from "@iconify/react"
 
 const NavigationFooter = () => {
-  const data = useStaticQuery(graphql`
-    query NavFoot {
-      allNavigationJson {
-        nodes {
-          name
-          image
-          path
-          test
-        }
-      }
-    }
-  `)
-  const { nodes } = data.allNavigationJson
+  
 
   return (
     <div className="header__navigation-footer">
