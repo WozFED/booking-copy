@@ -7,22 +7,7 @@ import { Icon } from "@iconify/react"
 import { format } from "prettier"
 
 const NavigationHeader = () => {
-  const data = useStaticQuery(graphql`
-    query NavHeader {
-      allHeaderJson {
-        nodes {
-          block
-          buttonClass
-          formatID
-          id
-          image
-          text
-          icon
-        }
-      }
-    }
-  `)
-  const { nodes } = data.allHeaderJson
+  
   const [language, setLanguage] = useState(false)
 
   const [image, setImage] = useState("/polski.png")
