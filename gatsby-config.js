@@ -56,7 +56,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-anchor-links`,
-    `gatsby-plugin-fontawesome-css`,
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,

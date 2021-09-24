@@ -4,7 +4,6 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 import Language from "../Language"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { Icon } from "@iconify/react"
-import { format } from "prettier"
 
 const NavigationHeader = () => {
   const data = useStaticQuery(graphql`
