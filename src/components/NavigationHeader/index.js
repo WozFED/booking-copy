@@ -10,20 +10,11 @@ const NavigationHeader = () => {
   
   const [language, setLanguage] = useState(false)
 
-  const [image, setImage] = useState("/polski.png")
 
   const setValuePage = id => {
     id === "2" ? setLanguage(true) : setLanguage(false)
   }
 
-  useEffect(() => {
-    if (window.location.pathname.includes("/en/")) {
-      setImage("/english.png")
-    }
-    if (window.location.pathname.includes("/pl/")) {
-      setImage("/polski.png")
-    }
-  }, [])
 
   return (
     <div className="header__navigation-header">
