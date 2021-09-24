@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react";
+import { Link } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Towns = ({ towns }) => {
   return (
@@ -9,8 +9,8 @@ const Towns = ({ towns }) => {
       <div className="towns__wrapper">
         {towns.map((el, index) => {
           return (
-            <Link 
-              key = {index}
+            <Link
+              key={index}
               to={`${el.slug}`}
               style={{
                 width: "100px",
@@ -36,11 +36,11 @@ const Towns = ({ towns }) => {
                 </div>
               </BackgroundImage>
             </Link>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Towns
+export default Towns;

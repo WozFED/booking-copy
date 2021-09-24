@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react"
-import { StaticImage } from "gatsby-plugin-image"
-import { FormattedMessage } from "gatsby-plugin-intl"
-import Language from "../Language"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { Icon } from "@iconify/react"
-import { format } from "prettier"
+import React, { useEffect, useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import { FormattedMessage } from "gatsby-plugin-intl";
+import Language from "../Language";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import { Icon } from "@iconify/react";
+import { format } from "prettier";
 
 const NavigationHeader = () => {
   
-  const [language, setLanguage] = useState(false)
+  const [language, setLanguage] = useState(false);
 
-
-  const setValuePage = id => {
-    id === "2" ? setLanguage(true) : setLanguage(false)
-  }
-
+  const setValuePage = (id) => {
+    id === "2" ? setLanguage(true) : setLanguage(false);
+  };
 
   return (
     <div className="header__navigation-header">
@@ -32,7 +30,7 @@ const NavigationHeader = () => {
         {language ? <Language languageF={setValuePage} /> : null}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavigationHeader
+export default NavigationHeader;
