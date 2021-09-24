@@ -21,31 +21,12 @@ const NavigationFooter = () => {
   return (
     <div className="header__navigation-footer">
       <ul className="header__list">
-        {nodes.map((el, index) => {
-          return (
-            <li key={index}>
-              <Link
-              activeStyle = 'click'
-                to={el.path}
-                style={{
-                  textDecoration: "none",
-                  padding: "15px",
-                  paddingBottom: "10px",
-                }}
-              >
-                <span>
-                  <Icon
-                    icon={`${el.image}`}
-                    style={{ fontSize: "25px", color: "white" }}
-                  />
-                </span>
-                <p>
-                  <FormattedMessage id={el.name} />
-                </p>
-              </Link>
-            </li>
-          )
-        })}
+      <li>Pobyty</li>
+      <li>Pobyty</li>
+      <li>Pobyty</li>
+      <li>Pobyty</li>
+      <li>Pobyty</li>
+      <li>Pobyty</li>
       </ul>
     </div>
   )
