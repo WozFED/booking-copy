@@ -3,18 +3,17 @@ import loadable from '@loadable/component'
 import React, { useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
-import InspirationPosts from "../components/InspirationPosts"
 
 
 const CarouselPhoto = loadable(()=> import('../components/CarouselPhoto'))
 const SearchHotels = loadable(()=> import('../components/SearchHotels'))
 const Towns = loadable(() => import('../components/Towns'))
-
+const InspirationPosts = loadable(() => import('../components/InspirationPosts'))
 
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
   const [filteredTown, setFilteredTown] = useState(towns)
-
+  const [carouselTowns, setCarouselTown] = useState(towns)
 
   const filterArrayFunction = (towns) => {
     return new Promise((resolve) => {
@@ -24,8 +23,17 @@ const IndexPage = ({ data }) => {
     })
   }
 
+  const filterCarouselPhoto = (towns) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(towns.sort(() => 0.5 - Math.random()))
+      }, 250);
+    })
+  }
+
   useEffect(()=>{
     filterArrayFunction(towns).then(array => setFilteredTown(array))
+    filterCarouselPhoto(towns).then(array => setCarouselTown(array))
   },[data])
 
   return (
@@ -40,7 +48,7 @@ const IndexPage = ({ data }) => {
         />
 
         <CarouselPhoto
-          array={data.towns.nodes.sort(() => 0.5 - Math.random())}
+          array={carouselTowns}
           section={"poland"}
         />
         <InspirationPosts posts={data.posts.nodes} />
@@ -59,7 +67,7 @@ export const query = graphql`
         amount
         slug
         photo {
-          fluid(maxWidth: 100) {
+          fluid(maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }
@@ -83,7 +91,7 @@ export const query = graphql`
     posts: allContentfulBlogPosts(filter: { node_locale: { eq: $locale } }) {
       nodes {
         background {
-          fluid {
+          fluid(maxWidth: 300) {
             ...GatsbyContentfulFluid
           }
         }

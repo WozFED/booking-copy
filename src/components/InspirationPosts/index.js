@@ -17,7 +17,7 @@ const InspirationPosts = ({ posts }) => {
                 to={`/${post.slug}`}
                 style={{
                   width:
-                    index <= 2 ? "calc(33.333% - 15px)" : "calc(50% - 15px)",
+                  "300px",
                   height: "320px",
                   marginTop: "15px",
                   marginRight: "15px",
