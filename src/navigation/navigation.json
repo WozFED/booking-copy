@@ -1,32 +1,3 @@
 [
-  {
-    "name": "stays",
-    "path": "/",
-    "image": "fluent:bed-24-filled",
-    "test": 0
-  },
-  {
-    "name": "flights",
-    "path": "/flights/",
-    "image": "fa-solid:plane",
-    "test": 1
-  },
-  {
-    "name": "rent",
-    "path": "/cars/",
-    "image": "bx:bxs-car",
-    "test": 2
-  },
-  {
-    "name": "attraction",
-    "path": "/atractive/",
-    "image": "ic:sharp-attractions",
-    "test": 3
-  },
-  {
-    "name": "taxi",
-    "path": "/taxi/",
-    "image": "cil:taxi",
-    "test": 4
-  }
+  
 ]
