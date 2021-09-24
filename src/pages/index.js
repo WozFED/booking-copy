@@ -12,6 +12,7 @@ const InspirationPosts = loadable(() => import('../components/InspirationPosts')
 
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
+  const categories = data.categories.nodes
   const [filteredTown, setFilteredTown] = useState(towns)
   const [carouselTowns, setCarouselTown] = useState(towns)
 
@@ -42,7 +43,7 @@ const IndexPage = ({ data }) => {
       <div className="homepage">
         
         <SearchHotels />
-        <CarouselPhoto array={data.categories.nodes} section={"category"} />
+        <CarouselPhoto array={categories} section={"category"} />
         <Towns
           towns={filteredTown}
         />
@@ -80,7 +81,7 @@ export const query = graphql`
       nodes {
         node_locale
         photo {
-          fluid {
+          fluid(maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }

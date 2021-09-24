@@ -55,6 +55,13 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
+    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-transformer-json`,

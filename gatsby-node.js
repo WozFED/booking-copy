@@ -1,21 +1,6 @@
 const slash = require("slash")
 const path = require(`path`)
 
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage, deletePage } = actions
-
-  deletePage(page)
-
-  createPage({
-      ...page,
-      context: {
-          ...page.context,
-          locale: page.context.intl.language,
-      },
-  })
-}
-
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const townTemplate = path.resolve("./src/templates/townTemplate.js")
