@@ -16,14 +16,7 @@ module.exports = {
         duration: 2500,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `navigation`,
-        path: `${__dirname}/src/navigation/`,
-        ignore: [`**/\.*`],
-      },
-    },
+    
 
     {
       resolve: `gatsby-plugin-intl`,
