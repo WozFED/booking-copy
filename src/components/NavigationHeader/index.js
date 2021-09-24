@@ -52,39 +52,7 @@ const NavigationHeader = () => {
         </Link>
       </div>
       <div className="header__options">
-        {nodes.map(el => {
-          return (
-            <div className={`${el.block}`} key={el.id}>
-              <button
-                className={`${el.buttonClass}`}
-                onClick={() => setValuePage(el.id)}
-              >
-                {el.text ? (
-                  <p>{el.text}</p>
-                ) : el.icon ? (
-                  <span
-                    style={{
-                      color: "white",
-                      fontSize: "30px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: 0,
-                    }}
-                  >
-                    <Icon icon={el.icon} />
-                  </span>
-                ) : el.image ? (
-                  <img src={image}></img>
-                ) : el.formatID ? (
-                  <p>
-                    <FormattedMessage id={`${el.formatID}`} />
-                  </p>
-                ) : null}
-              </button>
-            </div>
-          )
-        })}
+        <p>Halo?</p>
         {language ? <Language languageF={setValuePage} /> : null}
       </div>
     </div>
