@@ -1,39 +1,31 @@
 import { graphql } from "gatsby"
-import React, { useState, useEffect } from "react"
+import loadable from '@loadable/component'
+import React, { useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
+import CarouselPhoto from '../components/CarouselPhoto'
 import SearchHotels from "../components/SearchHotels"
 import Towns from "../components/Towns"
-import CarouselPhoto from "../components/CarouselPhoto"
 import InspirationPosts from "../components/InspirationPosts"
 
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
-  const [filteredTown, setFilteredTown] = useState(towns)
-  const filterArrayFunction = (towns) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(towns.filter(el => el.slug !== null).sort())
-      }, 50)
-    })
-  }
-
-  useEffect(()=>{
-    filterArrayFunction(towns).then(array => setFilteredTown(array))
-  },[data])
+  const categories = data.categories.nodes
+  
 
   return (
     <Layout>
+        
       <div className="homepage">
         
         <SearchHotels />
-        <CarouselPhoto array={data.categories.nodes} section={"category"} />
+        <CarouselPhoto array={categories} section={"category"} />
         <Towns
-          towns={filteredTown}
+          towns={towns}
         />
 
         <CarouselPhoto
-          array={data.towns.nodes.sort(() => 0.5 - Math.random())}
+          array={towns}
           section={"poland"}
         />
         <InspirationPosts posts={data.posts.nodes} />
@@ -52,7 +44,7 @@ export const query = graphql`
         amount
         slug
         photo {
-          fluid {
+          fluid(maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }
@@ -65,7 +57,7 @@ export const query = graphql`
       nodes {
         node_locale
         photo {
-          fluid {
+          fluid(maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }
@@ -76,7 +68,7 @@ export const query = graphql`
     posts: allContentfulBlogPosts(filter: { node_locale: { eq: $locale } }) {
       nodes {
         background {
-          fluid {
+          fluid(maxWidth: 300) {
             ...GatsbyContentfulFluid
           }
         }
