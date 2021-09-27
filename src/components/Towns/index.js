@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 const Towns = ({ towns }) => {
-
-  const [test, setTest] = useState(null)
+  const townsArray = towns
+  const [test, setTest] = useState(townsArray)
 
   const filterArrayFunction = (towns) => {
 
@@ -16,7 +16,7 @@ const Towns = ({ towns }) => {
   }
 
   useEffect(()=>{
-    filterArrayFunction(towns).then(array => setTest(array))
+    filterArrayFunction(townsArray).then(array => setTest(array))
   }, [])
 
   return (
