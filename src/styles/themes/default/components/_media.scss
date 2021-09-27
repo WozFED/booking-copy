@@ -1,0 +1,291 @@
+@media only screen and (max-width: $grid-lg) {
+  .another {
+    display: none;
+  }
+  .article__wrapper {
+    width: 80%;
+  }
+  .inputs {
+    height: 200px;
+    align-items: center;
+    &__wrapper {
+      width: 80%;
+      height: 80%;
+      padding: 0;
+    }
+    &__element {
+      height: $space-large;
+      font-size: pxToRem(10);
+      input {
+        font-size: pxToRem(10);
+      }
+    }
+  }
+  .slider {
+    button.rec.rec-arrow-right {
+      top: 70px;
+      right: -1%;
+    }
+    width: 80%;
+    &__wrapper {
+      width: 80%;
+    }
+    &__photo {
+      &-category {
+        width: 150px;
+      }
+      &-poland {
+        width: 150px;
+      }
+    }
+    .towns {
+      &__wrapper {
+        width: 80%;
+      }
+    }
+    .inspirations {
+      &__wrapper {
+        width: 80%;
+      }
+    }
+    .footer__contact {
+      width: 100%;
+    }
+  }
+  .hotels {
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    &__options {
+      width: 20%;
+    }
+    &__wrapper {
+      width: 80%;
+      padding-left: $space-xsx-small;
+    }
+    &__container {
+      width: 100%;
+    }
+    .window {
+      &__image {
+        width: auto;
+      }
+      &__description {
+        div {
+          flex-direction: column;
+        }
+      }
+    }
+    .react-date-picker__inputGroup {
+      font-size: pxToRem(12);
+    }
+  }
+  .opinions__comments {
+    div.rec.rec-carousel {
+      left: 0;
+    }
+  }
+  .facilities__all {
+    width: 75%;
+  }
+  .hotel {
+    width: 100%;
+  }
+  .gallery-big {
+    width: 60%;
+  }
+  .gallery-small {
+    width: 38%;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .button-header {
+    p {
+      padding: 0;
+    }
+  }
+  .header {
+    &__navigation {
+      width: 90%;
+      &-footer {
+        width: 100%;
+      }
+    }
+    &__button {
+      display: none;
+    }
+    &__list {
+      li {
+        a {
+          padding: 0;
+          p {
+            font-size: pxToRem(10);
+          }
+          span {
+            font-size: pxToRem(10);
+          }
+        }
+      }
+    }
+  }
+  .slider {
+    button.rec.rec-arrow-left {
+      top: $space-large;
+      left: -$space-small;
+    }
+    &__wrapper {
+      p:first-of-type {
+        font-size: pxToRem(12);
+      }
+      p:last-of-type {
+        font-size: pxToRem(10);
+      }
+    }
+    &__photo {
+      &-category {
+        width: 130px;
+        height: 180px;
+      }
+      &-poland {
+        width: 130px;
+        height: 180px;
+      }
+    }
+  }
+  .towns__wrapper {
+    width: 100%;
+  }
+  .footer__contact {
+    width: 100%;
+  }
+  .show__grade-text {
+    padding: 0;
+  }
+  .rating {
+    height: $space-large;
+  }
+  .facilities__all {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header__navigation-footer {
+    display: none;
+  }
+  .article__footer {
+    display: none;
+  }
+  .inputs {
+    height: 400px;
+    &__wrapper {
+      p {
+        display: none;
+      }
+    }
+    &__inputs {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__element {
+      margin: $space-xsx-small;
+      font-size: pxToRem(14);
+      width: 200px;
+      border: 4px solid #febb02;
+      border-radius: 3px;
+      p {
+        display: inline;
+      }
+    }
+  }
+  .towns__wrapper {
+    justify-content: center;
+    a {
+      margin: 0 !important;
+      width: 50% !important;
+    }
+  }
+  .slider {
+    display: none;
+  }
+  .inspirations__container {
+    a {
+      width: 100% !important;
+    }
+  }
+
+  .footer__text {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    button {
+      font-size: pxToRem(14);
+    }
+  }
+  .sharing {
+    display: none;
+  }
+  .hotels {
+    &__wrapper {
+      width: 100%;
+    }
+    &__window {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__options {
+      width: 100%;
+    }
+    &__equal {
+      display: none;
+    }
+  }
+  .window {
+    &__image {
+      width: 100% !important;
+      display: flex;
+      justify-content: center;
+      &-postcard {
+        width: 100% !important;
+        margin: 0;
+      }
+      a {
+        width: 90%;
+      }
+    }
+    &__description {
+      width: 90%;
+      padding: 0;
+    }
+    &__show {
+      width: 90%;
+      justify-content: space-between;
+      padding: $space-x-standard 0;
+    }
+  }
+  .show__grade {
+    width: 30%;
+    justify-content: space-between;
+  }
+  .button-price {
+    margin: 0;
+  }
+
+  .options {
+    width: 100%;
+    display: flex;
+  }
+
+  .options__date {
+    margin: 0;
+  }
+  .selects__element {
+    p {
+      font-size: pxToRem(12);
+    }
+  }
+}
