@@ -3,11 +3,10 @@ import loadable, { loadableReady } from '@loadable/component'
 import React, { useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
-
-const CarouselPhoto = loadable(() => import('../components/CarouselPhoto'))
-const SearchHotels = loadable(() => import('../components/SearchHotels'))
-const Towns = loadable(() => import('../components/Towns'))
-const InspirationPosts = loadable(() => import('../components/InspirationPosts'))
+import CarouselPhoto from '../components/CarouselPhoto'
+import SearchHotels from "../components/SearchHotels"
+import Towns from "../components/Towns"
+import InspirationPosts from "../components/InspirationPosts"
 
 
 const IndexPage = ({ data }) => {
