@@ -1,12 +1,14 @@
 import { graphql } from "gatsby"
-import loadable from '@loadable/component'
+import loadable, { loadableReady } from '@loadable/component'
 import React, { useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"
-import CarouselPhoto from '../components/CarouselPhoto'
-import SearchHotels from "../components/SearchHotels"
-import Towns from "../components/Towns"
-import InspirationPosts from "../components/InspirationPosts"
+
+const CarouselPhoto = loadable(() => import('../components/CarouselPhoto'))
+const SearchHotels = loadable(() => import('../components/SearchHotels'))
+const Towns = loadable(() => import('../components/Towns'))
+const InspirationPosts = loadable(() => import('../components/InspirationPosts'))
+
 
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
@@ -18,7 +20,7 @@ const IndexPage = ({ data }) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(towns.filter(el => el.slug !== null).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)))
-      }, 100)
+      }, 200)
     })
   }
 
@@ -26,7 +28,7 @@ const IndexPage = ({ data }) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(towns.sort(() => 0.5 - Math.random()))
-      }, 700);
+      }, 500);
     })
   }
 

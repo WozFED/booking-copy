@@ -17,22 +17,12 @@ import Important from "../components/Important"
 
 const HotelsTemplate = ({ data }) => {
   const hotel = data.contentfulHotels
-  console.log(hotel)
   const photos = data.contentfulHotels.photos
   const morePhotos = photos.concat(photos).concat(photos).concat(photos)
   const headerPhotos = morePhotos.slice(0, 3)
   const footerPhotos = morePhotos.slice(3, 8)
   const [openOpinions, setOpenOpinions] = useState(false)
 
-  const whatNumberGrade = stars => {
-    if (stars > 4) {
-      return (Math.random() * (9.9 - 9) + 9).toFixed(1)
-    } else if (stars === 4) {
-      return (Math.random() * (8.9 - 8) + 8).toFixed(1)
-    } else {
-      return (Math.random() * (7.9 - 5) + 5).toFixed(1)
-    }
-  }
   return (
     <Layout>
       <div className="hotels">
@@ -40,7 +30,6 @@ const HotelsTemplate = ({ data }) => {
 
         <Options section={false} hotel={hotel} />
         <div className="hotels__wrapper">
-          {/* <button style = {{position: 'fixed'}} onClick = {() => console.log(window.pageYOffset)}>Pokaż kordy</button> */}
           <div className="hotels__general">
             <ul>
               <li className="hotels__table">

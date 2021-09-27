@@ -9,16 +9,7 @@
     height: $space-x-large;
     display: flex;
     justify-content: center;
-    &:hover {
-      background-color: rgba(0, 113, 194, 0.3);
-      cursor: pointer;
-    }
-    p {
-      color: $c-white;
-      font-family: "Kanit", sans-serif;
-      font-size: pxToRem(16);
-      font-weight: 900;
-    }
+
   }
   &__navigation {
     width: 1500px;
