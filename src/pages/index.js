@@ -11,31 +11,7 @@ import InspirationPosts from "../components/InspirationPosts"
 const IndexPage = ({ data }) => {
   const towns = data.towns.nodes
   const categories = data.categories.nodes
-  const [filteredTown, setFilteredTown] = useState(towns)
-  const [carouselTowns, setCarouselTown] = useState(towns)
-
-  const filterArrayFunction = (towns) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(towns.filter(el => el.slug !== null).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)))
-      }, 200)
-    })
-  }
-
-  const filterCarouselPhoto = (towns) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(towns.sort(() => 0.5 - Math.random()))
-      }, 500);
-    })
-  }
-
-  useEffect(()=>{
-    filterArrayFunction(towns).then(array => setFilteredTown(array))
-    filterCarouselPhoto(towns).then(array => setCarouselTown(array))
-  },[data])
   
-
   return (
     <Layout>
         
@@ -44,11 +20,11 @@ const IndexPage = ({ data }) => {
         <SearchHotels />
         <CarouselPhoto array={categories} section={"category"} />
         <Towns
-          towns={filteredTown}
+          towns={towns}
         />
 
         <CarouselPhoto
-          array={carouselTowns}
+          array={towns}
           section={"poland"}
         />
         <InspirationPosts posts={data.posts.nodes} />
@@ -91,7 +67,7 @@ export const query = graphql`
     posts: allContentfulBlogPosts(filter: { node_locale: { eq: $locale } }) {
       nodes {
         background {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }
