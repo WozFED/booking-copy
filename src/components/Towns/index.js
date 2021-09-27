@@ -1,13 +1,28 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Towns = ({ towns }) => {
+
+  const [test, setTest] = useState(null)
+
+  const filterArrayFunction = (towns) => {
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(towns.filter(el => el.slug !== null).sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)))
+      }, 200)
+    })
+  }
+
+  useEffect(()=>{
+    filterArrayFunction(towns).then(array => setTest(array))
+  }, [])
+
   return (
     <div className="towns">
       <div className="towns__wrapper">
-        {towns.map((el, index) => {
+        {test.map((el, index) => {
           return (
             <Link
               to={`${el.slug}`}
