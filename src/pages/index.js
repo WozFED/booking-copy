@@ -1,5 +1,4 @@
 import { graphql } from "gatsby"
-import loadable, { loadableReady } from '@loadable/component'
 import React, { useState, useEffect} from "react"
 import Layout from "../components/Layout"
 import "../styles/themes/default/theme.scss"

@@ -10,6 +10,12 @@
     display: flex;
     justify-content: center;
 
+    p {
+      color: $c-white;
+      font-family: "Kanit", sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+    }
   }
   &__navigation {
     width: 1500px;
